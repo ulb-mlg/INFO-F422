@@ -1,14 +1,14 @@
 # Introduction
 ## Welcome
-Welcome to the *Statistical Foundations of Machine Learning* course, part of the Master's program in Computer Science at ULB. This course provides the essential mathematical and algorithmic foundations behind the modern techniques used in machine learning, with a strong focus on statistics, probabilistic modeling, and regression/classification methods. It is the perfect starting point for anyone aiming to understand, build, and evaluate predictive models rigorously.
+Welcome to the practicals handbook of the *Statistical Foundations of Machine Learning* course, part of the Master's program in Computer Science at ULB. This course provides the essential mathematical and algorithmic foundations behind the modern techniques used in machine learning, with a strong focus on statistics, probabilistic modeling, and regression/classification methods. It is the perfect starting point for anyone aiming to understand, build, and evaluate predictive models rigorously. The present document aims at bringing additional examples, tools and exercises to help understanding the main course's contents.
 
 ---
 
-## Why This Course?
+## Why This Book?
 
 Machine learning is not magic. It is grounded in solid mathematical ideas, especially probability theory, statistics, linear algebra, and optimization. Understanding **how and why** algorithms work is crucial for designing good systems that are not only performant but also interpretable and reliable.
 
-This course will:
+This book will:
 
 - Build your **intuition** for probabilistic reasoning and statistical inference.
 - Introduce **core regression and classification models**, from linear regression to neural networks.
@@ -85,7 +85,7 @@ From regression to classification, we shift the focus:
 ---
 
 ## Practical Exercises
-This handbook serves as the practicals reference for the course. The theoretical handbook remains the main reference. We want to focus here in the implementations, the algorithms and the existing libraries for implementing the topics covered in the course. The student should refer as much as possible to the theoretical handbook before delving into the coding. Here, we try, as much as possible, to include:
+This handbook serves as the practicals reference for the course. The [theorecical handbook](https://www.researchgate.net/publication/242692234_Statistical_foundations_of_machine_learning_the_handbook) remains the main reference. We want to focus here in the implementations, the algorithms and the existing libraries for implementing the topics covered in the course. The student should refer as much as possible to the theoretical handbook before delving into the coding. Here, we try, as much as possible, to include:
 - **Hands-on coding exercises**
 - **Mini-projects and simulations**
 - **Graphical visualizations** of models and results
