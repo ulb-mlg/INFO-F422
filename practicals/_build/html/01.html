@@ -559,17 +559,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">v0</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of v0 components:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average value in M:&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar product of v2 and v3:&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sum of v0 components: 6
-Average value in M: 5.0
 Scalar product of v2 and v3: 35.18518518518518
 </pre></div>
 </div>
@@ -592,26 +589,22 @@ E[\mathbf X] = \begin{cases}
     \sum_{x} x p_{\mathbf X}(x) &amp; \text{for discrete $\mathbf X$}
 \end{cases}
 \end{split}\]</div>
-<p>Statistically, the average is an unbiased estimator of the expected value. In \codeword{NumPy}, the average value in an array can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.mean</span></code> function.
-The variance of <span class="math notranslate nohighlight">\(\mathbf X\)</span>, denoted <span class="math notranslate nohighlight">\(\text{Var}(\mathbf X)\)</span>, measures the dispersion around the mean:</p>
+<p>The variance of <span class="math notranslate nohighlight">\(\mathbf X\)</span>, denoted <span class="math notranslate nohighlight">\(\text{Var}(\mathbf X)\)</span>, measures the dispersion around the mean:</p>
 <div class="math notranslate nohighlight">
 \[
 \text{Var}(\mathbf X) = E[(\mathbf X - E[\mathbf X])^2] = E[\mathbf X^2] - (E[\mathbf X])^2
 \]</div>
-<p>The variance is the square of the standard deviation.
-So, in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the variance of an array can be computed by squaring the result of the <code class="docutils literal notranslate"><span class="pre">numpy.std</span></code> function.
-For two random variables <span class="math notranslate nohighlight">\(\mathbf X\)</span> and \mathbf <span class="math notranslate nohighlight">\(Y\)</span>, their covariance is defined as:</p>
+<p>The variance is the square of the standard deviation.</p>
+<p>For two random variables <span class="math notranslate nohighlight">\(\mathbf X\)</span> and \mathbf <span class="math notranslate nohighlight">\(Y\)</span>, their covariance is defined as:</p>
 <div class="math notranslate nohighlight">
 \[
 \text{Cov}(\mathbf X, \mathbf Y) = E[(\mathbf X - E[\mathbf X])(\mathbf Y - E[\mathbf Y])] = E[\mathbf X\mathbf Y] - E[\mathbf X]E[\mathbf Y]
 \]</div>
-<p>In <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the covariance between two vectors can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.cov</span></code> function.
-The correlation coefficient, which measures the linear dependence between <span class="math notranslate nohighlight">\(\mathbf X\)</span> and <span class="math notranslate nohighlight">\(\mathbf Y\)</span>, is:</p>
+<p>The correlation coefficient, which measures the linear dependence between <span class="math notranslate nohighlight">\(\mathbf X\)</span> and <span class="math notranslate nohighlight">\(\mathbf Y\)</span>, is:</p>
 <div class="math notranslate nohighlight">
 \[
 \rho_{\mathbf X,\mathbf Y} = \frac{\text{Cov}(\mathbf X, \mathbf Y)}{\sqrt{\text{Var}(\mathbf X) \cdot \text{Var}(\mathbf Y)}}
 \]</div>
-<p>In <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the correlation coefficient between two vectors can be computed with the `numpy.corrcoef function.</p>
 </section>
 <section id="common-probability-distributions">
 <h3><span class="section-number">2.3.2. </span>Common Probability Distributions<a class="headerlink" href="#common-probability-distributions" title="Link to this heading">#</a></h3>
@@ -702,7 +695,8 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </section>
 <section id="statistical-analysis">
 <h3><span class="section-number">2.4.4. </span>Statistical Analysis<a class="headerlink" href="#statistical-analysis" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Scipy</span></code> offers tools to analyse statistical distributions. As an example, if wan to get density, repartition function and quantiles of a normal distribution <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> implements a huge diversity of estimators for the different tools that have been presented in the probability introduction. As an example, the average is an unbiased estimator of the expected value. In <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the average value in an array can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.mean</span></code> function. The variance of an array can be computed by squaring the result of the <code class="docutils literal notranslate"><span class="pre">numpy.std</span></code> function. The covariance between two vectors can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.cov</span></code> function. Finally, the correlation coefficient between two vectors can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.corrcoef</span></code> function.</p>
+<p>Moreover, <code class="docutils literal notranslate"><span class="pre">Scipy</span></code> offers tools to analyse statistical distributions. As an example, if wan to get density, repartition function and quantiles of a normal distribution <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
@@ -797,7 +791,7 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c6048ade83d7089033ebe0520d131c4d3319b69ab675f5690f6473245a9d83db.png" src="_images/c6048ade83d7089033ebe0520d131c4d3319b69ab675f5690f6473245a9d83db.png" />
+<img alt="_images/e3bffc1096629c33e798ef269766466ea312c099599482ecf8fb4c9c0022ff23.png" src="_images/e3bffc1096629c33e798ef269766466ea312c099599482ecf8fb4c9c0022ff23.png" />
 </div>
 </div>
 </section>
@@ -821,15 +815,15 @@ They can be described by mean vector <span class="math notranslate nohighlight">
 <p>The Monte Carlo estimate of this integral is:</p>
 <div class="math notranslate nohighlight">
 \[
-    \hat{I}_n = \frac{|\Omega|}{n} \sum_{i=1}^{n} f(\mathbf{X}_i)
+    \hat{I}_n = \frac{|\Omega|}{n} \sum_{i=1}^{n} f(\mathbf{x}_i)
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{X}_1, \mathbf{X}_2, \dots, \mathbf{X}_n\)</span> are i.i.d. random variables uniformly distributed over <span class="math notranslate nohighlight">\(\Omega\)</span>, and <span class="math notranslate nohighlight">\(|\Omega|\)</span> is the measure (volume) of <span class="math notranslate nohighlight">\(\Omega\)</span>.
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x}_1, \mathbf{x}_2, \dots, \mathbf{x}_n\)</span> are i.i.d. random variables uniformly distributed over <span class="math notranslate nohighlight">\(\Omega\)</span>, and <span class="math notranslate nohighlight">\(|\Omega|\)</span> is the measure (volume) of <span class="math notranslate nohighlight">\(\Omega\)</span>.
 For a definite integral over <span class="math notranslate nohighlight">\([a, b]\)</span>, the Monte Carlo estimate is:</p>
 <div class="math notranslate nohighlight">
 \[
-    \int_{a}^{b} f(x) dx \approx (b - a) \cdot \frac{1}{n} \sum_{i=1}^{n} f(X_i)
+    \int_{a}^{b} f(x) dx \approx (b - a) \cdot \frac{1}{n} \sum_{i=1}^{n} f(\mathbf{x}_i)
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(X_i \sim \mathcal{U}(a, b)\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x}_i \sim \mathcal{U}(a, b)\)</span>.</p>
 </section>
 <section id="exercise-integral-estimation">
 <h3><span class="section-number">2.6.2. </span>Exercise: Integral Estimation<a class="headerlink" href="#exercise-integral-estimation" title="Link to this heading">#</a></h3>
@@ -859,7 +853,7 @@ For a definite integral over <span class="math notranslate nohighlight">\([a, b]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/76c52fef9e1ca87966488a66da222bbcab65bc5544ea66dba284b3b7acf69b6a.png" src="_images/76c52fef9e1ca87966488a66da222bbcab65bc5544ea66dba284b3b7acf69b6a.png" />
+<img alt="_images/8933e37ef60a307bf240432297251fd152173fe5630154bf585649a79dad0c8f.png" src="_images/8933e37ef60a307bf240432297251fd152173fe5630154bf585649a79dad0c8f.png" />
 </div>
 </div>
 </section>
@@ -876,29 +870,29 @@ For a definite integral over <span class="math notranslate nohighlight">\([a, b]
 <p>Let us first show how to analytically compute the requested probablity.
 The probability that <span class="math notranslate nohighlight">\(X\)</span> lies within the interval is given by:</p>
 <div class="math notranslate nohighlight">
-\[P(-0.25 \leq \mathbf X \leq 0.25) = \int_{-0.25}^{0.25} f_{\mathbf X}(x) \, dx\]</div>
-<p>where the Probability Density Function <span class="math notranslate nohighlight">\(f_{\mathbf X}(x)\)</span> is:</p>
+\[P(-0.25 \leq \mathbf x \leq 0.25) = \int_{-0.25}^{0.25} f_{\mathbf x}(x) \, dx\]</div>
+<p>where the Probability Density Function <span class="math notranslate nohighlight">\(f_{\mathbf x}(x)\)</span> is:</p>
 <div class="math notranslate nohighlight">
-\[f_{\mathbf X}(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}}\]</div>
+\[f_{\mathbf x}(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}}\]</div>
 <p>In our case, <span class="math notranslate nohighlight">\(\mu = 0\)</span> and <span class="math notranslate nohighlight">\(\sigma^2 = 1/2\)</span>, so:</p>
 <div class="math notranslate nohighlight">
-\[f_{\mathbf X}(x) = \frac{1}{\sqrt{\pi}} e^{-2x^2}\]</div>
-<p>To simplify the calculation, we convert <span class="math notranslate nohighlight">\(X\)</span> to the standard normal variable <span class="math notranslate nohighlight">\(\mathbf Z\)</span>:</p>
+\[f_{\mathbf x}(x) = \frac{1}{\sqrt{\pi}} e^{-2x^2}\]</div>
+<p>To simplify the calculation, we convert <span class="math notranslate nohighlight">\(\mathbf x\)</span> to the standard normal variable <span class="math notranslate nohighlight">\(\mathbf z\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf Z = \frac{\mathbf X - \mu}{\sigma}, \quad \text{where } \sigma = \sqrt{1/2} = \frac{\sqrt{2}}{2}\]</div>
+\[\mathbf z = \frac{\mathbf x - \mu}{\sigma}, \quad \text{where } \sigma = \sqrt{1/2} = \frac{\sqrt{2}}{2}\]</div>
 <p>For the bounds of the interval:</p>
 <div class="math notranslate nohighlight">
 \[z_{-0.25} = \frac{-0.25 - 0}{\sigma} = -0.25 \cdot \frac{2}{\sqrt{2}} = -\frac{\sqrt{2}}{4}, \quad
 z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 <p>The probability is then expressed using the repartition function <span class="math notranslate nohighlight">\(\Phi(z)\)</span> of the standard normal distribution:</p>
 <div class="math notranslate nohighlight">
-\[P(-0.25 \leq \mathbf X \leq 0.25) = P\left(-\frac{\sqrt{2}}{4} \leq \mathbf Z \leq \frac{\sqrt{2}}{4}\right) = \Phi\left(\frac{\sqrt{2}}{4}\right) - \Phi\left(-\frac{\sqrt{2}}{4}\right)\]</div>
+\[P(-0.25 \leq \mathbf x \leq 0.25) = P\left(-\frac{\sqrt{2}}{4} \leq \mathbf z \leq \frac{\sqrt{2}}{4}\right) = \Phi\left(\frac{\sqrt{2}}{4}\right) - \Phi\left(-\frac{\sqrt{2}}{4}\right)\]</div>
 <p>Using the symmetry of the standard normal distribution:</p>
 <div class="math notranslate nohighlight">
 \[\Phi(-z) = 1 - \Phi(z)\]</div>
 <p>This simplifies to:</p>
 <div class="math notranslate nohighlight">
-\[P(-0.25 \leq \mathbf X \leq 0.25) = 2 \cdot \Phi\left(\frac{\sqrt{2}}{4}\right) - 1\]</div>
+\[P(-0.25 \leq \mathbf x \leq 0.25) = 2 \cdot \Phi\left(\frac{\sqrt{2}}{4}\right) - 1\]</div>
 <p>To find <span class="math notranslate nohighlight">\(\Phi\left(\frac{\sqrt{2}}{4}\right)\)</span>, we can use values in tables. It yields:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\sqrt{2}}{4} \approx 0.3536\]</div>
@@ -911,7 +905,7 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6381631950841185
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.6381631950841185)
 </pre></div>
 </div>
 </div>
@@ -920,7 +914,7 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 \[\Phi(0.3536) \approx 0.6388\]</div>
 <p>Thus:</p>
 <div class="math notranslate nohighlight">
-\[P(-0.25 \leq X \leq 0.25)\]</div>
+\[P(-0.25 \leq \mathbf x \leq 0.25)\]</div>
 <p>is given by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -929,7 +923,7 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2763263901682369
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.2763263901682369)
 </pre></div>
 </div>
 </div>
@@ -956,23 +950,23 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </section>
 <section id="exercise-monte-carlo-approximation-of-parameters">
 <h3><span class="section-number">2.6.4. </span>Exercise: Monte Carlo Approximation of Parameters<a class="headerlink" href="#exercise-monte-carlo-approximation-of-parameters" title="Link to this heading">#</a></h3>
-<p>Use Monte Carlo simulation to approximate numerically the mean of a Normal r.v. <span class="math notranslate nohighlight">\({\mathbf Z} \sim N(\mu,\sigma^2)\)</span> and of the variable <span class="math notranslate nohighlight">\({\mathbf Y}= {\mathbf Z}^2\)</span>. Verify that MC returns a good approximation of the analytical result. As a hint, note that <span class="math notranslate nohighlight">\(\mbox{Var}[{\mathbf Z}]=E[{\mathbf Z}^2]-E[{\mathbf Z}]^2\)</span></p>
+<p>Use Monte Carlo simulation to approximate numerically the mean of a Normal r.v. <span class="math notranslate nohighlight">\({\mathbf z} \sim N(\mu,\sigma^2)\)</span> and of the variable <span class="math notranslate nohighlight">\({\mathbf y}= {\mathbf z}^2\)</span>. Verify that MC returns a good approximation of the analytical result. As a hint, note that <span class="math notranslate nohighlight">\(\mbox{Var}[{\mathbf z}]=E[{\mathbf z}^2]-E[{\mathbf z}]^2\)</span></p>
 <section id="id3">
 <h4><span class="section-number">2.6.4.1. </span>Solution<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
-<p>First, analytically, we can note that, if <span class="math notranslate nohighlight">\(\mu\)</span> is the expected value of <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, and  <span class="math notranslate nohighlight">\(\sigma^2\)</span> is its variance, then the expected value of <span class="math notranslate nohighlight">\(\mathbf{Y}=\mathbf{Z}^2\)</span> is given by</p>
+<p>First, analytically, we can note that, if <span class="math notranslate nohighlight">\(\mu\)</span> is the expected value of <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and  <span class="math notranslate nohighlight">\(\sigma^2\)</span> is its variance, then the expected value of <span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{z}^2\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
-    E[\mathbf Z^2] = Var[Z] + (E[\mathbf Z])^2 = \sigma^2 + \mu^2
+    E[\mathbf z^2] = Var[\mathbf z] + (E[\mathbf z])^2 = \sigma^2 + \mu^2
 \]</div>
-<p>Secondly, the variance of <span class="math notranslate nohighlight">\(Y=Z^2\)</span> is given by</p>
+<p>Secondly, the variance of <span class="math notranslate nohighlight">\(\mathbf y=\mathbf z^2\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
-    Var[\mathbf Z^2] = E[\mathbf Z^4]-(E[\mathbf Z^2])^2
+    Var[\mathbf z^2] = E[\mathbf Z^4]-(E[\mathbf z^2])^2
 \]</div>
-<p>The second term is already known (<span class="math notranslate nohighlight">\(E[\mathbf Z^2] = \sigma^2+\mu^2\)</span>). The first term is the fourth moment (for the development, see the notion <em>moment generating function</em> in the course of <em>Probabilités et Statistiques</em>) of a normal variable, i.e.:</p>
+<p>The second term is already known (<span class="math notranslate nohighlight">\(E[\mathbf z^2] = \sigma^2+\mu^2\)</span>). The first term is the fourth moment (for the development, see the notion <em>moment generating function</em> in the course of <em>Probabilités et Statistiques</em>) of a normal variable, i.e.:</p>
 <div class="math notranslate nohighlight">
 \[
-    E[\mathbf Z^4] = 3\sigma^4 + 6\sigma^2\mu^2 + \mu^4
+    E[\mathbf z^4] = 3\sigma^4 + 6\sigma^2\mu^2 + \mu^4
 \]</div>
 <p>If we study a concrete example, let us fix <span class="math notranslate nohighlight">\(\mu=\frac12\)</span> and <span class="math notranslate nohighlight">\(\sigma^2=1.7\)</span>:</p>
 <div class="cell docutils container">
@@ -982,29 +976,29 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 <span class="n">Vz</span> <span class="o">=</span> <span class="mf">1.7</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">Ez</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Vz</span><span class="p">),</span> <span class="n">R</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[</span><span class="se">\\</span><span class="s2">mathbf Z]=</span><span class="si">{</span><span class="n">Ez</span><span class="si">}</span><span class="s2">;\ MC\ E[</span><span class="se">\\</span><span class="s2">mathbf Z]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf Z]=</span><span class="si">{</span><span class="n">Vz</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf Z]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[</span><span class="se">\\</span><span class="s2">mathbf Z^2]=</span><span class="si">{</span><span class="n">Vz</span><span class="o">+</span><span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">;\ MC\ E[</span><span class="se">\\</span><span class="s2">mathbf Y=</span><span class="se">\\</span><span class="s2">mathbf Z^2]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf Z^2]=</span><span class="si">{</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">Vz</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">Vz</span><span class="o">*</span><span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Ez</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">Vz</span><span class="o">+</span><span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf Y=</span><span class="se">\\</span><span class="s2">mathbf Z^2]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[</span><span class="se">\\</span><span class="s2">mathbf z]=</span><span class="si">{</span><span class="n">Ez</span><span class="si">}</span><span class="s2">;\ MC\ E[</span><span class="se">\\</span><span class="s2">mathbf z]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf z]=</span><span class="si">{</span><span class="n">Vz</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf z]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[</span><span class="se">\\</span><span class="s2">mathbf z^2]=</span><span class="si">{</span><span class="n">Vz</span><span class="o">+</span><span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">;\ MC\ E[</span><span class="se">\\</span><span class="s2">mathbf y=</span><span class="se">\\</span><span class="s2">mathbf z^2]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf z^2]=</span><span class="si">{</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">Vz</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">Vz</span><span class="o">*</span><span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Ez</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">Vz</span><span class="o">+</span><span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf y=</span><span class="se">\\</span><span class="s2">mathbf z^2]=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle E[\mathbf Z]=0.5;\ MC\ E[\mathbf Z]=0.5015\]</div>
+\[\displaystyle E[\mathbf z]=0.5;\ MC\ E[\mathbf z]=0.5015\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle Var[\mathbf Z]=1.7;\ MC\ Var[\mathbf Z]=1.6931\]</div>
+\[\displaystyle Var[\mathbf z]=1.7;\ MC\ Var[\mathbf z]=1.6931\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle E[\mathbf Z^2]=1.95;\ MC\ E[\mathbf Y=\mathbf Z^2]=1.9446\]</div>
+\[\displaystyle E[\mathbf z^2]=1.95;\ MC\ E[\mathbf y=\mathbf z^2]=1.9446\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle Var[\mathbf Z^2]=7.4800;\ MC\ Var[\mathbf Y=\mathbf Z^2]=7.4843\]</div>
+\[\displaystyle Var[\mathbf z^2]=7.4800;\ MC\ Var[\mathbf y=\mathbf z^2]=7.4843\]</div>
 </div>
 </div>
 </section>
 </section>
 <section id="exercise-absolute-value">
 <h3><span class="section-number">2.6.5. </span>Exercise: Absolute Value<a class="headerlink" href="#exercise-absolute-value" title="Link to this heading">#</a></h3>
-<p>Use MC to approximate numerically <span class="math notranslate nohighlight">\(E[ {\mathbf K}]\)</span> and <span class="math notranslate nohighlight">\(\mbox{Var}[ {\mathbf K}]\)</span> where <span class="math notranslate nohighlight">\({\mathbf K} = |{\mathbf Z}|\)</span> and check that the approximation is good w.r.t. the analytical results in <a class="reference external" href="https://www.quora.com/If-Y-X-where-X-has-normal-distribution-N-0-1-what-is-the-density-function-expectation-and-variance-of-Y">this article</a>.</p>
+<p>Use MC to approximate numerically <span class="math notranslate nohighlight">\(E[ {\mathbf k}]\)</span> and <span class="math notranslate nohighlight">\(\mbox{Var}[ {\mathbf k}]\)</span> where <span class="math notranslate nohighlight">\({\mathbf k} = |{\mathbf z}|\)</span> and check that the approximation is good w.r.t. the analytical results in <a class="reference external" href="https://www.quora.com/If-Y-X-where-X-has-normal-distribution-N-0-1-what-is-the-density-function-expectation-and-variance-of-Y">this article</a>.</p>
 <section id="id4">
 <h4><span class="section-number">2.6.5.1. </span>Solution<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>The process is truly similar to the previous one.</p>
@@ -1018,23 +1012,23 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 <span class="n">Ek</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="n">Vk</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[</span><span class="se">\\</span><span class="s2">mathbf K] = </span><span class="si">{</span><span class="n">Ek</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ E[</span><span class="se">\\</span><span class="s2">mathbf K=|</span><span class="se">\\</span><span class="s2">mathbf Z|] = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf K] = </span><span class="si">{</span><span class="n">Vk</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf K=|</span><span class="se">\\</span><span class="s2">mathbf Z|] = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[</span><span class="se">\\</span><span class="s2">mathbf k] = </span><span class="si">{</span><span class="n">Ek</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ E[</span><span class="se">\\</span><span class="s2">mathbf k=|</span><span class="se">\\</span><span class="s2">mathbf z|] = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf k] = </span><span class="si">{</span><span class="n">Vk</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf k=|</span><span class="se">\\</span><span class="s2">mathbf z|] = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle E[\mathbf K] = 0.7979;\ MC\ E[\mathbf K=|\mathbf Z|] = 0.7998\]</div>
+\[\displaystyle E[\mathbf k] = 0.7979;\ MC\ E[\mathbf k=|\mathbf z|] = 0.7998\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle Var[\mathbf K] = 0.3634;\ MC\ Var[\mathbf K=|\mathbf Z|] = 0.3633\]</div>
+\[\displaystyle Var[\mathbf k] = 0.3634;\ MC\ Var[\mathbf k=|\mathbf z|] = 0.3633\]</div>
 </div>
 </div>
 </section>
 </section>
 <section id="exercise-expected-value-for-any-function">
 <h3><span class="section-number">2.6.6. </span>Exercise: Expected Value for any Function<a class="headerlink" href="#exercise-expected-value-for-any-function" title="Link to this heading">#</a></h3>
-<p>Use MC to approximate numerically the value of <span class="math notranslate nohighlight">\(E[f({\mathbf X})]\)</span> and <span class="math notranslate nohighlight">\(f(E[{\mathbf X}])\)</span> for a given deterministic function <span class="math notranslate nohighlight">\(f\)</span>, where <span class="math notranslate nohighlight">\({\mathbf X}\)</span> is a normal random variable.</p>
+<p>Use MC to approximate numerically the value of <span class="math notranslate nohighlight">\(E[f({\mathbf x})]\)</span> and <span class="math notranslate nohighlight">\(f(E[{\mathbf x}])\)</span> for a given deterministic function <span class="math notranslate nohighlight">\(f\)</span>, where <span class="math notranslate nohighlight">\({\mathbf x}\)</span> is a normal random variable.</p>
 <section id="id5">
 <h4><span class="section-number">2.6.6.1. </span>Solution<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>The following script show the MC process to estimate the expected value of any Python function.</p>
@@ -1063,23 +1057,23 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 
 <span class="n">muX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[f(x)]= </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">FX</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f(E[x])= </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">muX</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E[f(</span><span class="se">\\</span><span class="s2">mathbf x)]= </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">FX</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f(E[</span><span class="se">\\</span><span class="s2">mathbf x])= </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">muX</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle E[f(x)]= -0.9756\]</div>
+\[\displaystyle E[f(\mathbf x)]= -0.9756\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle f(E[x])= -0.0003\]</div>
+\[\displaystyle f(E[\mathbf x])= -0.0003\]</div>
 </div>
 </div>
 </section>
 </section>
 <section id="exercise-variance-of-uniform-random-variable">
 <h3><span class="section-number">2.6.7. </span>Exercise: Variance of Uniform Random Variable<a class="headerlink" href="#exercise-variance-of-uniform-random-variable" title="Link to this heading">#</a></h3>
-<p>Use MC to approximate numerically the value of the variance <span class="math notranslate nohighlight">\(\mbox{Var}[{\mathbf Z}]\)</span> where <span class="math notranslate nohighlight">\({\mathbf Z} \sim U(a,b)\)</span> is uniformly distributed. Check that the result is a good approximation of the analytical value.</p>
+<p>Use MC to approximate numerically the value of the variance <span class="math notranslate nohighlight">\(\mbox{Var}[{\mathbf z}]\)</span> where <span class="math notranslate nohighlight">\({\mathbf z} \sim U(a,b)\)</span> is uniformly distributed. Check that the result is a good approximation of the analytical value.</p>
 <section id="id6">
 <h4><span class="section-number">2.6.7.1. </span>Solution<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <p>The following script estimates the variance of an uniformly distributed variable by Monte Carlo. The distribution is uniform between <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(1\)</span>.</p>
@@ -1095,27 +1089,27 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
     <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="n">Z</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">muz</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf Z]= </span><span class="si">{</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">12</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf Z]= </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Var[</span><span class="se">\\</span><span class="s2">mathbf z]= </span><span class="si">{</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">12</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;\ MC\ Var[</span><span class="se">\\</span><span class="s2">mathbf z]= </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle Var[\mathbf Z]= 0.3333;\ MC\ Var[\mathbf Z]= 0.3340\]</div>
+\[\displaystyle Var[\mathbf z]= 0.3333;\ MC\ Var[\mathbf z]= 0.3340\]</div>
 </div>
 </div>
 </section>
 </section>
 <section id="exercise-covariance-of-a-multiple-of-a-random-variable">
 <h3><span class="section-number">2.6.8. </span>Exercise: Covariance of a Multiple of a Random Variable<a class="headerlink" href="#exercise-covariance-of-a-multiple-of-a-random-variable" title="Link to this heading">#</a></h3>
-<p>Use MC to approximate the value of the covariance of <span class="math notranslate nohighlight">\({\mathbf X}\)</span> and <span class="math notranslate nohighlight">\({\mathbf Y}=K{\mathbf X}\)</span> and verify that the result is a good approximation of the analytical derivation. Check for different distributions of <span class="math notranslate nohighlight">\({\mathbf X}\)</span>. As a hint, note that</p>
+<p>Use MC to approximate the value of the covariance of <span class="math notranslate nohighlight">\({\mathbf x}\)</span> and <span class="math notranslate nohighlight">\({\mathbf y}=K{\mathbf x}\)</span> and verify that the result is a good approximation of the analytical derivation. Check for different distributions of <span class="math notranslate nohighlight">\({\mathbf x}\)</span>. As a hint, note that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-\mbox{Cov}({\mathbf X},{\mathbf Y})&amp;=E[{\mathbf X}{\mathbf Y}]-K E[{\mathbf X}]E[{\mathbf X}]\\
-&amp;=E[K*{\mathbf X}^2]-K(E[{\mathbf X}]^2)\\
-&amp;=K(\mbox{Var}({\mathbf X})+E[{\mathbf X}]^2)-K (E[{\mathbf X}])^2\\
-&amp;=K\mbox{Var}({\mathbf X})
+\mbox{Cov}({\mathbf x},{\mathbf y})&amp;=E[{\mathbf x}{\mathbf y}]-K E[{\mathbf x}]E[{\mathbf x}]\\
+&amp;=E[K{\mathbf x}^2]-K(E[{\mathbf x}]^2)\\
+&amp;=K(\mbox{Var}({\mathbf x})+E[{\mathbf x}]^2)-K (E[{\mathbf x}])^2\\
+&amp;=K\mbox{Var}({\mathbf x})
 \end{align}\end{split}\]</div>
 <section id="id7">
 <h4><span class="section-number">2.6.8.1. </span>Solution<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
@@ -1167,7 +1161,7 @@ Hint: use <code class="docutils literal notranslate"><span class="pre">scipy.sta
 Ensure you understand the difference between population and sample covariance.</p>
 <section id="id8">
 <h4><span class="section-number">2.7.1.1. </span>Solution<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">rvs</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.stats.multivariate\_normal</span></code> (for <em>random variable sample</em> allows to sample a bivariate Gaussian adequately defined. The following code shows how to sample such kind of distribution, how to display it in <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, and how to estimate the covariance matrix.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">rvs</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.stats.multivariate_normal</span></code> (for <em>random variable sample</em> allows to sample a bivariate Gaussian adequately defined. The following code shows how to sample such kind of distribution, how to display it in <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, and how to estimate the covariance matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">multivariate_normal</span> <span class="k">as</span> <span class="n">mvn</span>
@@ -1197,7 +1191,7 @@ Ensure you understand the difference between population and sample covariance.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c42d014b523f46b0ef10bb2f5c7486d45fdbbdd0816fd2077add36f4e7dd6863.png" src="_images/c42d014b523f46b0ef10bb2f5c7486d45fdbbdd0816fd2077add36f4e7dd6863.png" />
+<img alt="_images/83943a838ea1d6fd5050d070bc4ea6b965b9d1dc728a673264b3bb3bda2c7b72.png" src="_images/83943a838ea1d6fd5050d070bc4ea6b965b9d1dc728a673264b3bb3bda2c7b72.png" />
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \mu=\left[
 \begin{array}{}
@@ -1230,15 +1224,15 @@ Ensure you understand the difference between population and sample covariance.</
 </section>
 <section id="exercise">
 <h3><span class="section-number">2.7.2. </span>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
-<p>We define a bivariate gaussian distribution <span class="math notranslate nohighlight">\((\mathbf Z_1, \mathbf Z_2)\)</span> with the following parameters:</p>
+<p>We define a bivariate gaussian distribution <span class="math notranslate nohighlight">\((\mathbf z_1, \mathbf z_2)\)</span> with the following parameters:</p>
 <ul class="simple">
 <li><p>Mean vector: <span class="math notranslate nohighlight">\([0.25, 1.0]\)</span></p></li>
 <li><p>Covariance matrix: <span class="math notranslate nohighlight">\(\begin{bmatrix}1.0&amp;0.5\\0.5&amp;1.0\end{bmatrix}\)</span></p></li>
 </ul>
-<p>Plot the regressions of <span class="math notranslate nohighlight">\(\mathbf Z_1|\mathbf Z_2\)</span> and <span class="math notranslate nohighlight">\(\mathbf Z_2|\mathbf Z_1\)</span>. What is their intersection ? Hint: those are given by expressing <span class="math notranslate nohighlight">\(\mathbf Z_1\)</span> in terms of <span class="math notranslate nohighlight">\(\mathbf Z_2\)</span> (or the opposite): <span class="math notranslate nohighlight">\(\mathbf Z_1 = a_1 + b_1\mathbf Z_2\)</span>.</p>
+<p>Plot the regressions of <span class="math notranslate nohighlight">\(\mathbf z_1|\mathbf z_2\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2|\mathbf z_1\)</span>. What is their intersection ? Hint: those are given by expressing <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> in terms of <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> (or the opposite): <span class="math notranslate nohighlight">\(\mathbf z_1 = a_1 + b_1\mathbf z_2\)</span>.</p>
 <section id="id9">
 <h4><span class="section-number">2.7.2.1. </span>Solution<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
-<p>For the following derivation, we redirect the student to the theoretical handbook, pages 64-65. The following code generates a set of samples from a bivariate normal distribution with mean vector <span class="math notranslate nohighlight">\(\mu = \begin{bmatrix} 0.25 \\ 1 \end{bmatrix}\)</span> and covariance matrix <span class="math notranslate nohighlight">\(\Sigma = \begin{bmatrix} 1 &amp; 0.5 \\ 0.5 &amp; 1 \end{bmatrix}\)</span>, then computes and visualizes the regression lines corresponding to the conditional expectations <span class="math notranslate nohighlight">\(\mathbb{E}[\mathbf Z_1 \mid \mathbf Z_2]\)</span> and <span class="math notranslate nohighlight">\(\mathbb{E}[\mathbf Z_2 \mid \mathbf Z_1]\)</span>. The regression coefficients are computed as <span class="math notranslate nohighlight">\(b_1 = \frac{\Sigma_{12}}{\Sigma_{22}}\)</span> and <span class="math notranslate nohighlight">\(b_2 = \frac{\Sigma_{12}}{\Sigma_{11}}\)</span>, with intercepts <span class="math notranslate nohighlight">\(a_1 = \mu_1 - b_1 \mu_2\)</span> and <span class="math notranslate nohighlight">\(a_2 = \mu_2 - b_2 \mu_1\)</span>. The resulting lines are plotted on the <span class="math notranslate nohighlight">\((\mathbf Z_2, \mathbf Z_1)\)</span> plane, showing the best linear predictors of each variable given the other.</p>
+<p>For the following derivation, we redirect the student to the theoretical handbook, pages 64-65. The following code generates a set of samples from a bivariate normal distribution with mean vector <span class="math notranslate nohighlight">\(\mu = \begin{bmatrix} 0.25 \\ 1 \end{bmatrix}\)</span> and covariance matrix <span class="math notranslate nohighlight">\(\Sigma = \begin{bmatrix} 1 &amp; 0.5 \\ 0.5 &amp; 1 \end{bmatrix}\)</span>, then computes and visualizes the regression lines corresponding to the conditional expectations <span class="math notranslate nohighlight">\(\mathbb{E}[\mathbf z_1 \mid \mathbf z_2]\)</span> and <span class="math notranslate nohighlight">\(\mathbb{E}[\mathbf z_2 \mid \mathbf z_1]\)</span>. The regression coefficients are computed as <span class="math notranslate nohighlight">\(b_1 = \frac{\Sigma_{12}}{\Sigma_{22}}\)</span> and <span class="math notranslate nohighlight">\(b_2 = \frac{\Sigma_{12}}{\Sigma_{11}}\)</span>, with intercepts <span class="math notranslate nohighlight">\(a_1 = \mu_1 - b_1 \mu_2\)</span> and <span class="math notranslate nohighlight">\(a_2 = \mu_2 - b_2 \mu_1\)</span>. The resulting lines are plotted on the <span class="math notranslate nohighlight">\((\mathbf z_2, \mathbf z_1)\)</span> plane, showing the best linear predictors of each variable given the other.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
@@ -1252,8 +1246,8 @@ Ensure you understand the difference between population and sample covariance.</
 <span class="n">a1</span> <span class="o">=</span> <span class="n">mean</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">b_1</span> <span class="o">*</span> <span class="n">mean</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">a2</span> <span class="o">=</span> <span class="n">mean</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">b_2</span> <span class="o">*</span> <span class="n">mean</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Regression of }Z_1</span><span class="se">\\</span><span class="s2">text{ on }Z_2: a_1 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="s2">&quot;,\ b_1 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">b_1</span><span class="p">))</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Regression of }Z_2</span><span class="se">\\</span><span class="s2">text{ on }Z_1: a_2 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="s2">&quot;,\ b_2 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">b_2</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Regression of }</span><span class="se">\\</span><span class="s2">mathbf z_1</span><span class="se">\\</span><span class="s2">text{ on }</span><span class="se">\\</span><span class="s2">mathbf z_2: a_1 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">a1</span><span class="p">),</span> <span class="s2">&quot;,\ b_1 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">b_1</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Regression of }</span><span class="se">\\</span><span class="s2">mathbf z_2</span><span class="se">\\</span><span class="s2">text{ on }</span><span class="se">\\</span><span class="s2">mathbf z_1: a_2 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">a2</span><span class="p">),</span> <span class="s2">&quot;,\ b_2 =&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">b_2</span><span class="p">))</span>
 
 <span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
@@ -1266,10 +1260,10 @@ Ensure you understand the difference between population and sample covariance.</
 <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="n">z1_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E[Z_1 | Z_2]$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="n">z2_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E[Z_2 | Z_1]$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$Z_2$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$Z_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="n">z1_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E[z_1 | z_2]$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z2</span><span class="p">,</span> <span class="n">z2_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$E[z_2 | z_1]$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$z_2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$z_1$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s2">&quot;on&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Regression Lines for Bivariate Normal Distribution&quot;</span><span class="p">)</span>
@@ -1279,10 +1273,10 @@ Ensure you understand the difference between population and sample covariance.</
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{Regression of }Z_1\text{ on }Z_2: a_1 =-0.25,\ b_1 =0.5\]</div>
+\[\displaystyle \text{Regression of }\mathbf z_1\text{ on }\mathbf z_2: a_1 =-0.25,\ b_1 =0.5\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{Regression of }Z_2\text{ on }Z_1: a_2 =0.875,\ b_2 =0.5\]</div>
-<img alt="_images/12e9fa2e1abf6d09227f5bff379bce3fbf11e457999a0c7a08c5b9a768a3e925.png" src="_images/12e9fa2e1abf6d09227f5bff379bce3fbf11e457999a0c7a08c5b9a768a3e925.png" />
+\[\displaystyle \text{Regression of }\mathbf z_2\text{ on }\mathbf z_1: a_2 =0.875,\ b_2 =0.5\]</div>
+<img alt="_images/e79ac2f638b863cf9720c99b0248b6841c2b12297ac8602da0a190f78211b0d0.png" src="_images/e79ac2f638b863cf9720c99b0248b6841c2b12297ac8602da0a190f78211b0d0.png" />
 </div>
 </div>
 </section>
@@ -1343,17 +1337,17 @@ Pay attention to the interpretation of correlations between dimensions.</p>
   0.9758 &amp;  0.6169 &amp;  1.0465
 \end{array}
 \right]\end{split}\]</div>
-<img alt="_images/456ed6152d21f8ca9da08f15285b096c8104ae43d4546612965b188a5349556c.png" src="_images/456ed6152d21f8ca9da08f15285b096c8104ae43d4546612965b188a5349556c.png" />
+<img alt="_images/933ab21320b7a0fdcb93bd0e28df608e17e0401ad1dc8bf888cfdd3d67f7d9c3.png" src="_images/933ab21320b7a0fdcb93bd0e28df608e17e0401ad1dc8bf888cfdd3d67f7d9c3.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="exercise-partial-correlation">
 <h3><span class="section-number">2.7.4. </span>Exercise: Partial Correlation<a class="headerlink" href="#exercise-partial-correlation" title="Link to this heading">#</a></h3>
-<p>Given two normal <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> r.v. <span class="math notranslate nohighlight">\(Z_1, Z_2\)</span> and a third r.v. <span class="math notranslate nohighlight">\(Y = Z_1 + Z_2\)</span>, compute the correlation between <span class="math notranslate nohighlight">\(Z_1\)</span> and <span class="math notranslate nohighlight">\(Z_2\)</span>, then compute the partial correlation between <span class="math notranslate nohighlight">\(Z_1\)</span> and <span class="math notranslate nohighlight">\(Z_2\)</span> given <span class="math notranslate nohighlight">\(Y\)</span>. Hint: use the function <code class="docutils literal notranslate"><span class="pre">corrcoef</span></code> of <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> to compute the correlation coefficients. What happens to the partial correlation between <span class="math notranslate nohighlight">\(Z_1\)</span> and <span class="math notranslate nohighlight">\(Z_2\)</span> given <span class="math notranslate nohighlight">\(Y\)</span> if now  <span class="math notranslate nohighlight">\(Y = Z_1 + Z_2 + Z_3\)</span>, for <span class="math notranslate nohighlight">\(Z_3\)</span> another <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> r.v. ?</p>
+<p>Given two normal <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> r.v. <span class="math notranslate nohighlight">\(\mathbf z_1, \mathbf z_2\)</span> and a third r.v. <span class="math notranslate nohighlight">\(\mathbf y = \mathbf z_1 + \mathbf z_2\)</span>, compute the correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span>, then compute the partial correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> given <span class="math notranslate nohighlight">\(\mathbf y\)</span>. Hint: use the function <code class="docutils literal notranslate"><span class="pre">corrcoef</span></code> of <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> to compute the correlation coefficients. What happens to the partial correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> given <span class="math notranslate nohighlight">\(\mathbf y\)</span> if now  <span class="math notranslate nohighlight">\(\mathbf y = \mathbf z_1 + \mathbf z_2 + \mathbf z_3\)</span>, for <span class="math notranslate nohighlight">\(\mathbf z_3\)</span> another <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> r.v. ?</p>
 <section id="id11">
 <h4><span class="section-number">2.7.4.1. </span>Solution<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
-<p>This code defines a function <code class="docutils literal notranslate"><span class="pre">partial_corr(X,</span> <span class="pre">Y,</span> <span class="pre">Z)</span></code> that computes the partial correlation between two variables <span class="math notranslate nohighlight">\(\mathbf X\)</span> and <span class="math notranslate nohighlight">\(\mathbf Y\)</span> given a third variable <span class="math notranslate nohighlight">\(\mathbf Z\)</span>, using the formula <span class="math notranslate nohighlight">\(\rho_{\mathbf X\mathbf Y \cdot \mathbf Z} = \frac{\rho_{\mathbf X\mathbf Y} - \rho_{\mathbf X\mathbf Z}\rho_{\mathbf Y\mathbf Z}}{\sqrt{(1 - \rho_{\mathbf X\mathbf Z}^2)(1 - \rho_{\mathbf Y\mathbf Z}^2)}}\)</span>. It then generates one million samples of three independent standard normal variables <span class="math notranslate nohighlight">\(\mathbf Z_1, \mathbf Z_2, \mathbf Z_3\)</span>, defines <span class="math notranslate nohighlight">\(\mathbf Y = \mathbf Z_1 + \mathbf Z_2\)</span>, and prints the empirical correlation between <span class="math notranslate nohighlight">\(\mathbf Z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf Z_2\)</span>, as well as the partial correlations between <span class="math notranslate nohighlight">\(\mathbf Z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf Z_2\)</span> given <span class="math notranslate nohighlight">\(\mathbf Y\)</span> and given <span class="math notranslate nohighlight">\(\mathbf Y + \mathbf Z_3\)</span>, illustrating that the dependence between <span class="math notranslate nohighlight">\(\mathbf Z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf Z_2\)</span> vanishes when conditioning on their sum.</p>
+<p>This code defines a function <code class="docutils literal notranslate"><span class="pre">partial_corr(X,</span> <span class="pre">Y,</span> <span class="pre">Z)</span></code> that computes the partial correlation between two variables <span class="math notranslate nohighlight">\(\mathbf x\)</span> and <span class="math notranslate nohighlight">\(\mathbf y\)</span> given a third variable <span class="math notranslate nohighlight">\(\mathbf z\)</span>, using the formula <span class="math notranslate nohighlight">\(\rho_{\mathbf x\mathbf y \cdot \mathbf z} = \frac{\rho_{\mathbf x\mathbf y} - \rho_{\mathbf x\mathbf z}\rho_{\mathbf y\mathbf z}}{\sqrt{(1 - \rho_{\mathbf x\mathbf z}^2)(1 - \rho_{\mathbf y\mathbf z}^2)}}\)</span>. It then generates one million samples of three independent standard normal variables <span class="math notranslate nohighlight">\(\mathbf z_1, \mathbf z_2, \mathbf z_3\)</span>, defines <span class="math notranslate nohighlight">\(\mathbf y = \mathbf z_1 + \mathbf z_2\)</span>, and prints the empirical correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span>, as well as the partial correlations between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> given <span class="math notranslate nohighlight">\(\mathbf y\)</span> and given <span class="math notranslate nohighlight">\(\mathbf y + \mathbf z_3\)</span>, illustrating that the dependence between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> vanishes when conditioning on their sum.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">partial_corr</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">):</span>
@@ -1370,19 +1364,22 @@ Pay attention to the interpretation of correlations between dimensions.</p>
 
 <span class="n">Y</span> <span class="o">=</span> <span class="n">Z1</span> <span class="o">+</span> <span class="n">Z2</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Correlation between }</span><span class="se">\\</span><span class="s2">mathbf Z_1</span><span class="se">\\</span><span class="s2">text{ and }</span><span class="se">\\</span><span class="s2">mathbf Z_2: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">Z1</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">Z2</span><span class="o">.</span><span class="n">T</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])[:</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Partial Correlation between }</span><span class="se">\\</span><span class="s2">mathbf Z_1</span><span class="se">\\</span><span class="s2">text{ and }</span><span class="se">\\</span><span class="s2">mathbf Z_2</span><span class="se">\\</span><span class="s2">text{ given }</span><span class="se">\\</span><span class="s2">mathbf Y=</span><span class="se">\\</span><span class="s2">mathbf Z_1+</span><span class="se">\\</span><span class="s2">mathbf Z_2:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">partial_corr</span><span class="p">(</span><span class="n">Z1</span><span class="p">,</span> <span class="n">Z2</span><span class="p">,</span> <span class="n">Y</span><span class="p">))[:</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Partial Correlation between }</span><span class="se">\\</span><span class="s2">mathbf Z_1</span><span class="se">\\</span><span class="s2">text{ and }</span><span class="se">\\</span><span class="s2">mathbf Z_2</span><span class="se">\\</span><span class="s2">text{ given }</span><span class="se">\\</span><span class="s2">mathbf Y=</span><span class="se">\\</span><span class="s2">mathbf Z_1+</span><span class="se">\\</span><span class="s2">mathbf Z_2+</span><span class="se">\\</span><span class="s2">mathbf Z_3:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">partial_corr</span><span class="p">(</span><span class="n">Z1</span><span class="p">,</span> <span class="n">Z2</span><span class="p">,</span> <span class="n">Z1</span> <span class="o">+</span> <span class="n">Z2</span> <span class="o">+</span> <span class="n">Z3</span><span class="p">))[:</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text</span><span class="si">{Estimations}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Correlation between }</span><span class="se">\\</span><span class="s2">mathbf z_1</span><span class="se">\\</span><span class="s2">text{ and }</span><span class="se">\\</span><span class="s2">mathbf z_2: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">Z1</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">Z2</span><span class="o">.</span><span class="n">T</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])[:</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Partial Correlation between }</span><span class="se">\\</span><span class="s2">mathbf z_1</span><span class="se">\\</span><span class="s2">text{ and }</span><span class="se">\\</span><span class="s2">mathbf z_2</span><span class="se">\\</span><span class="s2">text{ given }</span><span class="se">\\</span><span class="s2">mathbf y=</span><span class="se">\\</span><span class="s2">mathbf z_1+</span><span class="se">\\</span><span class="s2">mathbf z_2:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">partial_corr</span><span class="p">(</span><span class="n">Z1</span><span class="p">,</span> <span class="n">Z2</span><span class="p">,</span> <span class="n">Y</span><span class="p">))[:</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Partial Correlation between }</span><span class="se">\\</span><span class="s2">mathbf z_1</span><span class="se">\\</span><span class="s2">text{ and }</span><span class="se">\\</span><span class="s2">mathbf z_2</span><span class="se">\\</span><span class="s2">text{ given }</span><span class="se">\\</span><span class="s2">mathbf y=</span><span class="se">\\</span><span class="s2">mathbf z_1+</span><span class="se">\\</span><span class="s2">mathbf z_2+</span><span class="se">\\</span><span class="s2">mathbf z_3:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">partial_corr</span><span class="p">(</span><span class="n">Z1</span><span class="p">,</span> <span class="n">Z2</span><span class="p">,</span> <span class="n">Z1</span> <span class="o">+</span> <span class="n">Z2</span> <span class="o">+</span> <span class="n">Z3</span><span class="p">))[:</span><span class="mi">8</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{Correlation between }\mathbf Z_1\text{ and }\mathbf Z_2: -0.00073\]</div>
+\[\displaystyle \text{Estimations}\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{Partial Correlation between }\mathbf Z_1\text{ and }\mathbf Z_2\text{ given }\mathbf Y=\mathbf Z_1+\mathbf Z_2:-0.99999\]</div>
+\[\displaystyle \text{Correlation between }\mathbf z_1\text{ and }\mathbf z_2: -0.00073\]</div>
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{Partial Correlation between }\mathbf Z_1\text{ and }\mathbf Z_2\text{ given }\mathbf Y=\mathbf Z_1+\mathbf Z_2+\mathbf Z_3:-0.50070\]</div>
+\[\displaystyle \text{Partial Correlation between }\mathbf z_1\text{ and }\mathbf z_2\text{ given }\mathbf y=\mathbf z_1+\mathbf z_2:-0.99999\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \text{Partial Correlation between }\mathbf z_1\text{ and }\mathbf z_2\text{ given }\mathbf y=\mathbf z_1+\mathbf z_2+\mathbf z_3:-0.50070\]</div>
 </div>
 </div>
 </section>
@@ -1420,7 +1417,7 @@ Pay attention to the interpretation of correlations between dimensions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/680ab4f7cc133d9b86a6fdbf5be875a6dfacc6d512d1feca0bcdad161600ed51.png" src="_images/680ab4f7cc133d9b86a6fdbf5be875a6dfacc6d512d1feca0bcdad161600ed51.png" />
+<img alt="_images/3d14cdbc4b7b580a67331030db5443aca881cf9211e810dbc34c8e25f7f033de.png" src="_images/3d14cdbc4b7b580a67331030db5443aca881cf9211e810dbc34c8e25f7f033de.png" />
 </div>
 </div>
 </section>
@@ -1430,8 +1427,8 @@ Pay attention to the interpretation of correlations between dimensions.</p>
 <h2><span class="section-number">2.9. </span>Mixture of Gaussians<a class="headerlink" href="#mixture-of-gaussians" title="Link to this heading">#</a></h2>
 <p>Mixture of Gaussians are particular cases of linear combinations of Gaussians r.v. Formally, they are defined as</p>
 <div class="math notranslate nohighlight">
-\[p = \sum_{i=1}^m w_i p_i\]</div>
-<p>where <span class="math notranslate nohighlight">\(p_i\)</span> are normal r.v. and <span class="math notranslate nohighlight">\(\sum_i w_1=1\)</span>.
+\[p = \sum_{i=1}^m w_i \mathbf p_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf p_i\)</span> are normal r.v. and <span class="math notranslate nohighlight">\(\sum_i w_1=1\)</span>.
 As an example, we show here how to define (and plot) the mixture of three Gaussians:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1447,20 +1444,20 @@ As an example, we show here how to define (and plot) the mixture of three Gaussi
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">means</span><span class="p">,</span> <span class="n">stds</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">),</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;N(</span><span class="si">{</span><span class="n">mean</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">std</span><span class="si">}</span><span class="s1">^2)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">),</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;N(</span><span class="si">{</span><span class="n">mean</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">std</span><span class="si">}</span><span class="s1">**2)&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mixture Density&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s2">&quot;on&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mixture of Three Gaussians&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c85b218ae74a0e479630257a4e194fa687bea5896ea379d3822518165fdd349e.png" src="_images/c85b218ae74a0e479630257a4e194fa687bea5896ea379d3822518165fdd349e.png" />
+<img alt="_images/2c4324b4c46cf07089db85912dfce9da25bc1ae10d79df12a645a6edf21df8c5.png" src="_images/2c4324b4c46cf07089db85912dfce9da25bc1ae10d79df12a645a6edf21df8c5.png" />
 </div>
 </div>
 </section>
