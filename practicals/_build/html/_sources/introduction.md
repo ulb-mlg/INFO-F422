@@ -22,6 +22,7 @@ Whether your goal is to become a data scientist, ML engineer, or researcher, the
 
 ## Course Overview
 
+As 2026 is the the first year of exploitation of this handbook, chapters will be delivered practical after practicals. If you notice any mistake, typo, unclarity, please [send me and email](mailto:pascal.tribel@ulb.be) !
 Here's what you can expect:
 
 ### Introduction to Probabilistic Methods and Monte Carlo Simulations

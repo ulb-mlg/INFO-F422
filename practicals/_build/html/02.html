@@ -63,7 +63,7 @@
     <link rel="icon" href="_static/sfml.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Data Preprocessing, Local Models and Tree-Based Models" href="03.html" />
+    <link rel="next" title="5. Bibliography" href="bibliography.html" />
     <link rel="prev" title="3. Introduction to Probabilistic Methods and Monte Carlo Simulations" href="01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,12 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="notation.html">2. Notation Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">3. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Linear Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">5. Data Preprocessing, Local Models and Tree-Based Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">6. Neural Networks for Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">7. Ensembles of models and feature selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">8. Classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conclusion.html">9. Conclusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">10. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">5. Bibliography</a></li>
 </ul>
 
     </div>
@@ -445,24 +440,24 @@ document.write(`
 </section>
 <section id="generating-synthetic-multivariate-data">
 <h2><span class="section-number">4.2. </span>Generating Synthetic Multivariate Data<a class="headerlink" href="#generating-synthetic-multivariate-data" title="Link to this heading">#</a></h2>
-<p>We’ll create a dataset where <code class="docutils literal notranslate"><span class="pre">Y</span></code> depends on three features: <code class="docutils literal notranslate"><span class="pre">X1,</span> <span class="pre">X2,</span> <span class="pre">X3</span></code>.
+<p>We’ll create a dataset where <code class="docutils literal notranslate"><span class="pre">Y</span></code> depends on three features: <code class="docutils literal notranslate"><span class="pre">x1,</span> <span class="pre">x2,</span> <span class="pre">x3</span></code>.
 The true data-generating process (DGP) is:</p>
 <div class="math notranslate nohighlight">
 \[
-  Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon,
+  \mathbf y = \beta_0 + \beta_1 \mathbf x_1 + \beta_2 \mathbf x_2 + \beta_3 \mathbf x_3 + \epsilon,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon \sim \mathcal{N}(0, \sigma^2)\)</span>.</p>
 <section id="exercise">
 <h3><span class="section-number">4.2.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Create <code class="docutils literal notranslate"><span class="pre">N</span></code> observations of <code class="docutils literal notranslate"><span class="pre">(X1,</span> <span class="pre">X2,</span> <span class="pre">X3)</span></code>.</p></li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">N</span></code> observations of <code class="docutils literal notranslate"><span class="pre">(x1,</span> <span class="pre">x2,</span> <span class="pre">x3)</span></code>.</p></li>
 <li><p>Define true coefficients <code class="docutils literal notranslate"><span class="pre">beta_true</span></code>.</p></li>
-<li><p>Generate noise and produce <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p></li>
+<li><p>Generate noise and produce <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
 <li><p>Store everything in a DataFrame for convenience.</p></li>
 </ol>
 <section id="solution">
 <h4><span class="section-number">4.2.1.1. </span>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h4>
-<p>The following code generates a synthetic dataset for a linear regression problem with three explanatory variables (<span class="math notranslate nohighlight">\(\mathbf X_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf X_2\)</span>, <span class="math notranslate nohighlight">\(\mathbf X_3\)</span>) and one target variable (<span class="math notranslate nohighlight">\(\mathbf Y\)</span>). It sets a random seed for reproducibility and defines true regression coefficients (<code class="docutils literal notranslate"><span class="pre">beta_true</span></code>) and a standard deviation for the noise (<code class="docutils literal notranslate"><span class="pre">sigma_true</span></code>). The explanatory variables are drawn from different distributions: uniform for <span class="math notranslate nohighlight">\(\mathbf X_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf X_2\)</span>, and normal for <span class="math notranslate nohighlight">\(\mathbf X_3\)</span>. The true response <code class="docutils literal notranslate"><span class="pre">Y_true</span></code> is computed as a linear combination of the variables with the defined coefficients, and Gaussian noise is added to simulate observed values of <span class="math notranslate nohighlight">\(\mathbf Y\)</span>. The resulting dataset, stored in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame, includes the predictors and the noisy target variable, and the first few rows are displayed using <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>.</p>
+<p>The following code generates a synthetic dataset for a linear regression problem with three explanatory variables (<span class="math notranslate nohighlight">\(\mathbf x_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf x_2\)</span>, <span class="math notranslate nohighlight">\(\mathbf x_3\)</span>) and one target variable (<span class="math notranslate nohighlight">\(\mathbf y\)</span>). It sets a random seed for reproducibility and defines true regression coefficients (<code class="docutils literal notranslate"><span class="pre">beta_true</span></code>) and a standard deviation for the noise (<code class="docutils literal notranslate"><span class="pre">sigma_true</span></code>). The explanatory variables are drawn from different distributions: uniform for <span class="math notranslate nohighlight">\(\mathbf x_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf x_2\)</span>, and normal for <span class="math notranslate nohighlight">\(\mathbf x_3\)</span>. The true response <code class="docutils literal notranslate"><span class="pre">Y_true</span></code> is computed as a linear combination of the variables with the defined coefficients, and Gaussian noise is added to simulate observed values of <span class="math notranslate nohighlight">\(\mathbf y\)</span>. The resulting dataset, stored in a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame, includes the predictors and the noisy target variable, and the first few rows are displayed using <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
@@ -472,19 +467,19 @@ The true data-generating process (DGP) is:</p>
 
 <span class="n">beta_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
 
-<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-<span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X1&#39;</span><span class="p">:</span><span class="n">X1</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">:</span><span class="n">X2</span><span class="p">,</span> <span class="s1">&#39;X3&#39;</span><span class="p">:</span><span class="n">X3</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x1&#39;</span><span class="p">:</span><span class="n">x1</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">:</span><span class="n">x2</span><span class="p">,</span> <span class="s1">&#39;x3&#39;</span><span class="p">:</span><span class="n">x3</span><span class="p">})</span>
 
-<span class="n">Y_true</span> <span class="o">=</span> <span class="p">(</span><span class="n">beta_true</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">]</span>
-          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">]</span>
-          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X3&#39;</span><span class="p">])</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="p">(</span><span class="n">beta_true</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">]</span>
+          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x2&#39;</span><span class="p">]</span>
+          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x3&#39;</span><span class="p">])</span>
 
 <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma_true</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y_true</span> <span class="o">+</span> <span class="n">noise</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_true</span> <span class="o">+</span> <span class="n">noise</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -509,10 +504,10 @@ The true data-generating process (DGP) is:</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>X1</th>
-      <th>X2</th>
-      <th>X3</th>
-      <th>Y</th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>y</th>
     </tr>
   </thead>
   <tbody>
@@ -574,7 +569,7 @@ The true data-generating process (DGP) is:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               X1          X2          X3           Y
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               x1          x2          x3           y
 count  200.000000  200.000000  200.000000  200.000000
 mean     0.032708   -0.193044   -0.112239    5.572700
 std      2.663947    5.907073    1.963533   12.473036
@@ -585,7 +580,7 @@ min     -4.973119   -9.929356   -5.262876  -20.342999
 max      4.953585    9.921727    4.501352   30.849943
 </pre></div>
 </div>
-<img alt="_images/456981c4f9bfe9b9d8b1c0e7cdae067f5cdd8df79b0ad78dd5a71c595220be19.png" src="_images/456981c4f9bfe9b9d8b1c0e7cdae067f5cdd8df79b0ad78dd5a71c595220be19.png" />
+<img alt="_images/53c2f7ef0440a8cb0d0a19f5b1656f87ea01d20829904caec467d5a6aedb8b67.png" src="_images/53c2f7ef0440a8cb0d0a19f5b1656f87ea01d20829904caec467d5a6aedb8b67.png" />
 </div>
 </div>
 </section>
@@ -595,25 +590,25 @@ max      4.953585    9.921727    4.501352   30.849943
 <p>We begin by specifying the standard linear regression model in matrix form:</p>
 <div class="math notranslate nohighlight">
 \[
-Y = X \boldsymbol{\beta} + \boldsymbol{\epsilon},
+y = X \beta + \epsilon,
 \]</div>
 <p>where:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> is an <span class="math notranslate nohighlight">\(N \times 1\)</span> vector of observed responses,</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> is an <span class="math notranslate nohighlight">\(N \times 1\)</span> vector of observed responses,</p></li>
 <li><p><span class="math notranslate nohighlight">\(X\)</span> is an <span class="math notranslate nohighlight">\(N \times p\)</span> <em>design matrix</em>, which includes a column of ones to account for the intercept,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span> is a <span class="math notranslate nohighlight">\(p \times 1\)</span> vector of regression coefficients (including the intercept),</p></li>
-<li><p><span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span> is an <span class="math notranslate nohighlight">\(N \times 1\)</span> vector of errors or residuals.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> is a <span class="math notranslate nohighlight">\(p \times 1\)</span> vector of regression coefficients (including the intercept),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> is an <span class="math notranslate nohighlight">\(N \times 1\)</span> vector of errors or residuals.</p></li>
 </ul>
-<p>The goal of Ordinary Least Squares is to find the vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\beta}}\)</span> that minimizes the sum of squared residuals. There is a well-known closed-form solution for this optimization problem, given by:</p>
+<p>The goal of Ordinary Least Squares is to find the vector <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> that minimizes the sum of squared residuals. There is a well-known closed-form solution for this optimization problem, given by:</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{\boldsymbol{\beta}} = (X^\top X)^{-1} X^\top Y.
+\hat{\beta} = (X^\top X)^{-1} X^\top y.
 \]</div>
-<p>This formula provides the best linear unbiased estimator (BLUE) of the coefficients under standard assumptions (linearity, independence, homoscedasticity, and normally distributed errors).</p>
+<p>This formula provides the best linear unbiased estimator (<em>BLUE</em>) of the coefficients under standard assumptions (linearity, independence, homoscedasticity, and normally distributed errors).</p>
 <p>In the following steps, we will:</p>
 <ol class="arabic simple">
 <li><p>Manually construct the design matrix <span class="math notranslate nohighlight">\(X\)</span>, ensuring it includes a column of ones for the intercept.</p></li>
-<li><p>Compute the estimated coefficients <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\beta}}\)</span> using NumPy’s matrix operations, specifically <code class="docutils literal notranslate"><span class="pre">np.linalg.inv(...)</span></code>.</p></li>
+<li><p>Compute the estimated coefficients <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> using NumPy’s matrix operations, specifically <code class="docutils literal notranslate"><span class="pre">np.linalg.inv(...)</span></code>.</p></li>
 <li><p>Compare the computed estimates with the known or true values of the coefficients (<code class="docutils literal notranslate"><span class="pre">beta_true</span></code>) used to generate the data.</p></li>
 <li><p>Validate our manual computation by comparing it to the output from the <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> OLS implementation.</p></li>
 </ol>
@@ -621,12 +616,12 @@ Y = X \boldsymbol{\beta} + \boldsymbol{\epsilon},
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
     <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;X3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;x2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;x3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="p">])</span> 
 
-<span class="n">y_vec</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_vec</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X_mat shape:&quot;</span><span class="p">,</span> <span class="n">X_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y_vec shape:&quot;</span><span class="p">,</span> <span class="n">y_vec</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -679,8 +674,8 @@ y_vec shape: (200, 1)
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_design_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span><span class="s1">&#39;X2&#39;</span><span class="p">,</span><span class="s1">&#39;X3&#39;</span><span class="p">]])</span>
-<span class="n">model_ols</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">X_design_sm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_design_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span><span class="s1">&#39;x3&#39;</span><span class="p">]])</span>
+<span class="n">model_ols</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">X_design_sm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model_ols</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 
 <span class="n">beta_hat_sm</span> <span class="o">=</span> <span class="n">model_ols</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span>
@@ -692,11 +687,11 @@ y_vec shape: (200, 1)
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      Y   R-squared:                       0.976
+Dep. Variable:                      y   R-squared:                       0.976
 Model:                            OLS   Adj. R-squared:                  0.976
 Method:                 Least Squares   F-statistic:                     2657.
-Date:                Tue, 16 Sep 2025   Prob (F-statistic):          2.01e-158
-Time:                        13:31:42   Log-Likelihood:                -415.03
+Date:                Mon, 02 Feb 2026   Prob (F-statistic):          2.01e-158
+Time:                        16:44:38   Log-Likelihood:                -415.03
 No. Observations:                 200   AIC:                             838.1
 Df Residuals:                     196   BIC:                             851.2
 Df Model:                           3                                         
@@ -705,9 +700,9 @@ Covariance Type:            nonrobust
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
 const          5.2043      0.138     37.720      0.000       4.932       5.476
-X1             1.4772      0.052     28.497      0.000       1.375       1.579
-X2            -1.9629      0.023    -83.872      0.000      -2.009      -1.917
-X3             0.5243      0.070      7.446      0.000       0.385       0.663
+x1             1.4772      0.052     28.497      0.000       1.375       1.579
+x2            -1.9629      0.023    -83.872      0.000      -2.009      -1.917
+x3             0.5243      0.070      7.446      0.000       0.385       0.663
 ==============================================================================
 Omnibus:                        1.025   Durbin-Watson:                   2.042
 Prob(Omnibus):                  0.599   Jarque-Bera (JB):                1.117
@@ -785,7 +780,7 @@ Manual OLS: [ 5.20431058  1.47721924 -1.96286883  0.52430039]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1921734cb73ae8ebd1a30b01ed0947980b222fdd39ece0f80010ebae317d706c.png" src="_images/1921734cb73ae8ebd1a30b01ed0947980b222fdd39ece0f80010ebae317d706c.png" />
+<img alt="_images/bf81a7380465bfc11274af488ad9eef293fa9c5bf3a8d25259c54c763228d567.png" src="_images/bf81a7380465bfc11274af488ad9eef293fa9c5bf3a8d25259c54c763228d567.png" />
 </div>
 </div>
 </section>
@@ -818,7 +813,7 @@ Manual OLS: [ 5.20431058  1.47721924 -1.96286883  0.52430039]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b12fe6781548d7942f02ad291a9bc90f78ff77e5523831dd2353856a7bf1db05.png" src="_images/b12fe6781548d7942f02ad291a9bc90f78ff77e5523831dd2353856a7bf1db05.png" />
+<img alt="_images/e893fe952514d9e5843967428058424d205faa395fdc56ace0fd45d763791ffe.png" src="_images/e893fe952514d9e5843967428058424d205faa395fdc56ace0fd45d763791ffe.png" />
 </div>
 </div>
 <section id="comments">
@@ -897,8 +892,8 @@ y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_1^2 + \beta_5 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolynomialFeatures</span>
 
 <span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">X_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span><span class="s1">&#39;X2&#39;</span><span class="p">,</span><span class="s1">&#39;X3&#39;</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original shape:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span><span class="s1">&#39;X2&#39;</span><span class="p">,</span><span class="s1">&#39;X3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">X_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span><span class="s1">&#39;x3&#39;</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original shape:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span><span class="s1">&#39;x3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polynomial shape:&quot;</span><span class="p">,</span> <span class="n">X_poly</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="n">X_poly_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">X_poly</span><span class="p">])</span>
@@ -942,7 +937,7 @@ Polynomial shape: (200, 9)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_poly_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X_poly</span><span class="p">)</span>
-<span class="n">model_poly_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">X_poly_sm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model_poly_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">X_poly_sm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">beta_hat_poly_sm</span> <span class="o">=</span> <span class="n">model_poly_sm</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span>
 
 <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{Statsmodels polynomial OLS}:&quot;</span><span class="p">,</span> <span class="n">beta_hat_poly_sm</span><span class="p">)</span>
@@ -967,11 +962,11 @@ Polynomial shape: (200, 9)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomial OLS summary:
                              OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      Y   R-squared:                       0.976
+Dep. Variable:                      y   R-squared:                       0.976
 Model:                            OLS   Adj. R-squared:                  0.975
 Method:                 Least Squares   F-statistic:                     872.4
-Date:                Tue, 16 Sep 2025   Prob (F-statistic):          2.13e-149
-Time:                        13:31:42   Log-Likelihood:                -413.46
+Date:                Mon, 02 Feb 2026   Prob (F-statistic):          2.13e-149
+Time:                        16:44:38   Log-Likelihood:                -413.46
 No. Observations:                 200   AIC:                             846.9
 Df Residuals:                     190   BIC:                             879.9
 Df Model:                           9                                         
@@ -1027,8 +1022,8 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/058510b3c11a0fb724a1c6dfdfbdee47a0154a934032ba892466cc547793b11e.png" src="_images/058510b3c11a0fb724a1c6dfdfbdee47a0154a934032ba892466cc547793b11e.png" />
-<img alt="_images/63232262e329da9e0ce61297e428d201f3e8faa1f0c49f84f37b3be167099356.png" src="_images/63232262e329da9e0ce61297e428d201f3e8faa1f0c49f84f37b3be167099356.png" />
+<img alt="_images/52b2242f9e2b843baacb6c490006ca4eac20723177b17b56256e3bceddda453c.png" src="_images/52b2242f9e2b843baacb6c490006ca4eac20723177b17b56256e3bceddda453c.png" />
+<img alt="_images/9815c486ef473dad3b262f5a50609b4bf3c352a9fc7a9bff4e5e942add838de9.png" src="_images/9815c486ef473dad3b262f5a50609b4bf3c352a9fc7a9bff4e5e942add838de9.png" />
 </div>
 </div>
 <p><strong>Interpretation</strong>:</p>
@@ -1079,12 +1074,12 @@ y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_1^2 + \beta_5 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.kernel_approximation</span><span class="w"> </span><span class="kn">import</span> <span class="n">RBFSampler</span>
 
 <span class="n">rbf</span> <span class="o">=</span> <span class="n">RBFSampler</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
-<span class="n">X_rbf</span> <span class="o">=</span> <span class="n">rbf</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span><span class="s1">&#39;X2&#39;</span><span class="p">,</span><span class="s1">&#39;X3&#39;</span><span class="p">]])</span>
+<span class="n">X_rbf</span> <span class="o">=</span> <span class="n">rbf</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span><span class="s1">&#39;x3&#39;</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RBF-transformed shape:&quot;</span><span class="p">,</span> <span class="n">X_rbf</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="c1"># We&#39;ll do OLS with statsmodels for brevity:</span>
 <span class="n">X_rbf_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X_rbf</span><span class="p">)</span>
-<span class="n">model_rbf_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span> <span class="n">X_rbf_sm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model_rbf_sm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">X_rbf_sm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">model_rbf_sm</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 
@@ -1106,11 +1101,11 @@ y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_1^2 + \beta_5 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RBF-transformed shape: (200, 50)
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      Y   R-squared:                       0.980
+Dep. Variable:                      y   R-squared:                       0.980
 Model:                            OLS   Adj. R-squared:                  0.973
 Method:                 Least Squares   F-statistic:                     146.9
-Date:                Tue, 16 Sep 2025   Prob (F-statistic):          5.70e-105
-Time:                        13:31:42   Log-Likelihood:                -396.22
+Date:                Mon, 02 Feb 2026   Prob (F-statistic):          5.70e-105
+Time:                        16:44:38   Log-Likelihood:                -396.22
 No. Observations:                 200   AIC:                             894.4
 Df Residuals:                     149   BIC:                             1063.
 Df Model:                          50                                         
@@ -1182,7 +1177,7 @@ Notes:
 strong multicollinearity or other numerical problems.
 </pre></div>
 </div>
-<img alt="_images/780d93454acec8c3ab6c4f25370c0190e0db903a733cec5cb2002e60c7327e26.png" src="_images/780d93454acec8c3ab6c4f25370c0190e0db903a733cec5cb2002e60c7327e26.png" />
+<img alt="_images/3b612899e7110fa664f00b3498274937c126623a4ddaab0e93583654d95f3b66.png" src="_images/3b612899e7110fa664f00b3498274937c126623a4ddaab0e93583654d95f3b66.png" />
 </div>
 </div>
 <section id="id1">
@@ -1207,14 +1202,14 @@ strong multicollinearity or other numerical problems.
 Ridge regression adds an L2 penalty:</p>
 <div class="math notranslate nohighlight">
 \[
-  \min_{\beta} \;\; \| Y - X \beta \|^2 + \alpha \| \beta \|^2.
+  \min_{\beta} \;\; \| y - X \beta \|^2 + \alpha \| \beta \|^2.
 \]</div>
 <section id="ridge-closed-form">
 <h3><span class="section-number">4.8.1. </span>Ridge Closed-form<a class="headerlink" href="#ridge-closed-form" title="Link to this heading">#</a></h3>
 <p>Ridge also has a known closed-form:</p>
 <div class="math notranslate nohighlight">
 \[
-  \hat{\beta}_{\mathrm{ridge}} = (X^\top X + \alpha I)^{-1} X^\top Y.
+  \hat{\beta}_{\mathrm{ridge}} = (X^\top X + \alpha I)^{-1} X^\top y.
 \]</div>
 <p>We’ll show a manual solution, then compare to scikit-learn. We’ll do it on the <strong>polynomial features</strong> for illustration.</p>
 <div class="cell docutils container">
@@ -1257,7 +1252,7 @@ Ridge regression adds an L2 penalty:</p>
 <span class="c1"># &quot;fit_intercept=False&quot; because we already included the intercept column in X_poly_mat</span>
 <span class="c1"># We will manually set the intercept to match the first column or we can remove intercept from X_poly_mat.</span>
 
-<span class="n">ridge_sklearn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_poly_mat</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">])</span>
+<span class="n">ridge_sklearn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_poly_mat</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
 <span class="n">beta_hat_ridge_sklearn</span> <span class="o">=</span> <span class="n">ridge_sklearn</span><span class="o">.</span><span class="n">coef_</span>
 
 <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">text{scikit-learn Ridge Coeffs}:&quot;</span><span class="p">,</span> <span class="n">beta_hat_ridge_sklearn</span><span class="p">)</span>
@@ -1287,7 +1282,7 @@ Ridge regression adds an L2 penalty:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_ridge</span> <span class="o">=</span> <span class="n">X_poly_mat</span> <span class="o">@</span> <span class="n">beta_hat_ridge_manual</span>
-<span class="n">resid_ridge</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_pred_ridge</span>
+<span class="n">resid_ridge</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_pred_ridge</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_pred_ridge</span><span class="p">,</span> <span class="n">resid_ridge</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -1301,12 +1296,12 @@ Ridge regression adds an L2 penalty:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/46cd873ca0b7cf4c0e09251a497c889a8edddc5011ec75ab3d6d35306dbee6b6.png" src="_images/46cd873ca0b7cf4c0e09251a497c889a8edddc5011ec75ab3d6d35306dbee6b6.png" />
+<img alt="_images/2ca56dd7e941cfc276cf2654632b48bd76893b7d9cef9f260b2260a79350931b.png" src="_images/2ca56dd7e941cfc276cf2654632b48bd76893b7d9cef9f260b2260a79350931b.png" />
 </div>
 </div>
 <p><strong>Remarks</strong>:</p>
 <ul class="simple">
-<li><p>As alpha_ridge increases, the polynomial coefficients shrink more, typically reducing variance (but possibly increasing bias).</p></li>
+<li><p>As <code class="docutils literal notranslate"><span class="pre">alpha_ridge</span></code> increases, the polynomial coefficients shrink more, typically reducing variance (but possibly increasing bias).</p></li>
 <li><p>We can further use cross-validation to select alpha automatically or do a hyperparameter grid.</p></li>
 </ul>
 </section>
@@ -1360,11 +1355,11 @@ Ridge regression adds an L2 penalty:</p>
       </div>
     </a>
     <a class="right-next"
-       href="03.html"
+       href="bibliography.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Data Preprocessing, Local Models and Tree-Based Models</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Bibliography</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
