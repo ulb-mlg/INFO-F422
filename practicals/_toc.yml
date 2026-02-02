@@ -6,14 +6,23 @@ root: "frontpage"
 options:
     numbered: 4
     maxdepth: 3
-chapters:
-    - file: "introduction"
-    - file: "notation"
-    - file: "01"
-    - file: "02"
-    #- file: "03"
-    #- file: "04"
-    #- file: "05"
-    #- file: "06"
-    #- file: "conclusion"
-    - file: "bibliography"
+parts:
+    - caption: Preamble
+    numbered: False
+    chapters:
+        - file: "introduction"
+        - file: "notation"
+    - caption: Body
+    numbered: True
+    chapters:
+        - file: "01"
+        - file: "02"
+        #- file: "03"
+        #- file: "04"
+        #- file: "05"
+        #- file: "06"
+    - caption Postamble
+    numbered: False
+    chapters:
+        #- file: "conclusion"
+        - file: "bibliography"
