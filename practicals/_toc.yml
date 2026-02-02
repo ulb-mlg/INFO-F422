@@ -8,6 +8,7 @@ options:
     maxdepth: 3
 chapters:
     - file: "introduction"
+    - file: "notation"
     - file: "01"
     - file: "02"
     - file: "03"

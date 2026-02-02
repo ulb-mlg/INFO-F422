@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Ensembles of models and feature selection &#8212; Statistical Foundations of Machine Learning - Practicals handbook</title>
+    <title>7. Ensembles of models and feature selection &#8212; Statistical Foundations of Machine Learning - Practicals handbook</title>
   
   
   
@@ -66,8 +66,8 @@
     <link rel="icon" href="_static/sfml.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Classification" href="06.html" />
-    <link rel="prev" title="5. Neural Networks for Regression" href="04.html" />
+    <link rel="next" title="8. Classification" href="06.html" />
+    <link rel="prev" title="6. Neural Networks for Regression" href="04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,14 +187,15 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">2. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">3. Linear Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">4. Data Preprocessing, Local Models and Tree-Based Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">5. Neural Networks for Regression</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Ensembles of models and feature selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">7. Classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conclusion.html">8. Conclusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">9. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notation.html">2. Notation Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">3. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">4. Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. Data Preprocessing, Local Models and Tree-Based Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">6. Neural Networks for Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Ensembles of models and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">8. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">9. Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">10. Bibliography</a></li>
 </ul>
 
     </div>
@@ -343,35 +344,35 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-supervised-learning">6.1. Reminder:  Supervised learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">6.1.1. Regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-measurement">6.1.2. Error measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-supervised-learning">7.1. Reminder:  Supervised learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">7.1.1. Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-measurement">7.1.2. Error measurement</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">6.2. Feature selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview-and-preprocessing">6.2.1. Data overview and preprocessing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-variables">6.2.2. Input and output variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-linear-and-decision-tree-models">6.2.3. Modelling with linear and decision tree models</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model">6.2.3.1. Linear model</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">6.2.3.2. Decision tree</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-with-loo-cv">6.2.3.3. Ridge regression with LOO-CV</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">6.2.3.4. Selection bias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">7.2. Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview-and-preprocessing">7.2.1. Data overview and preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-variables">7.2.2. Input and output variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-linear-and-decision-tree-models">7.2.3. Modelling with linear and decision tree models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model">7.2.3.1. Linear model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">7.2.3.2. Decision tree</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-with-loo-cv">7.2.3.3. Ridge regression with LOO-CV</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">7.2.3.4. Selection bias</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-models">6.2.4. Ensemble of models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-models">7.2.4. Ensemble of models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3. Feature selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">6.3.1. Filter methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-with-the-output">6.3.1.1. Correlation with the output</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mrmr">6.3.1.2. mRMR</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">6.3.1.3. PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3. Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">7.3.1. Filter methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-with-the-output">7.3.1.1. Correlation with the output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mrmr">7.3.1.2. mRMR</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">7.3.1.3. PCA</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper-methods">6.3.2. Wrapper methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper-methods">7.3.2. Wrapper methods</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-predictive-models">6.4. Using other predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-predictive-models">7.4. Using other predictive models</a></li>
 </ul>
             </nav>
         </div>
@@ -384,7 +385,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ensembles-of-models-and-feature-selection">
-<h1><span class="section-number">6. </span>Ensembles of models and feature selection<a class="headerlink" href="#ensembles-of-models-and-feature-selection" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Ensembles of models and feature selection<a class="headerlink" href="#ensembles-of-models-and-feature-selection" title="Link to this heading">#</a></h1>
 <p>Let us define some basic imports and a <code class="docutils literal notranslate"><span class="pre">pprint</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -412,10 +413,10 @@ document.write(`
 </div>
 </div>
 <section id="reminder-supervised-learning">
-<h2><span class="section-number">6.1. </span>Reminder:  Supervised learning<a class="headerlink" href="#reminder-supervised-learning" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Reminder:  Supervised learning<a class="headerlink" href="#reminder-supervised-learning" title="Link to this heading">#</a></h2>
 <p>Supervised learning aims to model the (unknown) stochastic dependence between a set of <span class="math notranslate nohighlight">\(n\)</span> inputs <span class="math notranslate nohighlight">\(x\)</span> (also called features) and an output <span class="math notranslate nohighlight">\({\mathbf y}\)</span> on the basis of a training set <span class="math notranslate nohighlight">\(D_N\)</span> of size <span class="math notranslate nohighlight">\(N\)</span>. Supervised learning tasks are decomposed into <em>regression</em> and <em>classification</em> tasks.</p>
 <section id="regression">
-<h3><span class="section-number">6.1.1. </span>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
 <p>In regression the stochastic dependence is given by</p>
 <div class="math notranslate nohighlight">
 \[ {\mathbf y} = f(x)+\mathbf{w}\]</div>
@@ -433,7 +434,7 @@ document.write(`
 <p>of the regression function <span class="math notranslate nohighlight">\(f(x)\)</span>, where <span class="math notranslate nohighlight">\(\alpha\)</span> denotes the set of parameters of the model <span class="math notranslate nohighlight">\(h\)</span>.</p>
 </section>
 <section id="error-measurement">
-<h3><span class="section-number">6.1.2. </span>Error measurement<a class="headerlink" href="#error-measurement" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.1.2. </span>Error measurement<a class="headerlink" href="#error-measurement" title="Link to this heading">#</a></h3>
 <p>We already have used the <em>mean squared error</em> as an evaluation tool for the quality of the predictions of a model. Unfortunately, this tool does not take into account how “variable” the expected outputs are, and therefore two models could become undistinguishable when using the MSE. We can normalize the MSE by dividing it by the (measured) variance of the output data. This leads to the <em>normalized mean squared error</em>:</p>
 <div class="math notranslate nohighlight">
 \[\text{NMSE} = \frac{\sum(y-\hat{y})^2}{N\sigma^2_y}\]</div>
@@ -497,7 +498,7 @@ NMSEs: 0.16885724586364886, 0.963320410110144
 </section>
 </section>
 <section id="feature-selection">
-<h2><span class="section-number">6.2. </span>Feature selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Feature selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h2>
 <p>Feature selection and ensembles of models are two techniques which can be used to improve the accuracy of predictions.</p>
 <p>Feature selection aims at reducing the dimensionality of the problem, and is useful when input variables contain redundant or irrelevant (noisy) information. Benefits are twofold: it decreases the training time by simplifying the problem, and it decreases the complexity of the predictive model. This in turn usually improves the prediction accuracy, since high-dimensionality makes predictive models more prone to overfitting, and estimates of parameters more variant.</p>
 <p>There are three main approaches to feature selection:</p>
@@ -512,7 +513,7 @@ These methods are specific to given learning machines, and usually built-in in t
 <p>Ensembles of models consist in building several predictive models using resampled subsets of the original training set. The method works particularly well for predictive models with high variance (for example, decision trees or neural networks). The average prediction of the resulting models usually strongly decreases the variance component of the error, and as a consequence improves the prediction accuracy.</p>
 <p>In this session, we will use a synthetic dataset, made of 30 continuous variables. 24 of them will be useless, and 6 will serve in the output. The output will be a function of the useful input variables.</p>
 <section id="data-overview-and-preprocessing">
-<h3><span class="section-number">6.2.1. </span>Data overview and preprocessing<a class="headerlink" href="#data-overview-and-preprocessing" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Data overview and preprocessing<a class="headerlink" href="#data-overview-and-preprocessing" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -799,7 +800,7 @@ These methods are specific to given learning machines, and usually built-in in t
 </div>
 </section>
 <section id="input-and-output-variables">
-<h3><span class="section-number">6.2.2. </span>Input and output variables<a class="headerlink" href="#input-and-output-variables" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.2. </span>Input and output variables<a class="headerlink" href="#input-and-output-variables" title="Link to this heading">#</a></h3>
 <p>The output variable (Y) is <code class="docutils literal notranslate"><span class="pre">y</span></code>, and all other variables (X) are considered as inputs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -830,9 +831,9 @@ Variance of Y: 3.5704323990926374
 </div>
 </section>
 <section id="modelling-with-linear-and-decision-tree-models">
-<h3><span class="section-number">6.2.3. </span>Modelling with linear and decision tree models<a class="headerlink" href="#modelling-with-linear-and-decision-tree-models" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.3. </span>Modelling with linear and decision tree models<a class="headerlink" href="#modelling-with-linear-and-decision-tree-models" title="Link to this heading">#</a></h3>
 <section id="linear-model">
-<h4><span class="section-number">6.2.3.1. </span>Linear model<a class="headerlink" href="#linear-model" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.2.3.1. </span>Linear model<a class="headerlink" href="#linear-model" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Create a linear model <span class="math notranslate nohighlight">\(h(x)\)</span> for predicting the IMDB score on the basis of the input variables, and compute its empirical (or training) mean square error.</p></li>
 </ul>
@@ -906,7 +907,7 @@ Variance of Y: 3.5704323990926374
 </div>
 </section>
 <section id="decision-tree">
-<h4><span class="section-number">6.2.3.2. </span>Decision tree<a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.2.3.2. </span>Decision tree<a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Modify the previous code to compute the empirical error using a decision tree model. Use sklearn’s <code class="docutils literal notranslate"><span class="pre">DecisionTreeRegressor</span></code>.</p></li>
 </ul>
@@ -973,7 +974,7 @@ Variance of Y: 3.5704323990926374
 <p>Why is the result so different using the 10-fold cross-validation?</p>
 </section>
 <section id="ridge-regression-with-loo-cv">
-<h4><span class="section-number">6.2.3.3. </span>Ridge regression with LOO-CV<a class="headerlink" href="#ridge-regression-with-loo-cv" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.2.3.3. </span>Ridge regression with LOO-CV<a class="headerlink" href="#ridge-regression-with-loo-cv" title="Link to this heading">#</a></h4>
 <p>Recall: Ridge regression looks like a linear regression but includes a penalty term for large coefficients:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1047,7 +1048,7 @@ Greatests coefficients: [-7.1367055   0.89720319 -0.34672033 -0.33732339]
 </div>
 </section>
 <section id="selection-bias">
-<h4><span class="section-number">6.2.3.4. </span>Selection bias<a class="headerlink" href="#selection-bias" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.2.3.4. </span>Selection bias<a class="headerlink" href="#selection-bias" title="Link to this heading">#</a></h4>
 <p>Take care that if the features are selected using the error on the training set as an importance criterium leads to a flaw: the features may be over-fittingly selected and the performances then do not reflect on the testing performances dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1119,7 +1120,7 @@ Greatests coefficients: [-7.1367055   0.89720319 -0.34672033 -0.33732339]
 </section>
 </section>
 <section id="ensemble-of-models">
-<h3><span class="section-number">6.2.4. </span>Ensemble of models<a class="headerlink" href="#ensemble-of-models" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.2.4. </span>Ensemble of models<a class="headerlink" href="#ensemble-of-models" title="Link to this heading">#</a></h3>
 <p>Let us now create an ensemble of R=20 linear models to make predictions.</p>
 <ul class="simple">
 <li><p>Use a linear model as the base model.</p></li>
@@ -1198,11 +1199,11 @@ Is ensemble error lower than single model? True
 </section>
 </section>
 <section id="id1">
-<h2><span class="section-number">6.3. </span>Feature selection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Feature selection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="filter-methods">
-<h3><span class="section-number">6.3.1. </span>Filter methods<a class="headerlink" href="#filter-methods" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>Filter methods<a class="headerlink" href="#filter-methods" title="Link to this heading">#</a></h3>
 <section id="correlation-with-the-output">
-<h4><span class="section-number">6.3.1.1. </span>Correlation with the output<a class="headerlink" href="#correlation-with-the-output" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.3.1.1. </span>Correlation with the output<a class="headerlink" href="#correlation-with-the-output" title="Link to this heading">#</a></h4>
 <p>The following code performs feature selection by keeping the most correlated variables with the output. Compare the results for linear models and decision trees. What are the smallest CV errors, and how many features were needed?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1247,7 +1248,7 @@ Is ensemble error lower than single model? True
 </div>
 </section>
 <section id="mrmr">
-<h4><span class="section-number">6.3.1.2. </span>mRMR<a class="headerlink" href="#mrmr" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.3.1.2. </span>mRMR<a class="headerlink" href="#mrmr" title="Link to this heading">#</a></h4>
 <p>We will implement a simple mRMR feature selection. mRMR uses mutual information. We will approximate mutual information via the correlation-based formula provided.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1329,7 +1330,7 @@ Is ensemble error lower than single model? True
 </div>
 </section>
 <section id="pca">
-<h4><span class="section-number">6.3.1.3. </span>PCA<a class="headerlink" href="#pca" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.3.1.3. </span>PCA<a class="headerlink" href="#pca" title="Link to this heading">#</a></h4>
 <p>The following code performs features selection by first transforming the inputs using PCA, and then keeping the most relevant principal components in the model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1374,7 +1375,7 @@ Is ensemble error lower than single model? True
 </section>
 </section>
 <section id="wrapper-methods">
-<h3><span class="section-number">6.3.2. </span>Wrapper methods<a class="headerlink" href="#wrapper-methods" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.2. </span>Wrapper methods<a class="headerlink" href="#wrapper-methods" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1425,7 +1426,7 @@ Is ensemble error lower than single model? True
 </section>
 </section>
 <section id="using-other-predictive-models">
-<h2><span class="section-number">6.4. </span>Using other predictive models<a class="headerlink" href="#using-other-predictive-models" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Using other predictive models<a class="headerlink" href="#using-other-predictive-models" title="Link to this heading">#</a></h2>
 <p>We can try other models like SVM (SVR), Neural Networks (MLPRegressor), K-Nearest Neighbors (KNeighborsRegressor) and see if performance improves.</p>
 <ul class="simple">
 <li><p>Using SVR, show the error using all the features.</p></li>
@@ -1751,7 +1752,7 @@ Is ensemble error lower than single model? True
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Neural Networks for Regression</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Neural Networks for Regression</p>
       </div>
     </a>
     <a class="right-next"
@@ -1759,7 +1760,7 @@ Is ensemble error lower than single model? True
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Classification</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Classification</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1779,35 +1780,35 @@ Is ensemble error lower than single model? True
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-supervised-learning">6.1. Reminder:  Supervised learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">6.1.1. Regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-measurement">6.1.2. Error measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-supervised-learning">7.1. Reminder:  Supervised learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">7.1.1. Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-measurement">7.1.2. Error measurement</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">6.2. Feature selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview-and-preprocessing">6.2.1. Data overview and preprocessing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-variables">6.2.2. Input and output variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-linear-and-decision-tree-models">6.2.3. Modelling with linear and decision tree models</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model">6.2.3.1. Linear model</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">6.2.3.2. Decision tree</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-with-loo-cv">6.2.3.3. Ridge regression with LOO-CV</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">6.2.3.4. Selection bias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">7.2. Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview-and-preprocessing">7.2.1. Data overview and preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-variables">7.2.2. Input and output variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-linear-and-decision-tree-models">7.2.3. Modelling with linear and decision tree models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model">7.2.3.1. Linear model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">7.2.3.2. Decision tree</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-with-loo-cv">7.2.3.3. Ridge regression with LOO-CV</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">7.2.3.4. Selection bias</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-models">6.2.4. Ensemble of models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-models">7.2.4. Ensemble of models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3. Feature selection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">6.3.1. Filter methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-with-the-output">6.3.1.1. Correlation with the output</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mrmr">6.3.1.2. mRMR</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">6.3.1.3. PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3. Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">7.3.1. Filter methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-with-the-output">7.3.1.1. Correlation with the output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mrmr">7.3.1.2. mRMR</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">7.3.1.3. PCA</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper-methods">6.3.2. Wrapper methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper-methods">7.3.2. Wrapper methods</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-predictive-models">6.4. Using other predictive models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-predictive-models">7.4. Using other predictive models</a></li>
 </ul>
   </nav></div>
 

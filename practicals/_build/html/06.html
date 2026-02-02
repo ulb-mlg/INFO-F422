@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7. Classification &#8212; Statistical Foundations of Machine Learning - Practicals handbook</title>
+    <title>8. Classification &#8212; Statistical Foundations of Machine Learning - Practicals handbook</title>
   
   
   
@@ -63,8 +63,8 @@
     <link rel="icon" href="_static/sfml.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Conclusion" href="conclusion.html" />
-    <link rel="prev" title="6. Ensembles of models and feature selection" href="05.html" />
+    <link rel="next" title="9. Conclusion" href="conclusion.html" />
+    <link rel="prev" title="7. Ensembles of models and feature selection" href="05.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,14 +184,15 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">2. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">3. Linear Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">4. Data Preprocessing, Local Models and Tree-Based Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">5. Neural Networks for Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">6. Ensembles of models and feature selection</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conclusion.html">8. Conclusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">9. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notation.html">2. Notation Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">3. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">4. Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. Data Preprocessing, Local Models and Tree-Based Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">6. Neural Networks for Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">7. Ensembles of models and feature selection</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">9. Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">10. Bibliography</a></li>
 </ul>
 
     </div>
@@ -340,38 +341,38 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">7.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">7.2. Data generation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-way">7.2.1. Generative way:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminative-way">7.2.2. Discriminative way</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">8.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">8.2. Data generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-way">8.2.1. Generative way:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminative-way">8.2.2. Discriminative way</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">7.3. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">7.3.1. Question 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">7.3.2. Question 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">7.3.3. Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.3. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">8.3.1. Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">8.3.2. Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">8.3.3. Question 3</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-and-model-evaluations-methods">7.4. Metrics and model evaluations methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-classifier">7.5. Bayes classifier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model-for-classification">7.6. Linear model for classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-layers-perceptron">7.6.1. Multi-layers perceptron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-and-model-evaluations-methods">8.4. Metrics and model evaluations methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-classifier">8.5. Bayes classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model-for-classification">8.6. Linear model for classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-layers-perceptron">8.6.1. Multi-layers perceptron</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.7. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">7.7.1. KNN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes">7.7.2. Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models">7.7.3. Other models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-classes">7.7.4. More classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.7. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">8.7.1. KNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes">8.7.2. Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models">8.7.3. Other models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-classes">8.7.4. More classes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">7.8. ROC curve</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.8.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-models">7.8.2. More models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">8.8. ROC curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">8.8.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-models">8.8.2. More models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unequal-costs">7.9. Unequal costs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.9.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unequal-costs">8.9. Unequal costs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +387,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="classification">
-<h1><span class="section-number">7. </span>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h1>
 <p>Let us define the basic imports and a <code class="docutils literal notranslate"><span class="pre">pprint</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -412,7 +413,7 @@ document.write(`
 </div>
 </div>
 <section id="introduction">
-<h2><span class="section-number">7.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>In classification problem, the target is a category (a discrete variable) and its conditional distribution is</p>
 <div class="math notranslate nohighlight">
 \[P({y}|x)\]</div>
@@ -429,10 +430,10 @@ document.write(`
 training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <span class="math notranslate nohighlight">\(N\)</span> observation pairs <span class="math notranslate nohighlight">\((x_i,y_i)\)</span> where <span class="math notranslate nohighlight">\(x_i \in \mathbb{R}^n\)</span>.</p>
 </section>
 <section id="data-generation">
-<h2><span class="section-number">7.2. </span>Data generation<a class="headerlink" href="#data-generation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Data generation<a class="headerlink" href="#data-generation" title="Link to this heading">#</a></h2>
 <p>As seen in the theoretical course, there are multiple ways to generate datasets for binary classification problems.</p>
 <section id="generative-way">
-<h3><span class="section-number">7.2.1. </span>Generative way:<a class="headerlink" href="#generative-way" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.1. </span>Generative way:<a class="headerlink" href="#generative-way" title="Link to this heading">#</a></h3>
 <p>First, generate the class <span class="math notranslate nohighlight">\(y_i \in \{0, 1\}\)</span>, <span class="math notranslate nohighlight">\(i \in \{1,...,N\}\)</span>, using the <em>a priori</em> probability, then generate the <span class="math notranslate nohighlight">\(x\)</span> values, given the <strong>class conditional density <span class="math notranslate nohighlight">\(p(x | \mathbf{y}=y_i)\)</span></strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -502,7 +503,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </section>
 <section id="discriminative-way">
-<h3><span class="section-number">7.2.2. </span>Discriminative way<a class="headerlink" href="#discriminative-way" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.2. </span>Discriminative way<a class="headerlink" href="#discriminative-way" title="Link to this heading">#</a></h3>
 <p>Otherwise, if we have the conditional distributions <span class="math notranslate nohighlight">\(P(y|x)\)</span>, we can first sample <span class="math notranslate nohighlight">\(x\)</span>, then determine the class <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,14 +580,14 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </section>
 </section>
 <section id="exercises">
-<h2><span class="section-number">7.3. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>For the lastly defined distributions, given three points <span class="math notranslate nohighlight">\(q=\{(0, 0), (3, 0), (0, 2)\}\)</span>, compute <span class="math notranslate nohighlight">\(P(\mathbf{y}| \mathbf{x}=q)\)</span> for each class <span class="math notranslate nohighlight">\(y\)</span>. Compute <span class="math notranslate nohighlight">\(p(q|\mathbf{y}=y)\)</span> for each class <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(P(\mathbf{y}=y)\)</span> for each class <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
 <li><p>Can you adapt the two procedures to get higher-dimensional data (i.e. <span class="math notranslate nohighlight">\(x\)</span> is not in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> but in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>) ?</p></li>
 <li><p>Can you adapt the two procedures to get more-classes data (i.e. <span class="math notranslate nohighlight">\(y\)</span> is not in <span class="math notranslate nohighlight">\(\{0, 1\}\)</span> but in <span class="math notranslate nohighlight">\(\{1,...,c_{k}\}\)</span>) ?</p></li>
 </ul>
 <section id="question-1">
-<h3><span class="section-number">7.3.1. </span>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.1. </span>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
 <p>Using Bayes’ theorem:</p>
 <div class="math notranslate nohighlight">
 \[P(\mathbf{y}= y | \mathbf{x} = q) = \frac{p(q | \mathbf{y} = y) P(\mathbf{y} = y)}{p(q)}\]</div>
@@ -667,7 +668,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </section>
 <section id="question-2">
-<h3><span class="section-number">7.3.2. </span>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.2. </span>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
@@ -693,7 +694,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </section>
 <section id="question-3">
-<h3><span class="section-number">7.3.3. </span>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.3. </span>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -771,7 +772,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </section>
 </section>
 <section id="metrics-and-model-evaluations-methods">
-<h2><span class="section-number">7.4. </span>Metrics and model evaluations methods<a class="headerlink" href="#metrics-and-model-evaluations-methods" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>Metrics and model evaluations methods<a class="headerlink" href="#metrics-and-model-evaluations-methods" title="Link to this heading">#</a></h2>
 <p>In the previous practicals, when we were dealing with regression tasks, we defined different metrics for evaluating the quality of some model’s predictions. Remind: we defined the Mean Squared Error, then, we normalized it to define the Normalized Mean Squared Error. We spoke about other metrics, such as the MAE. All those quantities, while highly informative when applied to continuous quantities, are not as useful when dealing with classes.</p>
 <p>Let us consider a practical example. You are assigned the task to determine if some rocket components are working (1) or not (0). In this task, it seems clear that the fact of assigning <em>working</em> to a <em>non-working</em> piece is worse than assigning <em>non-working</em> to a <em>working</em> piece (you could lose astronauts). However, this is not reflected by the MSE: in both cases, assigning the wrong label would lead to an error of <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>In binary classification, however, we can determine entirely the cases possible after prediction:</p>
@@ -814,7 +815,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 <p>Let us define furthermore the <em>True Positive Rate</em>, i.e., the proportion of True Positive on all the indeed positive samples, and, conversely, the  <em>False Positive Rate</em>, the proportion of False Positive on all the in fact positive samples.</p>
 </section>
 <section id="bayes-classifier">
-<h2><span class="section-number">7.5. </span>Bayes classifier<a class="headerlink" href="#bayes-classifier" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>Bayes classifier<a class="headerlink" href="#bayes-classifier" title="Link to this heading">#</a></h2>
 <p>Remind: for discrete inputs, the Bayes theorem states that:</p>
 <div class="math notranslate nohighlight">
 \[P(y|x) = \frac{P(x|y)P(y)}{P(x)}\]</div>
@@ -860,7 +861,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </section>
 <section id="linear-model-for-classification">
-<h2><span class="section-number">7.6. </span>Linear model for classification<a class="headerlink" href="#linear-model-for-classification" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>Linear model for classification<a class="headerlink" href="#linear-model-for-classification" title="Link to this heading">#</a></h2>
 <p>As it has been done for the regression tasks, we can use a linear model for classifying the previously generated points. As an example, in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, we can use the <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -877,7 +878,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </div>
 <section id="multi-layers-perceptron">
-<h3><span class="section-number">7.6.1. </span>Multi-layers perceptron<a class="headerlink" href="#multi-layers-perceptron" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.6.1. </span>Multi-layers perceptron<a class="headerlink" href="#multi-layers-perceptron" title="Link to this heading">#</a></h3>
 <p>Now, for fun, we can train another model to see how the space is then divided:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,9 +897,9 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </section>
 </section>
 <section id="id1">
-<h2><span class="section-number">7.7. </span>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>Exercises<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="knn">
-<h3><span class="section-number">7.7.1. </span>KNN<a class="headerlink" href="#knn" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.7.1. </span>KNN<a class="headerlink" href="#knn" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Implement a KNN classifier (<code class="docutils literal notranslate"><span class="pre">sklearn.neighbors.KNeighborsClassifier</span></code>).</p></li>
 <li><p>Vary <span class="math notranslate nohighlight">\(k\)</span> (e.g., 1, 5, 20) and visualize decision boundaries.</p></li>
@@ -922,7 +923,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </section>
 <section id="bayes">
-<h3><span class="section-number">7.7.2. </span>Bayes<a class="headerlink" href="#bayes" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.7.2. </span>Bayes<a class="headerlink" href="#bayes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Compute the true Bayes decision boundary using the known densities <span class="math notranslate nohighlight">\(p(x|y)\)</span>.</p></li>
 <li><p>Compare it to the decision boundaries of logistic regression and KNN.</p></li>
@@ -955,7 +956,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </section>
 <section id="other-models">
-<h3><span class="section-number">7.7.3. </span>Other models<a class="headerlink" href="#other-models" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.7.3. </span>Other models<a class="headerlink" href="#other-models" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Use other models to classify tests’ <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> and show their decision boundaries.</p></li>
 <li><p>Compare their performances using the different metrics.</p></li>
@@ -1004,7 +1005,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </div>
 </section>
 <section id="more-classes">
-<h3><span class="section-number">7.7.4. </span>More classes<a class="headerlink" href="#more-classes" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.7.4. </span>More classes<a class="headerlink" href="#more-classes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Generate a dataset with two features <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, with classes in <span class="math notranslate nohighlight">\(\{0, 1, 2, 3\}\)</span>. The probability for each class is <span class="math notranslate nohighlight">\([0.2, 0.3, 0.35, 0.15]\)</span>.</p></li>
 <li><p>Use a Logisitc Regression model to classify the points.</p></li>
@@ -1069,7 +1070,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </section>
 </section>
 <section id="roc-curve">
-<h2><span class="section-number">7.8. </span>ROC curve<a class="headerlink" href="#roc-curve" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.8. </span>ROC curve<a class="headerlink" href="#roc-curve" title="Link to this heading">#</a></h2>
 <p>Let us define two important notions:</p>
 <ul class="simple">
 <li><p>The <strong>sensibility</strong>: <span class="math notranslate nohighlight">\(\frac{\text{TP}}{\text{TP}+\text{FN}}\)</span>. On all the indeed positive cases, what is the portion of correctly assigned positive?</p></li>
@@ -1078,7 +1079,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 <p>Now, let us use a threshold model. That is, for a given threshold, if the sample is below, classify it as 0, otherwise classify it as 1. For multiple values of this threshold, the <strong>ROC</strong> curve (for <em>receiver operating characteristic</em>) is a plot in which the False Positive Rate is put in abscissa, and the sensibility in ordinate. The <strong>precision/recall</strong> plot displays the precision vs. the recall. Finally, the <strong>lift</strong> curve shows the proportion of <em>assigned positives</em> among all the points (the <em>alert</em> level).</p>
 <p>We can define the notion of <em>area under the ROC curve</em> (AUROC, often called AUC). In the best case, the area under the ROC curve is <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <section id="exercise">
-<h3><span class="section-number">7.8.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.8.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>For the previous dataset, implement (by hand):</p>
 <ul>
@@ -1181,7 +1182,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 <p>For recall, those are a few models for classification that output a score. Try to display their ROC curve as well. See slides 28-33 from the theoretical course for more information.</p>
 </section>
 <section id="more-models">
-<h3><span class="section-number">7.8.2. </span>More models<a class="headerlink" href="#more-models" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.8.2. </span>More models<a class="headerlink" href="#more-models" title="Link to this heading">#</a></h3>
 <p>First, this model compute the mean of the two classes clusters, and then computes the score as a function of the distance between the query point and those two means.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1248,7 +1249,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 </section>
 </section>
 <section id="unequal-costs">
-<h2><span class="section-number">7.9. </span>Unequal costs<a class="headerlink" href="#unequal-costs" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.9. </span>Unequal costs<a class="headerlink" href="#unequal-costs" title="Link to this heading">#</a></h2>
 <p>When the cost associated with False Negatives and False Positive are not equal, the computation cannot be used as is. Let us define two costs: <span class="math notranslate nohighlight">\(L_{FP}\)</span> and <span class="math notranslate nohighlight">\(L_{FN}\)</span>. Keep in mind, here, that we consider the two other costs <span class="math notranslate nohighlight">\(L_{TP}, L_{TN} = 0\)</span>. The expected cost for each possible decision is <span class="math notranslate nohighlight">\(L(1|x) = P(\mathbf{y}=0|x)L_{FP}\)</span> and <span class="math notranslate nohighlight">\(L(0|x) = P(\mathbf{y}=1|x)L_{FN}\)</span>. The two <em>a posteriori</em> probabilities <span class="math notranslate nohighlight">\(P(y|x)\)</span> can be estimated from the data. If we have <span class="math notranslate nohighlight">\(P(\mathbf{y}=1|x)\)</span>, for a sample <span class="math notranslate nohighlight">\(x\)</span>, we want to assign the class that minimizes the expected cost.</p>
 <p>We predict</p>
 <div class="math notranslate nohighlight">
@@ -1268,7 +1269,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
 <li><p>Otherwise, it is better to output <span class="math notranslate nohighlight">\(y=0\)</span>.</p></li>
 </ul>
 <section id="id2">
-<h3><span class="section-number">7.9.1. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.9.1. </span>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>In the generated data, suppose that having a FN has a cost of <span class="math notranslate nohighlight">\(1\)</span> while having a FP has a costof <span class="math notranslate nohighlight">\(0.2\)</span>. What is the threshold and the optimal class ?</p></li>
 </ul>
@@ -1313,7 +1314,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Ensembles of models and feature selection</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Ensembles of models and feature selection</p>
       </div>
     </a>
     <a class="right-next"
@@ -1321,7 +1322,7 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Conclusion</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Conclusion</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1341,38 +1342,38 @@ training set <span class="math notranslate nohighlight">\(D_N\)</span> made of <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">7.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">7.2. Data generation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-way">7.2.1. Generative way:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminative-way">7.2.2. Discriminative way</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">8.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation">8.2. Data generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-way">8.2.1. Generative way:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminative-way">8.2.2. Discriminative way</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">7.3. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">7.3.1. Question 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">7.3.2. Question 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">7.3.3. Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.3. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">8.3.1. Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">8.3.2. Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">8.3.3. Question 3</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-and-model-evaluations-methods">7.4. Metrics and model evaluations methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-classifier">7.5. Bayes classifier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model-for-classification">7.6. Linear model for classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-layers-perceptron">7.6.1. Multi-layers perceptron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-and-model-evaluations-methods">8.4. Metrics and model evaluations methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-classifier">8.5. Bayes classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model-for-classification">8.6. Linear model for classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-layers-perceptron">8.6.1. Multi-layers perceptron</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.7. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">7.7.1. KNN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes">7.7.2. Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models">7.7.3. Other models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-classes">7.7.4. More classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.7. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">8.7.1. KNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes">8.7.2. Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models">8.7.3. Other models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-classes">8.7.4. More classes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">7.8. ROC curve</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">7.8.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-models">7.8.2. More models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">8.8. ROC curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">8.8.1. Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-models">8.8.2. More models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unequal-costs">7.9. Unequal costs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.9.1. Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unequal-costs">8.9. Unequal costs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
