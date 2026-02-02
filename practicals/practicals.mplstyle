@@ -36,9 +36,9 @@ savefig.transparent    : True
 
 legend.fontsize        : 7
 legend.frameon         : True
-legend.loc             : best
+legend.loc             : best   
 
-font.family            : Lucida Grande, sans-serif
+font.family            : serif, Lucida Grande
 font.sans-serif        : sans-serif, DejaVu Sans, Helvetica, Arial
 text.color             : "#000000"
 
@@ -47,6 +47,6 @@ lines.markersize       : 3
 lines.markeredgewidth  : 0.4
 
 # Use LaTeX style math
-text.usetex            : False
+text.usetex            : True
 mathtext.fontset       : stix
 mathtext.default       : it
