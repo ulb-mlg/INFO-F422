@@ -581,52 +581,52 @@ A larger introduction to <code class="docutils literal notranslate"><span class=
 <p>The course of MATH-F315 - <em>Probabilités et Statistiques</em> has presented all the necessary materials used in this chapter. This is let as reference for the formal demonstrations of the tools and theorems used here. However, we propose a small review of the most important notions that will help you understand the exercises at the end of the chapter. Remember: the exercises are not meant to make you familiar with one specific practical implementation of the techniques and tools, they are intended to make you apply some well understood and completely digested statistical and probabilistic concepts. We strongly recommend the reader to delve in depth in the theoretical concepts related to the exercises.</p>
 <section id="expectation-and-variance">
 <h3><span class="section-number">2.3.1. </span>Expectation and Variance<a class="headerlink" href="#expectation-and-variance" title="Link to this heading">#</a></h3>
-<p>The expectation of a random variable <span class="math notranslate nohighlight">\(\mathbf X\)</span>, denoted <span class="math notranslate nohighlight">\(E[\mathbf X]\)</span>, is defined as:</p>
+<p>The expectation of a random variable <span class="math notranslate nohighlight">\(\mathbf x\)</span>, denoted <span class="math notranslate nohighlight">\(E[\mathbf x]\)</span>, is defined as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-E[\mathbf X] = \begin{cases}
-    \int_{-\infty}^{\infty} x f_{\mathbf X}(x) dx &amp; \text{for continuous $\mathbf X$} \\
-    \sum_{x} x p_{\mathbf X}(x) &amp; \text{for discrete $\mathbf X$}
+E[\mathbf x] = \begin{cases}
+    \int_{-\infty}^{\infty} x f_{\mathbf x}(x) dx &amp; \text{for continuous $\mathbf x$} \\
+    \sum_{x} x p_{\mathbf x}(x) &amp; \text{for discrete $\mathbf x$}
 \end{cases}
 \end{split}\]</div>
-<p>The variance of <span class="math notranslate nohighlight">\(\mathbf X\)</span>, denoted <span class="math notranslate nohighlight">\(\text{Var}(\mathbf X)\)</span>, measures the dispersion around the mean:</p>
+<p>The variance of <span class="math notranslate nohighlight">\(\mathbf x\)</span>, denoted <span class="math notranslate nohighlight">\(\text{Var}(\mathbf x)\)</span>, measures the dispersion around the mean:</p>
 <div class="math notranslate nohighlight">
 \[
-\text{Var}(\mathbf X) = E[(\mathbf X - E[\mathbf X])^2] = E[\mathbf X^2] - (E[\mathbf X])^2
+\text{Var}(\mathbf x) = E[(\mathbf x - E[\mathbf x])^2] = E[\mathbf x^2] - (E[\mathbf x])^2
 \]</div>
 <p>The variance is the square of the standard deviation.</p>
-<p>For two random variables <span class="math notranslate nohighlight">\(\mathbf X\)</span> and \mathbf <span class="math notranslate nohighlight">\(Y\)</span>, their covariance is defined as:</p>
+<p>For two random variables <span class="math notranslate nohighlight">\(\mathbf x\)</span> and \mathbf <span class="math notranslate nohighlight">\(Y\)</span>, their covariance is defined as:</p>
 <div class="math notranslate nohighlight">
 \[
-\text{Cov}(\mathbf X, \mathbf Y) = E[(\mathbf X - E[\mathbf X])(\mathbf Y - E[\mathbf Y])] = E[\mathbf X\mathbf Y] - E[\mathbf X]E[\mathbf Y]
+\text{Cov}(\mathbf x, \mathbf y) = E[(\mathbf x - E[\mathbf x])(\mathbf y - E[\mathbf y])] = E[\mathbf x\mathbf y] - E[\mathbf x]E[\mathbf y]
 \]</div>
-<p>The correlation coefficient, which measures the linear dependence between <span class="math notranslate nohighlight">\(\mathbf X\)</span> and <span class="math notranslate nohighlight">\(\mathbf Y\)</span>, is:</p>
+<p>The correlation coefficient, which measures the linear dependence between <span class="math notranslate nohighlight">\(\mathbf x\)</span> and <span class="math notranslate nohighlight">\(\mathbf y\)</span>, is:</p>
 <div class="math notranslate nohighlight">
 \[
-\rho_{\mathbf X,\mathbf Y} = \frac{\text{Cov}(\mathbf X, \mathbf Y)}{\sqrt{\text{Var}(\mathbf X) \cdot \text{Var}(\mathbf Y)}}
+\rho_{\mathbf x,\mathbf y} = \frac{\text{Cov}(\mathbf x, \mathbf y)}{\sqrt{\text{Var}(\mathbf x) \cdot \text{Var}(\mathbf y)}}
 \]</div>
 </section>
 <section id="common-probability-distributions">
 <h3><span class="section-number">2.3.2. </span>Common Probability Distributions<a class="headerlink" href="#common-probability-distributions" title="Link to this heading">#</a></h3>
 <section id="uniform-distribution">
 <h4><span class="section-number">2.3.2.1. </span>Uniform Distribution<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h4>
-<p>A random variable <span class="math notranslate nohighlight">\(\mathbf X\)</span> follows a uniform distribution on the interval <span class="math notranslate nohighlight">\([a, b]\)</span>, denoted <span class="math notranslate nohighlight">\(\mathbf X \sim \mathcal{U}(a, b)\)</span>, if its PDF is:</p>
+<p>A random variable <span class="math notranslate nohighlight">\(\mathbf x\)</span> follows a uniform distribution on the interval <span class="math notranslate nohighlight">\([a, b]\)</span>, denoted <span class="math notranslate nohighlight">\(\mathbf x \sim \mathcal{U}(a, b)\)</span>, if its PDF is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    f_{\mathbf X}(x) = \begin{cases}
+    f_{\mathbf x}(x) = \begin{cases}
     \frac{1}{b - a} &amp; \text{if } x \in [a, b] \\
     0 &amp; \text{otherwise}
     \end{cases}
 \end{split}\]</div>
-<p>The mean and variance are <span class="math notranslate nohighlight">\(E[\mathbf X] = \frac{a + b}{2}\)</span> and <span class="math notranslate nohighlight">\(\text{Var}\mathbf (X) = \frac{(b - a)^2}{12}\)</span>, respectively.
+<p>The mean and variance are <span class="math notranslate nohighlight">\(E[\mathbf x] = \frac{a + b}{2}\)</span> and <span class="math notranslate nohighlight">\(\text{Var}\mathbf (X) = \frac{(b - a)^2}{12}\)</span>, respectively.
 In <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the uniform distribution can be sampled with the <code class="docutils literal notranslate"><span class="pre">numpy.random.uniform</span></code> function.</p>
 </section>
 <section id="normal-gaussian-distribution">
 <h4><span class="section-number">2.3.2.2. </span>Normal (Gaussian) Distribution<a class="headerlink" href="#normal-gaussian-distribution" title="Link to this heading">#</a></h4>
-<p>A random variable <span class="math notranslate nohighlight">\(\mathbf X\)</span> follows a normal distribution with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>, denoted <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, if its PDF is:</p>
+<p>A random variable <span class="math notranslate nohighlight">\(\mathbf x\)</span> follows a normal distribution with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>, denoted <span class="math notranslate nohighlight">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, if its PDF is:</p>
 <div class="math notranslate nohighlight">
 \[
-    f_{\mathbf X}(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+    f_{\mathbf x}(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the mean and <span class="math notranslate nohighlight">\(\sigma^2\)</span> is the variance.
 In <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the uniform distribution can be sampled with the <code class="docutils literal notranslate"><span class="pre">numpy.random.normal</span></code> function.</p>
@@ -961,7 +961,7 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 <p>Secondly, the variance of <span class="math notranslate nohighlight">\(\mathbf y=\mathbf z^2\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
-    Var[\mathbf z^2] = E[\mathbf Z^4]-(E[\mathbf z^2])^2
+    Var[\mathbf z^2] = E[\mathbf z^4]-(E[\mathbf z^2])^2
 \]</div>
 <p>The second term is already known (<span class="math notranslate nohighlight">\(E[\mathbf z^2] = \sigma^2+\mu^2\)</span>). The first term is the fourth moment (for the development, see the notion <em>moment generating function</em> in the course of <em>Probabilités et Statistiques</em>) of a normal variable, i.e.:</p>
 <div class="math notranslate nohighlight">
