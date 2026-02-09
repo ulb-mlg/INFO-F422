@@ -1,0 +1,1208 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>INFO-F-422 - Statistical Foundations of Machine Learning &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'without_solutions/02_without_solutions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../frontpage.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../frontpage.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">Notation Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/without_solutions/02_without_solutions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>INFO-F-422 -  Statistical Foundations of Machine Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gian-marco-paldino-gian-marco-paldino-ulb-be">Gian Marco Paldino - <strong>gian.marco.paldino@ulb.be</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cedric-simar-cedric-simar-ulb-be">Cédric Simar - <strong>cedric.simar@ulb.be</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pascal-tribel-pascal-tribel-ulb-be">Pascal Tribel - <strong>pascal.tribel@ulb.be</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-2-linear-models">TP 2 - Linear Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#february-2025">February 2025</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-synthetic-multivariate-data">1. Generating Synthetic Multivariate Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-data-inspection">Quick Data Inspection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-ols-computation-matrix-form">2. Manual OLS Computation (Matrix Form)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-analysis-and-tests">3. Residual Analysis and Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residuals-vs-fitted-plot">1. Residuals vs. Fitted Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-q-q-plot-quantile-quantile-plot"><strong>2. Normal Q-Q Plot (Quantile-Quantile Plot)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-transformations-polynomial">4. Input Transformations (Polynomial)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-still-a-linear-model"><strong>Example: Still a Linear Model</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-not-be-a-linear-model"><strong>What Would NOT Be a Linear Model?</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-polynomial-features-in-linear-regression"><strong>Why Use Polynomial Features in Linear Regression?</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-feature-expansion"><strong>Polynomial Feature Expansion</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example"><strong>Example</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-implement-polynomial-features-in-python"><strong>How to Implement Polynomial Features in Python</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fpe-vs-mse">5. FPE vs MSE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-separate-section">6. Ridge Regression (Separate Section)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-closed-form-optional-manual">6.1 Ridge Closed-form (Optional Manual)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-analysis-for-ridge">6.3 Residual analysis for Ridge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-comments">Final Comments</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="info-f-422-statistical-foundations-of-machine-learning">
+<h1>INFO-F-422 -  Statistical Foundations of Machine Learning<a class="headerlink" href="#info-f-422-statistical-foundations-of-machine-learning" title="Link to this heading">#</a></h1>
+<section id="gian-marco-paldino-gian-marco-paldino-ulb-be">
+<h2>Gian Marco Paldino - <strong><a class="reference external" href="mailto:gian&#46;marco&#46;paldino&#37;&#52;&#48;ulb&#46;be">gian<span>&#46;</span>marco<span>&#46;</span>paldino<span>&#64;</span>ulb<span>&#46;</span>be</a></strong><a class="headerlink" href="#gian-marco-paldino-gian-marco-paldino-ulb-be" title="Link to this heading">#</a></h2>
+</section>
+<section id="cedric-simar-cedric-simar-ulb-be">
+<h2>Cédric Simar - <strong><a class="reference external" href="mailto:cedric&#46;simar&#37;&#52;&#48;ulb&#46;be">cedric<span>&#46;</span>simar<span>&#64;</span>ulb<span>&#46;</span>be</a></strong><a class="headerlink" href="#cedric-simar-cedric-simar-ulb-be" title="Link to this heading">#</a></h2>
+</section>
+<section id="pascal-tribel-pascal-tribel-ulb-be">
+<h2>Pascal Tribel - <strong><a class="reference external" href="mailto:pascal&#46;tribel&#37;&#52;&#48;ulb&#46;be">pascal<span>&#46;</span>tribel<span>&#64;</span>ulb<span>&#46;</span>be</a></strong><a class="headerlink" href="#pascal-tribel-pascal-tribel-ulb-be" title="Link to this heading">#</a></h2>
+</section>
+<section id="tp-2-linear-models">
+<h2>TP 2 - Linear Models<a class="headerlink" href="#tp-2-linear-models" title="Link to this heading">#</a></h2>
+<section id="february-2025">
+<h3>February 2025<a class="headerlink" href="#february-2025" title="Link to this heading">#</a></h3>
+<p>In this session, we will:</p>
+<ol class="arabic simple">
+<li><p>Generate synthetic multivariate data.</p></li>
+<li><p><strong>Manually compute</strong> the Ordinary Least Squares (OLS) solution (matrix form).</p></li>
+<li><p>Compare manual OLS results with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> OLS.</p></li>
+<li><p>Introduce <strong>transformations</strong> of inputs (e.g., polynomial, RBF expansions)</p></li>
+<li><p>Explore <strong>Ridge regression</strong> (manual formula vs. scikit-learn).</p></li>
+</ol>
+<p>We assume basic familiarity with matrix algebra and Python packages such as numpy, pandas, and statsmodels.</p>
+</section>
+</section>
+<section id="generating-synthetic-multivariate-data">
+<h2>1. Generating Synthetic Multivariate Data<a class="headerlink" href="#generating-synthetic-multivariate-data" title="Link to this heading">#</a></h2>
+<p>We’ll create a dataset where <code class="docutils literal notranslate"><span class="pre">Y</span></code> depends on three features: <code class="docutils literal notranslate"><span class="pre">X1,</span> <span class="pre">X2,</span> <span class="pre">X3</span></code>.
+The true data-generating process (DGP) is:</p>
+<div class="math notranslate nohighlight">
+\[
+  Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \epsilon,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon \sim \mathcal{N}(0, \sigma^2)\)</span>.</p>
+<section id="steps">
+<h3>Steps<a class="headerlink" href="#steps" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">N</span></code> observations of <code class="docutils literal notranslate"><span class="pre">(X1,</span> <span class="pre">X2,</span> <span class="pre">X3)</span></code>.</p></li>
+<li><p>Define true coefficients <code class="docutils literal notranslate"><span class="pre">beta_true</span></code>.</p></li>
+<li><p>Generate noise and produce <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p></li>
+<li><p>Store everything in a DataFrame for convenience.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>statsmodels<span class="w"> </span>scipy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (2.3.4)
+Requirement already satisfied: pandas in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (2.3.3)
+Requirement already satisfied: matplotlib in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (3.10.0)
+Requirement already satisfied: seaborn in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (0.13.2)
+Requirement already satisfied: statsmodels in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (0.14.6)
+Requirement already satisfied: scipy in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (1.16.3)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from pandas) (2025.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler&gt;=0.10 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from matplotlib) (4.55.3)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: packaging&gt;=20.0 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow&gt;=8 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from matplotlib) (2.4.7)
+Requirement already satisfied: patsy&gt;=0.5.6 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from statsmodels) (1.0.1)
+Requirement already satisfied: six&gt;=1.5 in /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">probplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="c1"># Number of data points</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="c1"># True noise standard deviation</span>
+<span class="n">sigma_true</span> <span class="o">=</span> <span class="mf">2.0</span>
+
+<span class="c1"># True coefficients (beta0, beta1, beta2, beta3)</span>
+<span class="n">beta_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+
+<span class="c1"># Generate X1, X2, X3</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Build DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X1&#39;</span><span class="p">:</span><span class="n">X1</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">:</span><span class="n">X2</span><span class="p">,</span> <span class="s1">&#39;X3&#39;</span><span class="p">:</span><span class="n">X3</span><span class="p">})</span>
+
+<span class="c1"># Generate the true Y (without noise)</span>
+<span class="n">Y_true</span> <span class="o">=</span> <span class="p">(</span><span class="n">beta_true</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">]</span>
+          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X2&#39;</span><span class="p">]</span>
+          <span class="o">+</span> <span class="n">beta_true</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;X3&#39;</span><span class="p">])</span>
+
+<span class="c1"># Add noise</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma_true</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y_true</span> <span class="o">+</span> <span class="n">noise</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X1</th>
+      <th>X2</th>
+      <th>X3</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.964692</td>
+      <td>0.852719</td>
+      <td>-3.510804</td>
+      <td>5.687964</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-2.138607</td>
+      <td>-8.664511</td>
+      <td>-0.697215</td>
+      <td>16.509223</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.731485</td>
+      <td>3.067297</td>
+      <td>-0.385230</td>
+      <td>-4.050829</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.513148</td>
+      <td>9.921727</td>
+      <td>0.898271</td>
+      <td>-12.453060</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.194690</td>
+      <td>5.387947</td>
+      <td>-0.290727</td>
+      <td>-1.697682</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="quick-data-inspection">
+<h3>Quick Data Inspection<a class="headerlink" href="#quick-data-inspection" title="Link to this heading">#</a></h3>
+<p>Note: the <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> includes a linear regression of the pairs of data. We will see later how to manually compute this regression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;reg&#39;</span><span class="p">,</span> <span class="n">plot_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;line_kws&#39;</span><span class="p">:{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;red&#39;</span><span class="p">}})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Pairplot of the Generated Data&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               X1          X2          X3           Y
+count  200.000000  200.000000  200.000000  200.000000
+mean     0.032708   -0.193044   -0.112239    5.572700
+std      2.663947    5.907073    1.963533   12.473036
+min     -4.973119   -9.929356   -5.262876  -20.342999
+25%     -1.953937   -5.254828   -1.286318   -4.258475
+50%      0.207716   -0.714124   -0.101728    5.417761
+75%      2.181854    5.168943    1.206797   14.861563
+max      4.953585    9.921727    4.501352   30.849943
+</pre></div>
+</div>
+<img alt="../_images/95ab544fe88d4140d8c73713a28d15d15389425155b03ee5289601866a7542f5.png" src="../_images/95ab544fe88d4140d8c73713a28d15d15389425155b03ee5289601866a7542f5.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="manual-ols-computation-matrix-form">
+<h2>2. Manual OLS Computation (Matrix Form)<a class="headerlink" href="#manual-ols-computation-matrix-form" title="Link to this heading">#</a></h2>
+<p>We make the hypothesis of a linear relationship between the data, yielding a model of the form:
+$<span class="math notranslate nohighlight">\(
+   \mathbf{Y} = X \boldsymbol{\beta} + \boldsymbol{\epsilon},
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>X<span class="math notranslate nohighlight">\( is an \)</span>N \times p$ matrix (including the column of ones for the intercept).</p>
+<p>In closed form, Ordinary Least Squares is described by:
+$<span class="math notranslate nohighlight">\(
+   \hat{\boldsymbol{\beta}} = \bigl(X^\top X\bigr)^{-1} X^\top \mathbf{Y}.
+\)</span>$</p>
+<section id="exercise">
+<h3>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Construct the design matrix manually.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> using <code class="docutils literal notranslate"><span class="pre">np.linalg.inv(...)</span></code>.</p></li>
+<li><p>Compare with the true coefficients <code class="docutils literal notranslate"><span class="pre">beta_true</span></code>.</p></li>
+<li><p>Compare with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> OLS results.</p></li>
+</ol>
+<p>Note: the <code class="docutils literal notranslate"><span class="pre">np.ones</span></code> column that we include in the <span class="math notranslate nohighlight">\(X\)</span> feature matrix allows the regression of the intercept (i.e. allows to determine the value of <span class="math notranslate nohighlight">\(y\)</span> if all features <span class="math notranslate nohighlight">\(x\)</span> are <span class="math notranslate nohighlight">\(0\)</span>).</p>
+</section>
+</section>
+<section id="residual-analysis-and-tests">
+<h2>3. Residual Analysis and Tests<a class="headerlink" href="#residual-analysis-and-tests" title="Link to this heading">#</a></h2>
+<p>Once we have the fitted model, let’s analyze <strong>residuals</strong>:
+$<span class="math notranslate nohighlight">\(
+  e_i = y_i - \hat{y}_i.
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">residuals</span> <span class="o">=</span> <span class="n">model_ols</span><span class="o">.</span><span class="n">resid</span>
+<span class="n">fitted_vals</span> <span class="o">=</span> <span class="n">model_ols</span><span class="o">.</span><span class="n">fittedvalues</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">residuals</span> <span class="o">=</span> <span class="n">model_ols</span><span class="o">.</span><span class="n">resid</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fitted_vals</span> <span class="o">=</span> <span class="n">model_ols</span><span class="o">.</span><span class="n">fittedvalues</span>
+
+<span class="ne">NameError</span>: name &#39;model_ols&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>When evaluating the quality of a regression model, it is crucial to check whether the underlying assumptions hold (i.e. the initial hypothesis of linear relationship that we have stated in the beginning). Two common residual diagnostic plots are:</p>
+<section id="residuals-vs-fitted-plot">
+<h3>1. Residuals vs. Fitted Plot<a class="headerlink" href="#residuals-vs-fitted-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Purpose</strong>: This plot helps detect <strong>non-linearity</strong> and <strong>heteroscedasticity</strong> (unequal variance of residuals).</p></li>
+<li><p><strong>How it works</strong>:</p>
+<ul>
+<li><p>The <strong>x-axis</strong> represents the fitted (predicted) values from the regression model.</p></li>
+<li><p>The <strong>y-axis</strong> represents the residuals (errors).</p></li>
+<li><p>Ideally, the residuals should be randomly scattered around zero, forming a <strong>homogeneous “cloud”</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Interpretation</strong>:</p>
+<ul>
+<li><p>If a clear pattern (e.g., a curve) appears, it suggests <strong>non-linearity</strong>, meaning the model might be missing key features or transformations.</p></li>
+<li><p>If the spread of residuals <strong>increases or decreases systematically</strong>, it indicates <strong>heteroscedasticity</strong>, meaning the variance of errors is not constant, which violates regression assumptions.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Residual vs. Fitted</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">fitted_vals</span><span class="p">,</span> <span class="n">residuals</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Fitted Values&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Residuals&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Residuals vs. Fitted&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="normal-q-q-plot-quantile-quantile-plot">
+<h3><strong>2. Normal Q-Q Plot (Quantile-Quantile Plot)</strong><a class="headerlink" href="#normal-q-q-plot-quantile-quantile-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Purpose</strong>: Checks whether the residuals follow a <strong>normal distribution</strong>, a key assumption in many regression analyses.</p></li>
+<li><p>Note: if it is not the case, using the knowledge about the distribution could help.</p></li>
+<li><p><strong>How it works</strong>:</p>
+<ul>
+<li><p>The <strong>x-axis</strong> shows the theoretical quantiles (expected values under normality).</p></li>
+<li><p>The <strong>y-axis</strong> shows the actual quantiles from the residuals.</p></li>
+<li><p>If the residuals are normally distributed, they should closely follow a <strong>straight diagonal line</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Interpretation</strong>:</p>
+<ul>
+<li><p><strong>Straight-line alignment</strong>: Residuals are normally distributed.</p></li>
+<li><p><strong>Deviations (e.g., S-shape, heavy tails, skewed distribution)</strong>: Suggests non-normal residuals, which might indicate missing variables, skewed data, or influential outliers.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>For the previously computed residuals, show the Q-Q plot, either in plain Matplotlib, or using the <code class="docutils literal notranslate"><span class="pre">probplot</span></code> function.</p>
+</section>
+</section>
+<section id="input-transformations-polynomial">
+<h2>4. Input Transformations (Polynomial)<a class="headerlink" href="#input-transformations-polynomial" title="Link to this heading">#</a></h2>
+<p>When we talk about <strong>linear regression</strong>, we mean that the model is <strong>linear in parameters</strong>, not necessarily in the input variables <span class="math notranslate nohighlight">\(X\)</span>. That is, the target variable <span class="math notranslate nohighlight">\(y\)</span> is modeled as a <strong>linear combination of parameters</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \beta_0 + \beta_1 f_1(X) + \beta_2 f_2(X) + \dots + \beta_n f_n(X) + \epsilon
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \beta_0, \beta_1, \dots, \beta_n \)</span> are the regression coefficients.</p></li>
+<li><p><span class="math notranslate nohighlight">\( f_i(X) \)</span> are <strong>functions of the input features</strong> (which can be non-linear transformations like squares or interaction terms).</p></li>
+<li><p><span class="math notranslate nohighlight">\( \epsilon \)</span> is the error term.</p></li>
+</ul>
+<section id="example-still-a-linear-model">
+<h3><strong>Example: Still a Linear Model</strong><a class="headerlink" href="#example-still-a-linear-model" title="Link to this heading">#</a></h3>
+<p>Even if we introduce <strong>non-linear transformations</strong> of <span class="math notranslate nohighlight">\(X\)</span>, as long as the model is <strong>linear in the parameters</strong> <span class="math notranslate nohighlight">\( \beta_i \)</span>, it is still considered a <strong>linear model</strong>. For example:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \beta_0 + \beta_1 X + \beta_2 X^2 + \epsilon
+\]</div>
+<p>This model includes a quadratic term (<span class="math notranslate nohighlight">\(X^2\)</span>), but is still a <strong>linear regression model</strong> because it remains a linear combination of the parameters <span class="math notranslate nohighlight">\(\beta_0, \beta_1, \beta_2\)</span>.</p>
+</section>
+<section id="what-would-not-be-a-linear-model">
+<h3><strong>What Would NOT Be a Linear Model?</strong><a class="headerlink" href="#what-would-not-be-a-linear-model" title="Link to this heading">#</a></h3>
+<p>A regression model becomes <strong>non-linear in parameters</strong> if the parameters appear in a non-linear way. For example:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \beta_0 + e^{\beta_1 X} + \epsilon
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+y = \frac{1}{\beta_0 + \beta_1 X} + \epsilon
+\]</div>
+<p>These models are <strong>non-linear in parameters</strong> because the relationship between <span class="math notranslate nohighlight">\(y\)</span> and the <span class="math notranslate nohighlight">\(\beta\)</span> coefficients is no longer a simple linear combination.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="why-use-polynomial-features-in-linear-regression">
+<h2><strong>Why Use Polynomial Features in Linear Regression?</strong><a class="headerlink" href="#why-use-polynomial-features-in-linear-regression" title="Link to this heading">#</a></h2>
+<p>Since linear regression allows us to use <strong>non-linear transformations of <span class="math notranslate nohighlight">\(X\)</span></strong> while keeping the model linear in parameters, we can <strong>extend linear regression</strong> to capture more complex relationships.</p>
+<section id="polynomial-feature-expansion">
+<h3><strong>Polynomial Feature Expansion</strong><a class="headerlink" href="#polynomial-feature-expansion" title="Link to this heading">#</a></h3>
+<p>Given original features <span class="math notranslate nohighlight">\( X_1, X_2, X_3 \)</span>, we can introduce:</p>
+<ul class="simple">
+<li><p><strong>Squared terms</strong>: <span class="math notranslate nohighlight">\( X_1^2, X_2^2, X_3^2 \)</span> → captures curvature.</p></li>
+<li><p><strong>Interaction terms</strong>: <span class="math notranslate nohighlight">\( X_1X_2, X_1X_3, X_2X_3 \)</span> → captures relationships between variables.</p></li>
+</ul>
+<p>By expanding the features in this way, we allow a linear regression model to <strong>approximate non-linear patterns</strong> in the data, making it more flexible while maintaining its interpretability.</p>
+</section>
+<section id="example">
+<h3><strong>Example</strong><a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>A second-degree polynomial regression model:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_1^2 + \beta_5 X_2^2 + \beta_6 X_3^2 + \beta_7 X_1X_2 + \beta_8 X_1X_3 + \beta_9 X_2X_3 + \epsilon
+\]</div>
+<p>This is still <strong>a linear model in parameters</strong> but now captures non-linear relationships in <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="how-to-implement-polynomial-features-in-python">
+<h3><strong>How to Implement Polynomial Features in Python</strong><a class="headerlink" href="#how-to-implement-polynomial-features-in-python" title="Link to this heading">#</a></h3>
+<p>In Python, we can generate polynomial features using <code class="docutils literal notranslate"><span class="pre">sklearn.preprocessing.PolynomialFeatures</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+
+<span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">X_poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span><span class="s1">&#39;X2&#39;</span><span class="p">,</span><span class="s1">&#39;X3&#39;</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original shape:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span><span class="s1">&#39;X2&#39;</span><span class="p">,</span><span class="s1">&#39;X3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polynomial shape:&quot;</span><span class="p">,</span> <span class="n">X_poly</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Build a new design matrix with intercept for manual OLS:</span>
+<span class="n">X_poly_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">X_poly</span><span class="p">])</span>  <span class="c1"># shape: (N, num_features+1)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>Exercise<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Perform manually the OLS method to do the polynomial regression of the previously defined <code class="docutils literal notranslate"><span class="pre">Y</span></code> vector according to the polynomial <span class="math notranslate nohighlight">\(X\)</span> matrix.
+Recall: in closed form, Ordinary Least Squares is described by:
+$<span class="math notranslate nohighlight">\(
+   \hat{\boldsymbol{\beta}} = \bigl(X^\top X\bigr)^{-1} X^\top \mathbf{Y}.
+\)</span>$</p>
+</section>
+</section>
+<section id="fpe-vs-mse">
+<h2>5. FPE vs MSE<a class="headerlink" href="#fpe-vs-mse" title="Link to this heading">#</a></h2>
+<p>We can use the Final Predicted Error instead of the Mean Squared Error, since (as shown in the theroretical course, slides 27-31), the MSE is biased and the FPE solves the bias problem.
+To show the difference between both estimations of the error, we will try to fit some data that follow some ground truth
+$<span class="math notranslate nohighlight">\(y = \beta_0+ \beta_1 x_1 + \beta_2 x_2^2 + \beta_3 x_3^3 + \epsilon\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, we build a training set and a testing set. The training set hat <span class="math notranslate nohighlight">\(35\)</span> points and the testing set is a vector made of equally spaced points between <span class="math notranslate nohighlight">\([-1, 1]\)</span>, allowing the evaluation on the whole space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">p_max</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">N_train</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N_train</span><span class="p">))</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N_train</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">X</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="n">j</span><span class="p">))</span>
+
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_test</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">X_test</span><span class="p">,</span> <span class="n">x_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="n">j</span><span class="p">))</span>
+
+<span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(([</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="p">:</span><span class="n">p</span><span class="p">]</span> <span class="o">@</span> <span class="n">beta</span>
+<span class="n">f_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[:,</span> <span class="p">:</span><span class="n">p</span><span class="p">]</span> <span class="o">@</span> <span class="n">beta</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">Y_test</span> <span class="o">=</span> <span class="n">f_test</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X shape: </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Y shape: </span><span class="si">{</span><span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X test shape: </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Y test shape: </span><span class="si">{</span><span class="n">Y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We add noise to the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sd_w</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd_w</span><span class="p">,</span> <span class="n">N_train</span><span class="p">)</span>
+<span class="n">Y_test</span> <span class="o">=</span> <span class="n">Y_test</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sd_w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">f_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R_emp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">MISE</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">FPE</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">PSE</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">no_par</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">XX</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="p">:</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">invX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">XX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">XX</span><span class="p">)</span>
+        <span class="n">beta_hat</span> <span class="o">=</span> <span class="n">invX</span> <span class="o">@</span> <span class="n">XX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Y</span>
+        <span class="n">Y_hat</span> <span class="o">=</span> <span class="n">XX</span> <span class="o">@</span> <span class="n">beta_hat</span>
+    
+        <span class="n">XXts</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[:,</span> <span class="p">:</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">Y_hats</span> <span class="o">=</span> <span class="n">XXts</span> <span class="o">@</span> <span class="n">beta_hat</span>
+        <span class="n">no_par</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    
+        <span class="n">e</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">-</span> <span class="n">Y_hat</span>
+        <span class="n">R_emp</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+        <span class="n">sde2hat</span> <span class="o">=</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
+    
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">f_test</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True function&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Points&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">Y_hats</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted function&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">Y</span><span class="p">))</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        
+        <span class="n">e_ts</span> <span class="o">=</span> <span class="n">Y_test</span> <span class="o">-</span> <span class="n">Y_hats</span>
+        <span class="n">MISE</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">e_ts</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">e_ts</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+        <span class="n">FPE</span><span class="o">.</span><span class="n">append</span><span class="p">(((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">i</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span> <span class="o">/</span> <span class="n">N</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+        <span class="n">PSE</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sde2hat</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+        
+        <span class="n">ax</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;degree=</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">; MISE_emp=</span><span class="si">{</span><span class="n">MISE</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">;</span><span class="se">\n</span><span class="s2">FPE=</span><span class="si">{</span><span class="n">FPE</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">; PSE=</span><span class="si">{</span><span class="n">PSE</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">no_par</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R_emp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Empirical risk&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;# parameters&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Empirical risk&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Empirical risk&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">no_par</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MISE</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Generalization error&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;# parameters&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Generalization error&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Generalization error&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">no_par</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">FPE</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FPE&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;# parameters&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;FPE&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;FPE&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">no_par</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">PSE</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PSE&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;# parameters&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PSE&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;PSE&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;which.min(R.emp)=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">R_emp</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;which.min(MISE)=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">MISE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;which.min(FPE)=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">FPE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;which.min(PSE)=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">PSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ridge-regression-separate-section">
+<h2>6. Ridge Regression (Separate Section)<a class="headerlink" href="#ridge-regression-separate-section" title="Link to this heading">#</a></h2>
+<p>For complex expansions (like polynomial of high degree or many RBF components), <strong>overfitting</strong> can happen.
+Ridge regression adds an L2 penalty:
+$<span class="math notranslate nohighlight">\(
+  \min_{\beta} \;\; \| Y - X \beta \|^2 + \alpha \| \beta \|^2.
+\)</span>$</p>
+<section id="ridge-closed-form-optional-manual">
+<h3>6.1 Ridge Closed-form (Optional Manual)<a class="headerlink" href="#ridge-closed-form-optional-manual" title="Link to this heading">#</a></h3>
+<p>Ridge also has a known closed-form:
+$<span class="math notranslate nohighlight">\(
+  \hat{\beta}_{\mathrm{ridge}} = (X^\top X + \alpha I)^{-1} X^\top Y.
+\)</span>$</p>
+<p>We’ll show a manual solution, then compare to scikit-learn. We’ll do it on the <strong>polynomial features</strong> for illustration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6.1 Manual ridge on polynomial features</span>
+<span class="n">alpha_ridge</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">I_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">X_poly_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># dimension p x p, where p = number of poly features + 1 (intercept)</span>
+
+<span class="c1"># Usually we do not regularize the intercept, so we might set I_p[0,0] = 0.</span>
+<span class="c1"># Let&#39;s do that to avoid shrinking the intercept:</span>
+<span class="n">I_p</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="n">XTX_ridge</span> <span class="o">=</span> <span class="n">X_poly_mat</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X_poly_mat</span> <span class="o">+</span> <span class="n">alpha_ridge</span><span class="o">*</span><span class="n">I_p</span>
+<span class="n">XTX_ridge_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">XTX_ridge</span><span class="p">)</span>
+<span class="n">XTy_ridge</span> <span class="o">=</span> <span class="n">X_poly_mat</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">y_vec</span>
+<span class="n">beta_hat_ridge_manual</span> <span class="o">=</span> <span class="n">XTX_ridge_inv</span> <span class="o">@</span> <span class="n">XTy_ridge</span>
+<span class="n">beta_hat_ridge_manual</span> <span class="o">=</span> <span class="n">beta_hat_ridge_manual</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Manual Ridge (polynomial) shape:&quot;</span><span class="p">,</span> <span class="n">beta_hat_ridge_manual</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Manual Ridge Coeffs (first 10):&quot;</span><span class="p">,</span> <span class="n">beta_hat_ridge_manual</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6.2 Compare with scikit-learn Ridge</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ridge</span>
+
+<span class="n">ridge_sklearn</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha_ridge</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<span class="c1"># &quot;fit_intercept=False&quot; because we already included the intercept column in X_poly_mat</span>
+<span class="c1"># We will manually set the intercept to match the first column or we can remove intercept from X_poly_mat.</span>
+
+<span class="n">ridge_sklearn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_poly_mat</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">])</span>
+<span class="n">beta_hat_ridge_sklearn</span> <span class="o">=</span> <span class="n">ridge_sklearn</span><span class="o">.</span><span class="n">coef_</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;scikit-learn Ridge Coeffs (first 10):&quot;</span><span class="p">,</span> <span class="n">beta_hat_ridge_sklearn</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Difference (manual - sklearn):&quot;</span><span class="p">,</span> 
+      <span class="p">(</span><span class="n">beta_hat_ridge_manual</span> <span class="o">-</span> <span class="n">beta_hat_ridge_sklearn</span><span class="p">)[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>They should be nearly identical (tiny floating discrepancies may occur).</p>
+</section>
+<section id="residual-analysis-for-ridge">
+<h3>6.3 Residual analysis for Ridge<a class="headerlink" href="#residual-analysis-for-ridge" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_ridge</span> <span class="o">=</span> <span class="n">X_poly_mat</span> <span class="o">@</span> <span class="n">beta_hat_ridge_manual</span>
+<span class="n">resid_ridge</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_pred_ridge</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_pred_ridge</span><span class="p">,</span> <span class="n">resid_ridge</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Fitted values (Ridge, polynomial)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Residuals&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Residuals vs. Fitted (Ridge)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Remarks</strong>:</p>
+<ul class="simple">
+<li><p>As alpha_ridge increases, the polynomial coefficients shrink more, typically reducing variance (but possibly increasing bias).</p></li>
+<li><p>We can further use cross-validation to select alpha automatically or do a hyperparameter grid.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="final-comments">
+<h2>Final Comments<a class="headerlink" href="#final-comments" title="Link to this heading">#</a></h2>
+<p><strong>In this TP</strong>:</p>
+<ol class="arabic simple">
+<li><p>We generated <strong>multivariate</strong> synthetic data with known coefficients.</p></li>
+<li><p><strong>Manually computed</strong> the OLS solution and compared results with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> OLS.</p></li>
+<li><p><strong>Performed residual tests</strong> (residual vs. fitted, Q-Q plots).</p></li>
+<li><p>Introduced <strong>Polynomial expansions</strong> and <strong>RBF expansions</strong></p></li>
+<li><p>Introduced <strong>Ridge regression</strong>.</p></li>
+</ol>
+<p>This workflow demonstrates how to:</p>
+<ul class="simple">
+<li><p>Implement linear models using the <strong>closed-form</strong> normal equations.</p></li>
+<li><p>Expand the feature space to handle <strong>non-linear</strong> relationships.</p></li>
+<li><p>Use <strong>regularization</strong> (ridge) to mitigate overfitting in high-dimensional expansions.</p></li>
+</ul>
+<p><em>End of TP2</em>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./without_solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gian-marco-paldino-gian-marco-paldino-ulb-be">Gian Marco Paldino - <strong>gian.marco.paldino@ulb.be</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cedric-simar-cedric-simar-ulb-be">Cédric Simar - <strong>cedric.simar@ulb.be</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pascal-tribel-pascal-tribel-ulb-be">Pascal Tribel - <strong>pascal.tribel@ulb.be</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-2-linear-models">TP 2 - Linear Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#february-2025">February 2025</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-synthetic-multivariate-data">1. Generating Synthetic Multivariate Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-data-inspection">Quick Data Inspection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-ols-computation-matrix-form">2. Manual OLS Computation (Matrix Form)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-analysis-and-tests">3. Residual Analysis and Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residuals-vs-fitted-plot">1. Residuals vs. Fitted Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-q-q-plot-quantile-quantile-plot"><strong>2. Normal Q-Q Plot (Quantile-Quantile Plot)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-transformations-polynomial">4. Input Transformations (Polynomial)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-still-a-linear-model"><strong>Example: Still a Linear Model</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-would-not-be-a-linear-model"><strong>What Would NOT Be a Linear Model?</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-polynomial-features-in-linear-regression"><strong>Why Use Polynomial Features in Linear Regression?</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-feature-expansion"><strong>Polynomial Feature Expansion</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example"><strong>Example</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-implement-polynomial-features-in-python"><strong>How to Implement Polynomial Features in Python</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fpe-vs-mse">5. FPE vs MSE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-separate-section">6. Ridge Regression (Separate Section)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-closed-form-optional-manual">6.1 Ridge Closed-form (Optional Manual)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-analysis-for-ridge">6.3 Residual analysis for Ridge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-comments">Final Comments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

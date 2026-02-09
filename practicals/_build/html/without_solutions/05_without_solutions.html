@@ -1,0 +1,1466 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>INFO-F-422 - Statistical Foundations of Machine Learning &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'without_solutions/05_without_solutions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../frontpage.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../frontpage.html">
+                    Home
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">Notation Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.html">Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.html">Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conclusion.html">Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/without_solutions/05_without_solutions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>INFO-F-422 -  Statistical Foundations of Machine Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pascal-tribel-pascal-tribel-ulb-be">Pascal Tribel - pascal.tribel@ulb.be</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cedric-simar-cedric-simar-ulb-be">Cédric Simar - cedric.simar@ulb.be</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gian-marco-paldino-gian-marco-paldino-ulb-be">Gian Marco Paldino - gian.marco.paldino@ulb.be</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-5-ensembles-of-models-and-feature-selection">TP 5 - Ensembles of models and feature selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-supervised-learning">Reminder:  Supervised learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-measurement">Error measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview-and-preprocessing">Data overview and preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-variables">Input and output variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-linear-and-decision-tree-models">1) Modelling with linear and decision tree models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model">Linear model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">Decision tree</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-with-loo-cv">Ridge regression with LOO-CV</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">Selection bias</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-models">2) Ensemble of models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3) Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">Filter methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-with-the-output">Correlation with the output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mrmr">mRMR</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-methods">Embedded methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-predictive-models">Using other predictive models</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="info-f-422-statistical-foundations-of-machine-learning">
+<h1>INFO-F-422 -  Statistical Foundations of Machine Learning<a class="headerlink" href="#info-f-422-statistical-foundations-of-machine-learning" title="Link to this heading">#</a></h1>
+<section id="pascal-tribel-pascal-tribel-ulb-be">
+<h2>Pascal Tribel - <a class="reference external" href="mailto:pascal&#46;tribel&#37;&#52;&#48;ulb&#46;be">pascal<span>&#46;</span>tribel<span>&#64;</span>ulb<span>&#46;</span>be</a><a class="headerlink" href="#pascal-tribel-pascal-tribel-ulb-be" title="Link to this heading">#</a></h2>
+</section>
+<section id="cedric-simar-cedric-simar-ulb-be">
+<h2>Cédric Simar - <a class="reference external" href="mailto:cedric&#46;simar&#37;&#52;&#48;ulb&#46;be">cedric<span>&#46;</span>simar<span>&#64;</span>ulb<span>&#46;</span>be</a><a class="headerlink" href="#cedric-simar-cedric-simar-ulb-be" title="Link to this heading">#</a></h2>
+</section>
+<section id="gian-marco-paldino-gian-marco-paldino-ulb-be">
+<h2>Gian Marco Paldino - <a class="reference external" href="mailto:gian&#46;marco&#46;paldino&#37;&#52;&#48;ulb&#46;be">gian<span>&#46;</span>marco<span>&#46;</span>paldino<span>&#64;</span>ulb<span>&#46;</span>be</a><a class="headerlink" href="#gian-marco-paldino-gian-marco-paldino-ulb-be" title="Link to this heading">#</a></h2>
+</section>
+<section id="tp-5-ensembles-of-models-and-feature-selection">
+<h2>TP 5 - Ensembles of models and feature selection<a class="headerlink" href="#tp-5-ensembles-of-models-and-feature-selection" title="Link to this heading">#</a></h2>
+</section>
+<section id="reminder-supervised-learning">
+<h2>Reminder:  Supervised learning<a class="headerlink" href="#reminder-supervised-learning" title="Link to this heading">#</a></h2>
+<p>Supervised learning aims to model the (unknown) stochastic dependence between a set of <span class="math notranslate nohighlight">\(n\)</span> inputs <span class="math notranslate nohighlight">\(x\)</span> (also called features) and an output <span class="math notranslate nohighlight">\({\mathbf y}\)</span> on the basis of a training set <span class="math notranslate nohighlight">\(D_N\)</span> of size <span class="math notranslate nohighlight">\(N\)</span>. Supervised learning tasks are decomposed into <em>regression</em> and <em>classification</em> tasks.</p>
+<section id="regression">
+<h3>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
+<p>In regression the stochastic dependence is given by
+$<span class="math notranslate nohighlight">\( {\mathbf y} = f(x)+\mathbf{w}\)</span>$
+where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{R}\)</span> represents the output variable (also called target)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^n\)</span> represents the vector of inputs (also called features)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{w}\)</span> denotes the noise, and is typically assumed that <span class="math notranslate nohighlight">\(E[\mathbf{w}]=0\)</span> and the variance
+<span class="math notranslate nohighlight">\(\text{Var}[\mathbf{w}]=\sigma^2_{\mathbf{w}}\)</span> is constant</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)=E[{\mathbf y} | x]\)</span> is the (unknown) mapping between input and outputs, also known as the <em>regression function</em>.</p></li>
+</ul>
+<p>In regression, the goal of learning is to return an estimator
+$<span class="math notranslate nohighlight">\(h(x,\alpha)\)</span><span class="math notranslate nohighlight">\(
+of the regression function \)</span>f(x)<span class="math notranslate nohighlight">\(, where \)</span>\alpha<span class="math notranslate nohighlight">\( denotes the set of parameters of the model \)</span>h$.</p>
+</section>
+</section>
+<section id="error-measurement">
+<h2>Error measurement<a class="headerlink" href="#error-measurement" title="Link to this heading">#</a></h2>
+<p>We already have used the <em>mean squared error</em> as an evaluation tool for the quality of the predictions of a model. Unfortunately, this tool does not take into account how “variable” the expected outputs are, and therefore two models could become undistinguishable when using the MSE. We can normalize the MSE by dividing it by the (measured) variance of the output data. This leads to the <em>normalized mean squared error</em>:</p>
+<div class="math notranslate nohighlight">
+\[\text{NMSE} = \frac{\sum(y-\hat{y})^2}{N\sigma^2_y}\]</div>
+<p>We can see that the most naive model which outputs the mean of the observed outputs should give:
+$<span class="math notranslate nohighlight">\(\frac{\sum(y-\mu_y)^2}{N\sigma^2_y} = \frac{\sigma^2_y}{\sigma^2_y} = 1\)</span>$</p>
+<p>Any model that has a NMSE greater than <span class="math notranslate nohighlight">\(1\)</span> is therefore performing worse than the most naive model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sklearn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">B1</span><span class="p">,</span> <span class="n">B2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">B1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">B2</span>
+
+<span class="n">model1</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">model2</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;model1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">model2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;model2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/beb04c4748c1f422dc65e1d43de4734b33ca96721faf7b75c4e1e438d270eeb4.png" src="../_images/beb04c4748c1f422dc65e1d43de4734b33ca96721faf7b75c4e1e438d270eeb4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mse</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_hat</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">y_hat</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">nmse</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_hat</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">y_hat</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSEs: </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="w"> </span><span class="n">model2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NMSEs: </span><span class="si">{</span><span class="n">nmse</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">nmse</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="w"> </span><span class="n">model2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSEs: 0.9551841621240215, 96.08863209535309
+NMSEs: 0.1511134747944494, 0.9533359778147638
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="feature-selection">
+<h2>Feature selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h2>
+<p>Feature selection and ensembles of models are two techniques which can be used to improve the accuracy of predictions.</p>
+<p>Feature selection aims at reducing the dimensionality of the problem, and is useful when input variables contain redundant or irrelevant (noisy) information. Benefits are twofold: it decreases the training time by simplifying the problem, and it decreases the complexity of the predictive model. This in turn usually improves the prediction accuracy, since high-dimensionality makes predictive models more prone to overfitting, and estimates of parameters more variant.</p>
+<p>There are three main approaches to feature selection:</p>
+<ul class="simple">
+<li><p><strong>Filter methods:</strong>
+These methods rely solely on the data and their intrinsic properties, without considering the impact of the selected features on the learning algorithm performance. For this reason, they are often used as preprocessing techniques.</p></li>
+<li><p><strong>Wrapper methods:</strong>
+These methods assess subsets of variables according to their usefulness to a given predictor. The feature selection is performed using an evaluation function that includes the predictive performance of the considered learning algorithm as a selection criterion.</p></li>
+<li><p><strong>Embedded methods:</strong>
+These methods are specific to given learning machines, and usually built-in in the learning procedure (e.g. random forest, regularization based techniques).</p></li>
+</ul>
+<p>Ensembles of models consist in building several predictive models using resampled subsets of the original training set. The method works particularly well for predictive models with high variance (for example, decision trees or neural networks). The average prediction of the resulting models usually strongly decreases the variance component of the error, and as a consequence improves the prediction accuracy.</p>
+<p>In this session, we will use a synthetic dataset, made of 30 continuous variables. 24 of them will be useless, and 6 will serve in the output. The output will be a function of the useful input variables.</p>
+<section id="data-overview-and-preprocessing">
+<h3>Data overview and preprocessing<a class="headerlink" href="#data-overview-and-preprocessing" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span> == 0:
+            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;x_useful_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span> == 1:
+            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;x_useful_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span> == 2:
+            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;x_useful_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_x_useful</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">n_x_useless</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_x_useful</span><span class="p">):</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">d</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;x_useful_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_x_useless</span><span class="p">):</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+    <span class="n">d</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;x_useless_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,))</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">compute</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x_useful_1</th>
+      <th>x_useful_2</th>
+      <th>x_useful_3</th>
+      <th>x_useful_4</th>
+      <th>x_useful_5</th>
+      <th>x_useful_6</th>
+      <th>x_useless_1</th>
+      <th>x_useless_2</th>
+      <th>x_useless_3</th>
+      <th>x_useless_4</th>
+      <th>...</th>
+      <th>x_useless_16</th>
+      <th>x_useless_17</th>
+      <th>x_useless_18</th>
+      <th>x_useless_19</th>
+      <th>x_useless_20</th>
+      <th>x_useless_21</th>
+      <th>x_useless_22</th>
+      <th>x_useless_23</th>
+      <th>x_useless_24</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>...</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+      <td>1000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.008883</td>
+      <td>0.787868</td>
+      <td>-0.862362</td>
+      <td>-0.220739</td>
+      <td>0.900991</td>
+      <td>0.048531</td>
+      <td>0.848947</td>
+      <td>0.019645</td>
+      <td>0.655122</td>
+      <td>-0.189598</td>
+      <td>...</td>
+      <td>-0.421467</td>
+      <td>0.821257</td>
+      <td>-0.011411</td>
+      <td>0.441756</td>
+      <td>-0.958489</td>
+      <td>-0.384471</td>
+      <td>-0.152625</td>
+      <td>-0.518022</td>
+      <td>0.051116</td>
+      <td>-7.379040</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.904117</td>
+      <td>2.362233</td>
+      <td>1.466222</td>
+      <td>0.881817</td>
+      <td>1.535395</td>
+      <td>0.512844</td>
+      <td>1.362313</td>
+      <td>1.729953</td>
+      <td>1.665836</td>
+      <td>0.771923</td>
+      <td>...</td>
+      <td>0.922338</td>
+      <td>0.862039</td>
+      <td>2.287231</td>
+      <td>1.402679</td>
+      <td>1.452495</td>
+      <td>0.787796</td>
+      <td>0.610938</td>
+      <td>2.501076</td>
+      <td>1.985946</td>
+      <td>1.890504</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-5.782583</td>
+      <td>-6.520188</td>
+      <td>-5.587836</td>
+      <td>-3.444757</td>
+      <td>-3.751236</td>
+      <td>-1.380297</td>
+      <td>-3.305645</td>
+      <td>-5.469208</td>
+      <td>-4.426479</td>
+      <td>-2.355184</td>
+      <td>...</td>
+      <td>-3.443265</td>
+      <td>-1.763982</td>
+      <td>-7.985982</td>
+      <td>-4.070035</td>
+      <td>-5.422766</td>
+      <td>-2.947481</td>
+      <td>-1.917751</td>
+      <td>-11.958636</td>
+      <td>-6.453296</td>
+      <td>-13.989287</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-1.250588</td>
+      <td>-0.839990</td>
+      <td>-1.910921</td>
+      <td>-0.821390</td>
+      <td>-0.111143</td>
+      <td>-0.293415</td>
+      <td>-0.091018</td>
+      <td>-1.090598</td>
+      <td>-0.432532</td>
+      <td>-0.738497</td>
+      <td>...</td>
+      <td>-1.025653</td>
+      <td>0.250196</td>
+      <td>-1.464619</td>
+      <td>-0.527079</td>
+      <td>-1.967275</td>
+      <td>-0.890462</td>
+      <td>-0.564771</td>
+      <td>-2.155428</td>
+      <td>-1.329528</td>
+      <td>-8.514752</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>-0.014389</td>
+      <td>0.822298</td>
+      <td>-0.868373</td>
+      <td>-0.229933</td>
+      <td>0.883910</td>
+      <td>0.050555</td>
+      <td>0.825699</td>
+      <td>0.014043</td>
+      <td>0.655699</td>
+      <td>-0.199494</td>
+      <td>...</td>
+      <td>-0.423784</td>
+      <td>0.844540</td>
+      <td>0.021261</td>
+      <td>0.423711</td>
+      <td>-1.010335</td>
+      <td>-0.403122</td>
+      <td>-0.147460</td>
+      <td>-0.412912</td>
+      <td>0.054168</td>
+      <td>-7.414389</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.269272</td>
+      <td>2.284124</td>
+      <td>0.175776</td>
+      <td>0.372973</td>
+      <td>1.957939</td>
+      <td>0.386908</td>
+      <td>1.786537</td>
+      <td>1.128925</td>
+      <td>1.744190</td>
+      <td>0.350852</td>
+      <td>...</td>
+      <td>0.211144</td>
+      <td>1.361641</td>
+      <td>1.522601</td>
+      <td>1.368873</td>
+      <td>0.002406</td>
+      <td>0.173736</td>
+      <td>0.252462</td>
+      <td>1.202683</td>
+      <td>1.373122</td>
+      <td>-6.287151</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>5.424227</td>
+      <td>8.481613</td>
+      <td>3.712036</td>
+      <td>3.085683</td>
+      <td>5.435128</td>
+      <td>1.539755</td>
+      <td>4.825280</td>
+      <td>5.912388</td>
+      <td>5.919659</td>
+      <td>2.026439</td>
+      <td>...</td>
+      <td>3.010346</td>
+      <td>4.035696</td>
+      <td>7.689106</td>
+      <td>5.682900</td>
+      <td>3.504355</td>
+      <td>2.146540</td>
+      <td>1.745356</td>
+      <td>8.160750</td>
+      <td>5.685927</td>
+      <td>2.202998</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 31 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="input-and-output-variables">
+<h3>Input and output variables<a class="headerlink" href="#input-and-output-variables" title="Link to this heading">#</a></h3>
+<p>The output variable (Y) is <code class="docutils literal notranslate"><span class="pre">y</span></code>, and all other variables (X) are considered as inputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of the y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean of Y:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variance of Y:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">Y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/12b843906639be2b25d7a4d2f4394377c33375b91ff19a12f88f7bb825d039e6.png" src="../_images/12b843906639be2b25d7a4d2f4394377c33375b91ff19a12f88f7bb825d039e6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean of Y: -7.379040070934719
+Variance of Y: 3.5704323990926374
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelling-with-linear-and-decision-tree-models">
+<h3>1) Modelling with linear and decision tree models<a class="headerlink" href="#modelling-with-linear-and-decision-tree-models" title="Link to this heading">#</a></h3>
+<section id="linear-model">
+<h4>Linear model<a class="headerlink" href="#linear-model" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Create a linear model <span class="math notranslate nohighlight">\(h(x)\)</span> for predicting the ‘y’ value on the basis of the input variables, and compute itsnormalized mean square error.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Which input variables are statistically correlated with the output?</p></li>
+</ul>
+<p>In Python, we can check the coefficients of the linear model.</p>
+<ul class="simple">
+<li><p>Compute the validation error with a 10-fold cross-validation</p></li>
+</ul>
+</section>
+<section id="decision-tree">
+<h4>Decision tree<a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Modify the previous code to compute the empirical error using a decision tree model. Use sklearn’s <code class="docutils literal notranslate"><span class="pre">DecisionTreeRegressor</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Plot the resulting tree is more complicated in Python due to size, but we can just visualize its structure or get the depth.</p></li>
+</ul>
+<ul class="simple">
+<li><p>What is the 10-fold cross-validation error using a decision tree model?</p></li>
+</ul>
+<p>Why is the result so different using the 10-fold cross-validation?</p>
+</section>
+<section id="ridge-regression-with-loo-cv">
+<h4>Ridge regression with LOO-CV<a class="headerlink" href="#ridge-regression-with-loo-cv" title="Link to this heading">#</a></h4>
+<p>Recall: Ridge regression looks like a linear regression but includes a penalty term for large coefficients:
+$<span class="math notranslate nohighlight">\(
+  \min_{\beta} \;\; \| Y - X \beta \|^2 + \alpha \| \beta \|^2.
+\)</span>$</p>
+<p>Ridge also has a known closed-form:
+$<span class="math notranslate nohighlight">\(
+  \hat{\beta}_{\mathrm{ridge}} = (X^\top X + \lambda I)^{-1} X^\top Y.
+\)</span>$</p>
+<ul class="simple">
+<li><p>Leave-one out cross-validation is a method that consists in evaluating a given model by training it on the entire training set, except for one sample used for validation. By performing this validation, eliminating each of the samples at a time, we get an estimation of the quality of the model.</p></li>
+<li><p>Then, the coefficients can give an idea of the importance of each of the features in the prediction task.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_np</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="n">X_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lambdas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambdas</span><span class="p">)))</span>  
+<span class="n">E</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">Xtr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">X_np</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span>
+    <span class="n">Ytr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    
+    <span class="n">Xts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">1</span><span class="p">],</span> <span class="n">X_np</span><span class="p">[</span><span class="n">i</span><span class="p">,]))</span>
+    
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lambdas</span><span class="p">:</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">Xtr</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Xtr</span> <span class="o">+</span> <span class="n">l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">Xtr</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Ytr</span>
+        <span class="n">betahat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">@</span> <span class="n">b</span>
+        <span class="n">Yhati</span> <span class="o">=</span> <span class="n">Xts</span> <span class="o">@</span> <span class="n">betahat</span>
+        <span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">cnt</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Yhati</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">mseloo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">bestLambda</span> <span class="o">=</span> <span class="n">lambdas</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best lambda: </span><span class="si">{</span><span class="n">bestLambda</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">XX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">X_np</span><span class="p">))</span>
+<span class="n">A_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">XX</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">XX</span><span class="p">)</span> <span class="o">+</span> <span class="n">bestLambda</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">b_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">XX</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">betahat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A_final</span><span class="p">)</span> <span class="o">@</span> <span class="n">XX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Y</span>
+
+<span class="n">abs_betahat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">betahat</span><span class="p">)</span>
+<span class="n">sorted_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">abs_betahat</span><span class="p">)</span>
+<span class="n">top4</span> <span class="o">=</span> <span class="n">sorted_indices</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Greatests coefficients indexes: </span><span class="si">{</span><span class="n">top4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Greatests coefficients: </span><span class="si">{</span><span class="n">betahat</span><span class="p">[</span><span class="n">top4</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">mseloo</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;NMSE.loo vs Lambda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best lambda: 0.17333333333333334
+Greatests coefficients indexes: [0 4 5 2]
+Greatests coefficients: [-7.09953353  0.90007894 -0.39262165  0.24499269]
+</pre></div>
+</div>
+<img alt="../_images/de451c1b32170c27e530773c8c417c4128dc110b908ffb5d122a18ae3e567e72.png" src="../_images/de451c1b32170c27e530773c8c417c4128dc110b908ffb5d122a18ae3e567e72.png" />
+</div>
+</div>
+</section>
+<section id="selection-bias">
+<h4>Selection bias<a class="headerlink" href="#selection-bias" title="Link to this heading">#</a></h4>
+<p>Take care that if the features are selected using the error on the training set as an importance criterium leads to a flaw: the features may be over-fittingly selected and the performances then do not reflect on the testing performances dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pred</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">):</span>
+   <span class="n">reg</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeRegressor</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">X_tr</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">Y_tr</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[:</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">X_ts</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[</span><span class="mi">200</span><span class="p">:</span><span class="mi">250</span><span class="p">]</span>
+<span class="n">Y_ts</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">250</span><span class="p">]</span>
+
+<span class="n">N_tr</span> <span class="o">=</span> <span class="n">X_tr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">fset</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">bestr</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">bests</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)):</span>
+    <span class="n">NMSEf</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fset</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">N_tr</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_tr</span><span class="p">):</span>
+            <span class="n">X_train_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">Y_train_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">Y_tr</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+            <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">(</span><span class="n">fset</span> <span class="o">+</span> <span class="p">[</span><span class="n">f</span><span class="p">])]</span>
+            <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train_all</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]</span>
+            <span class="n">X_test_sample</span> <span class="o">=</span> <span class="n">X_tr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+            <span class="n">Yhati</span> <span class="o">=</span> <span class="n">pred</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train_all</span><span class="p">,</span> <span class="n">X_test_sample</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Yhati</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Y_tr</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">NMSEf</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="n">f_best</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">NMSEf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">NMSEf</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+    <span class="n">fset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f_best</span><span class="p">)</span>
+    <span class="n">bestr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NMSEf</span><span class="p">[</span><span class="n">f_best</span><span class="p">])</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">fset</span><span class="p">]</span>
+    <span class="n">Y_hats</span> <span class="o">=</span> <span class="n">pred</span><span class="p">(</span><span class="n">X_tr</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">],</span> <span class="n">Y_tr</span><span class="p">,</span> <span class="n">X_ts</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
+    <span class="n">nmse_test</span> <span class="o">=</span> <span class="n">nmse</span><span class="p">(</span><span class="n">Y_hats</span><span class="p">,</span> <span class="n">Y_ts</span><span class="p">)</span>
+    <span class="n">bests</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nmse_test</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">fset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bests</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bestr</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bests</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Test NMSE&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bestr</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Internal NMSE LOO&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">bests</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Selection bias and feature selection&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Feature set size&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1a7d6441231f4548b581e3f3734583aa"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">28</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>         <span class="n">X_test_sample</span> <span class="o">=</span> <span class="n">X_tr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">Yhati</span> <span class="o">=</span> <span class="n">pred</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train_all</span><span class="p">,</span> <span class="n">X_test_sample</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">28</span>         <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">Yhati</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Y_tr</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="n">NMSEf</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="n">f_best</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">NMSEf</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">NMSEf</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="ensemble-of-models">
+<h2>2) Ensemble of models<a class="headerlink" href="#ensemble-of-models" title="Link to this heading">#</a></h2>
+<p>Let us now create an ensemble of R=20 linear models to make predictions.</p>
+<ul class="simple">
+<li><p>Use a linear model as the base model.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Use a decision tree as the base model. Is the CV error lower?</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>3) Feature selection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="filter-methods">
+<h3>Filter methods<a class="headerlink" href="#filter-methods" title="Link to this heading">#</a></h3>
+<section id="correlation-with-the-output">
+<h4>Correlation with the output<a class="headerlink" href="#correlation-with-the-output" title="Link to this heading">#</a></h4>
+<p>The following code performs feature selection by keeping the most correlated variables with the output. Compare the results for linear models and decision trees. What are the smallest CV errors, and how many features were needed?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correlations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">Y</span><span class="p">)))</span>
+<span class="n">ranking_corr_idx</span> <span class="o">=</span> <span class="n">correlations</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+
+<span class="n">CV_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">fold_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">X_tr</span><span class="p">,</span> <span class="n">X_ts</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    <span class="n">Y_tr</span><span class="p">,</span> <span class="n">Y_ts</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">nb_features</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">selected_features</span> <span class="o">=</span> <span class="n">ranking_corr_idx</span><span class="p">[:</span><span class="n">nb_features</span><span class="p">]</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr</span><span class="p">[</span><span class="n">selected_features</span><span class="p">],</span> <span class="n">Y_tr</span><span class="p">)</span>
+        <span class="n">Y_hat_ts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_ts</span><span class="p">[</span><span class="n">selected_features</span><span class="p">])</span>
+        <span class="n">CV_err</span><span class="p">[</span><span class="n">nb_features</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">fold_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmse</span><span class="p">(</span><span class="n">Y_ts</span><span class="p">,</span> <span class="n">Y_hat_ts</span><span class="p">)</span>
+    <span class="n">fold_id</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#Features:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;; CV error=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">CV_err</span><span class="p">[</span><span class="n">i</span><span class="p">,:]),</span><span class="mi">4</span><span class="p">),</span>
+          <span class="s2">&quot;; std dev=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">CV_err</span><span class="p">[</span><span class="n">i</span><span class="p">,:]),</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation ranking:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ranking_corr_idx</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#Features: 1 ; CV error= 0.8381 ; std dev= 0.0698
+#Features: 2 ; CV error= 0.7428 ; std dev= 0.0702
+#Features: 3 ; CV error= 0.653 ; std dev= 0.093
+#Features: 4 ; CV error= 0.607 ; std dev= 0.0841
+#Features: 5 ; CV error= 0.5946 ; std dev= 0.0848
+#Features: 6 ; CV error= 0.5957 ; std dev= 0.0857
+#Features: 7 ; CV error= 0.5952 ; std dev= 0.0871
+#Features: 8 ; CV error= 0.5958 ; std dev= 0.0894
+#Features: 9 ; CV error= 0.5943 ; std dev= 0.0903
+#Features: 10 ; CV error= 0.5936 ; std dev= 0.0867
+#Features: 11 ; CV error= 0.5944 ; std dev= 0.0867
+#Features: 12 ; CV error= 0.595 ; std dev= 0.0869
+#Features: 13 ; CV error= 0.5958 ; std dev= 0.0865
+#Features: 14 ; CV error= 0.5966 ; std dev= 0.0857
+#Features: 15 ; CV error= 0.5976 ; std dev= 0.0874
+#Features: 16 ; CV error= 0.5984 ; std dev= 0.0876
+#Features: 17 ; CV error= 0.5999 ; std dev= 0.0865
+#Features: 18 ; CV error= 0.6009 ; std dev= 0.0865
+#Features: 19 ; CV error= 0.601 ; std dev= 0.0864
+#Features: 20 ; CV error= 0.6017 ; std dev= 0.0865
+#Features: 21 ; CV error= 0.6029 ; std dev= 0.0854
+#Features: 22 ; CV error= 0.6039 ; std dev= 0.0854
+#Features: 23 ; CV error= 0.6046 ; std dev= 0.0849
+#Features: 24 ; CV error= 0.6057 ; std dev= 0.086
+#Features: 25 ; CV error= 0.607 ; std dev= 0.0856
+#Features: 26 ; CV error= 0.6085 ; std dev= 0.0839
+#Features: 27 ; CV error= 0.6092 ; std dev= 0.0829
+#Features: 28 ; CV error= 0.6091 ; std dev= 0.0836
+#Features: 29 ; CV error= 0.6097 ; std dev= 0.0837
+#Features: 30 ; CV error= 0.6106 ; std dev= 0.084
+Correlation ranking:
+[&#39;x_useful_4&#39;, &#39;x_useful_5&#39;, &#39;x_useful_2&#39;, &#39;x_useful_1&#39;, &#39;x_useful_3&#39;, &#39;x_useless_14&#39;, &#39;x_useful_6&#39;, &#39;x_useless_5&#39;, &#39;x_useless_1&#39;, &#39;x_useless_18&#39;, &#39;x_useless_6&#39;, &#39;x_useless_7&#39;, &#39;x_useless_15&#39;, &#39;x_useless_10&#39;, &#39;x_useless_2&#39;, &#39;x_useless_11&#39;, &#39;x_useless_8&#39;, &#39;x_useless_24&#39;, &#39;x_useless_19&#39;, &#39;x_useless_13&#39;, &#39;x_useless_20&#39;, &#39;x_useless_4&#39;, &#39;x_useless_17&#39;, &#39;x_useless_22&#39;, &#39;x_useless_23&#39;, &#39;x_useless_16&#39;, &#39;x_useless_12&#39;, &#39;x_useless_9&#39;, &#39;x_useless_3&#39;, &#39;x_useless_21&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mrmr">
+<h4>mRMR<a class="headerlink" href="#mrmr" title="Link to this heading">#</a></h4>
+<p>We will implement a simple mRMR feature selection. mRMR uses mutual information. We will approximate mutual information via the correlation-based formula provided.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mutual_info_corr</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="c1"># Avoid invalid value if correlation == 1 or == -1</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mf">0.999999</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_mi_vector</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">Y_tr</span><span class="p">):</span>
+    <span class="n">mis</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X_tr</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">mi</span> <span class="o">=</span> <span class="n">mutual_info_corr</span><span class="p">(</span><span class="n">X_tr</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">Y_tr</span><span class="p">)</span>
+        <span class="n">mis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mis</span><span class="p">)</span>
+
+<span class="n">CV_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">fold_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">X_tr</span><span class="p">,</span> <span class="n">X_ts</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    <span class="n">Y_tr</span><span class="p">,</span> <span class="n">Y_ts</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    
+    <span class="n">mutual_info_values</span> <span class="o">=</span> <span class="n">compute_mi_vector</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">Y_tr</span><span class="p">)</span>
+    <span class="n">selected</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">redundancy_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">selected</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Compute pairwise mi between selected and candidates</span>
+            <span class="n">mi_sc</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">cidx</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+                <span class="n">col_c</span> <span class="o">=</span> <span class="n">X_tr</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">cidx</span><span class="p">]</span>
+                <span class="n">mis_c</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">sidx</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">:</span>
+                    <span class="n">col_s</span> <span class="o">=</span> <span class="n">X_tr</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">sidx</span><span class="p">]</span>
+                    <span class="c1"># Compute mutual info between col_s and col_c</span>
+                    <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">col_s</span><span class="p">,</span> <span class="n">col_c</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                        <span class="n">cc</span><span class="o">=</span><span class="mf">0.999999</span>
+                    <span class="n">mis_c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cc</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+                <span class="n">redundancy_score</span><span class="p">[</span><span class="n">candidates</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">cidx</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mis_c</span><span class="p">)</span>
+        <span class="n">mRMR_score</span> <span class="o">=</span> <span class="n">mutual_info_values</span><span class="p">[</span><span class="n">candidates</span><span class="p">]</span> <span class="o">-</span> <span class="n">redundancy_score</span>
+        <span class="n">best_idx</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">mRMR_score</span><span class="p">)]</span>
+        <span class="n">selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best_idx</span><span class="p">)</span>
+        <span class="n">candidates</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">best_idx</span><span class="p">)</span>
+    
+    <span class="c1"># selected is the ranking</span>
+    <span class="k">for</span> <span class="n">nb_features</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">features_to_use</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">[:</span><span class="n">nb_features</span><span class="p">]]</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr</span><span class="p">[</span><span class="n">features_to_use</span><span class="p">],</span> <span class="n">Y_tr</span><span class="p">)</span>
+        <span class="n">Y_hat_ts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_ts</span><span class="p">[</span><span class="n">features_to_use</span><span class="p">])</span>
+        <span class="n">CV_err</span><span class="p">[</span><span class="n">nb_features</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">fold_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmse</span><span class="p">(</span><span class="n">Y_ts</span><span class="p">,</span> <span class="n">Y_hat_ts</span><span class="p">)</span>
+    <span class="n">fold_id</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#Features:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;; CV error=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">CV_err</span><span class="p">[</span><span class="n">i</span><span class="p">,:]),</span><span class="mi">4</span><span class="p">),</span>
+          <span class="s2">&quot;; std dev=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">CV_err</span><span class="p">[</span><span class="n">i</span><span class="p">,:]),</span><span class="mi">4</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected features ranking (mRMR):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#Features: 1 ; CV error= 0.8381 ; std dev= 0.0698
+#Features: 2 ; CV error= 0.78 ; std dev= 0.0908
+#Features: 3 ; CV error= 0.653 ; std dev= 0.093
+#Features: 4 ; CV error= 0.607 ; std dev= 0.0841
+#Features: 5 ; CV error= 0.6163 ; std dev= 0.0875
+#Features: 6 ; CV error= 0.6183 ; std dev= 0.088
+#Features: 7 ; CV error= 0.6212 ; std dev= 0.0908
+#Features: 8 ; CV error= 0.6115 ; std dev= 0.0918
+#Features: 9 ; CV error= 0.6002 ; std dev= 0.0879
+#Features: 10 ; CV error= 0.5992 ; std dev= 0.0884
+#Features: 11 ; CV error= 0.5985 ; std dev= 0.086
+#Features: 12 ; CV error= 0.602 ; std dev= 0.0877
+#Features: 13 ; CV error= 0.6031 ; std dev= 0.0885
+#Features: 14 ; CV error= 0.604 ; std dev= 0.0867
+#Features: 15 ; CV error= 0.605 ; std dev= 0.0855
+#Features: 16 ; CV error= 0.6059 ; std dev= 0.0846
+#Features: 17 ; CV error= 0.6053 ; std dev= 0.0839
+#Features: 18 ; CV error= 0.6059 ; std dev= 0.0834
+#Features: 19 ; CV error= 0.6068 ; std dev= 0.0832
+#Features: 20 ; CV error= 0.6084 ; std dev= 0.0839
+#Features: 21 ; CV error= 0.6091 ; std dev= 0.0837
+#Features: 22 ; CV error= 0.6096 ; std dev= 0.0839
+#Features: 23 ; CV error= 0.6094 ; std dev= 0.0849
+#Features: 24 ; CV error= 0.6101 ; std dev= 0.0852
+#Features: 25 ; CV error= 0.6094 ; std dev= 0.0852
+#Features: 26 ; CV error= 0.6095 ; std dev= 0.0866
+#Features: 27 ; CV error= 0.6095 ; std dev= 0.0868
+#Features: 28 ; CV error= 0.6093 ; std dev= 0.0866
+#Features: 29 ; CV error= 0.6095 ; std dev= 0.0855
+#Features: 30 ; CV error= 0.6106 ; std dev= 0.084
+Selected features ranking (mRMR):
+[&#39;x_useful_4&#39;, &#39;x_useful_5&#39;, &#39;x_useful_2&#39;, &#39;x_useful_1&#39;, &#39;x_useless_5&#39;, &#39;x_useful_6&#39;, &#39;x_useless_14&#39;, &#39;x_useful_3&#39;, &#39;x_useless_1&#39;, &#39;x_useless_6&#39;, &#39;x_useless_18&#39;, &#39;x_useless_22&#39;, &#39;x_useless_10&#39;, &#39;x_useless_15&#39;, &#39;x_useless_7&#39;, &#39;x_useless_8&#39;, &#39;x_useless_17&#39;, &#39;x_useless_21&#39;, &#39;x_useless_2&#39;, &#39;x_useless_4&#39;, &#39;x_useless_11&#39;, &#39;x_useless_16&#39;, &#39;x_useless_9&#39;, &#39;x_useless_3&#39;, &#39;x_useless_23&#39;, &#39;x_useless_13&#39;, &#39;x_useless_19&#39;, &#39;x_useless_24&#39;, &#39;x_useless_12&#39;, &#39;x_useless_20&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pca">
+<h4>PCA<a class="headerlink" href="#pca" title="Link to this heading">#</a></h4>
+<p>The following code performs features selection by first transforming the inputs using PCA, and then keeping the most relevant principal components in the model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">()</span>
+<span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">CV_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">fold_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X_pca</span><span class="p">):</span>
+    <span class="n">X_tr</span><span class="p">,</span> <span class="n">X_ts</span> <span class="o">=</span> <span class="n">X_pca</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">X_pca</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    <span class="n">Y_tr</span><span class="p">,</span> <span class="n">Y_ts</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">nb_components</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr</span><span class="p">[:,</span> <span class="p">:</span><span class="n">nb_components</span><span class="p">],</span> <span class="n">Y_tr</span><span class="p">)</span>
+        <span class="n">Y_hat_ts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_ts</span><span class="p">[:,</span> <span class="p">:</span><span class="n">nb_components</span><span class="p">])</span>
+        <span class="n">CV_err</span><span class="p">[</span><span class="n">nb_components</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">fold_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmse</span><span class="p">(</span><span class="n">Y_ts</span><span class="p">,</span> <span class="n">Y_hat_ts</span><span class="p">)</span>
+    <span class="n">fold_id</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#Features:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;; CV error=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">CV_err</span><span class="p">[</span><span class="n">i</span><span class="p">,:]),</span><span class="mi">4</span><span class="p">),</span>
+          <span class="s2">&quot;; std dev=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">CV_err</span><span class="p">[</span><span class="n">i</span><span class="p">,:]),</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#Features: 1 ; CV error= 1.0133 ; std dev= 0.02
+#Features: 2 ; CV error= 1.0153 ; std dev= 0.0189
+#Features: 3 ; CV error= 0.9341 ; std dev= 0.0545
+#Features: 4 ; CV error= 0.9221 ; std dev= 0.069
+#Features: 5 ; CV error= 0.9244 ; std dev= 0.0759
+#Features: 6 ; CV error= 0.9187 ; std dev= 0.069
+#Features: 7 ; CV error= 0.9215 ; std dev= 0.0679
+#Features: 8 ; CV error= 0.9083 ; std dev= 0.0599
+#Features: 9 ; CV error= 0.8926 ; std dev= 0.0604
+#Features: 10 ; CV error= 0.8934 ; std dev= 0.0612
+#Features: 11 ; CV error= 0.8927 ; std dev= 0.0655
+#Features: 12 ; CV error= 0.8842 ; std dev= 0.0702
+#Features: 13 ; CV error= 0.8779 ; std dev= 0.0636
+#Features: 14 ; CV error= 0.8748 ; std dev= 0.0702
+#Features: 15 ; CV error= 0.8426 ; std dev= 0.0768
+#Features: 16 ; CV error= 0.8429 ; std dev= 0.0761
+#Features: 17 ; CV error= 0.8416 ; std dev= 0.0758
+#Features: 18 ; CV error= 0.7877 ; std dev= 0.091
+#Features: 19 ; CV error= 0.7767 ; std dev= 0.079
+#Features: 20 ; CV error= 0.7777 ; std dev= 0.0788
+#Features: 21 ; CV error= 0.7808 ; std dev= 0.0794
+#Features: 22 ; CV error= 0.7754 ; std dev= 0.073
+#Features: 23 ; CV error= 0.7771 ; std dev= 0.071
+#Features: 24 ; CV error= 0.6236 ; std dev= 0.0738
+#Features: 25 ; CV error= 0.6165 ; std dev= 0.0814
+#Features: 26 ; CV error= 0.6123 ; std dev= 0.0824
+#Features: 27 ; CV error= 0.6115 ; std dev= 0.0829
+#Features: 28 ; CV error= 0.6104 ; std dev= 0.081
+#Features: 29 ; CV error= 0.6103 ; std dev= 0.0825
+#Features: 30 ; CV error= 0.6106 ; std dev= 0.084
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="embedded-methods">
+<h3>Embedded methods<a class="headerlink" href="#embedded-methods" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">round_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">selected</span><span class="p">))</span>
+    <span class="n">CV_err_temp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+        <span class="n">features_to_include</span> <span class="o">=</span> <span class="n">selected</span> <span class="o">+</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span>
+        <span class="n">fold_errors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+            <span class="n">X_tr</span><span class="p">,</span> <span class="n">X_ts</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">,</span> <span class="n">features_to_include</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">,</span> <span class="n">features_to_include</span><span class="p">]</span>
+            <span class="n">Y_tr</span><span class="p">,</span> <span class="n">Y_ts</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+            
+            <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">Y_tr</span><span class="p">)</span>
+            <span class="n">Y_hat_ts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_ts</span><span class="p">)</span>
+            <span class="n">fold_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nmse</span><span class="p">(</span><span class="n">Y_ts</span><span class="p">,</span> <span class="n">Y_hat_ts</span><span class="p">))</span>
+        <span class="n">CV_err_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">fold_errors</span><span class="p">))</span>
+    
+    <span class="n">best_candidate</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">CV_err_temp</span><span class="p">)]</span>
+    <span class="n">selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best_candidate</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Round&quot;</span><span class="p">,</span> <span class="n">round_i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;; Selected feature:&quot;</span><span class="p">,</span> <span class="n">best_candidate</span><span class="p">,</span>
+          <span class="s2">&quot;; CV error=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">CV_err_temp</span><span class="p">),</span><span class="mi">4</span><span class="p">),</span> 
+          <span class="s2">&quot;; std dev=&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">fold_errors</span><span class="p">),</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected features:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Round 1 ; Selected feature: 3 ; CV error= 0.8381 ; std dev= 0.0148
+Round 2 ; Selected feature: 4 ; CV error= 0.7428 ; std dev= 0.0716
+Round 3 ; Selected feature: 1 ; CV error= 0.653 ; std dev= 0.0707
+Round 4 ; Selected feature: 0 ; CV error= 0.607 ; std dev= 0.0929
+Round 5 ; Selected feature: 2 ; CV error= 0.5946 ; std dev= 0.0838
+Round 6 ; Selected feature: 6 ; CV error= 0.593 ; std dev= 0.0844
+Round 7 ; Selected feature: 5 ; CV error= 0.5925 ; std dev= 0.0868
+Round 8 ; Selected feature: 14 ; CV error= 0.592 ; std dev= 0.0877
+Round 9 ; Selected feature: 23 ; CV error= 0.5916 ; std dev= 0.0882
+Round 10 ; Selected feature: 24 ; CV error= 0.5918 ; std dev= 0.0847
+Round 11 ; Selected feature: 10 ; CV error= 0.5922 ; std dev= 0.0847
+Round 12 ; Selected feature: 17 ; CV error= 0.5927 ; std dev= 0.086
+Round 13 ; Selected feature: 22 ; CV error= 0.5933 ; std dev= 0.085
+Round 14 ; Selected feature: 18 ; CV error= 0.594 ; std dev= 0.0844
+Round 15 ; Selected feature: 9 ; CV error= 0.5946 ; std dev= 0.0845
+Round 16 ; Selected feature: 12 ; CV error= 0.5953 ; std dev= 0.0846
+Round 17 ; Selected feature: 11 ; CV error= 0.596 ; std dev= 0.0849
+Round 18 ; Selected feature: 16 ; CV error= 0.5968 ; std dev= 0.0849
+Round 19 ; Selected feature: 8 ; CV error= 0.5976 ; std dev= 0.0851
+Round 20 ; Selected feature: 26 ; CV error= 0.5984 ; std dev= 0.0852
+Round 21 ; Selected feature: 20 ; CV error= 0.5992 ; std dev= 0.0856
+Round 22 ; Selected feature: 7 ; CV error= 0.6002 ; std dev= 0.0852
+Round 23 ; Selected feature: 29 ; CV error= 0.6012 ; std dev= 0.0868
+Round 24 ; Selected feature: 15 ; CV error= 0.6023 ; std dev= 0.0866
+Round 25 ; Selected feature: 27 ; CV error= 0.6034 ; std dev= 0.0855
+Round 26 ; Selected feature: 25 ; CV error= 0.6047 ; std dev= 0.0867
+Round 27 ; Selected feature: 28 ; CV error= 0.606 ; std dev= 0.0847
+Round 28 ; Selected feature: 19 ; CV error= 0.6072 ; std dev= 0.0841
+Round 29 ; Selected feature: 21 ; CV error= 0.6088 ; std dev= 0.0857
+Round 30 ; Selected feature: 13 ; CV error= 0.6106 ; std dev= 0.084
+Selected features: [&#39;x_useful_4&#39;, &#39;x_useful_5&#39;, &#39;x_useful_2&#39;, &#39;x_useful_1&#39;, &#39;x_useful_3&#39;, &#39;x_useless_1&#39;, &#39;x_useful_6&#39;, &#39;x_useless_9&#39;, &#39;x_useless_18&#39;, &#39;x_useless_19&#39;, &#39;x_useless_5&#39;, &#39;x_useless_12&#39;, &#39;x_useless_17&#39;, &#39;x_useless_13&#39;, &#39;x_useless_4&#39;, &#39;x_useless_7&#39;, &#39;x_useless_6&#39;, &#39;x_useless_11&#39;, &#39;x_useless_3&#39;, &#39;x_useless_21&#39;, &#39;x_useless_15&#39;, &#39;x_useless_2&#39;, &#39;x_useless_24&#39;, &#39;x_useless_10&#39;, &#39;x_useless_22&#39;, &#39;x_useless_20&#39;, &#39;x_useless_23&#39;, &#39;x_useless_14&#39;, &#39;x_useless_16&#39;, &#39;x_useless_8&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="using-other-predictive-models">
+<h2>Using other predictive models<a class="headerlink" href="#using-other-predictive-models" title="Link to this heading">#</a></h2>
+<p>We can try other models like SVM (SVR), Neural Networks (MLPRegressor), K-Nearest Neighbors (KNeighborsRegressor) and see if performance improves.</p>
+<ul class="simple">
+<li><p>Using SVR, show the error using all the features.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Then, using cross-validation, use mRMR.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Do the same for the two other models.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./without_solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pascal-tribel-pascal-tribel-ulb-be">Pascal Tribel - pascal.tribel@ulb.be</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cedric-simar-cedric-simar-ulb-be">Cédric Simar - cedric.simar@ulb.be</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gian-marco-paldino-gian-marco-paldino-ulb-be">Gian Marco Paldino - gian.marco.paldino@ulb.be</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tp-5-ensembles-of-models-and-feature-selection">TP 5 - Ensembles of models and feature selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-supervised-learning">Reminder:  Supervised learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-measurement">Error measurement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview-and-preprocessing">Data overview and preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-variables">Input and output variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-with-linear-and-decision-tree-models">1) Modelling with linear and decision tree models</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-model">Linear model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">Decision tree</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ridge-regression-with-loo-cv">Ridge regression with LOO-CV</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-bias">Selection bias</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-models">2) Ensemble of models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3) Feature selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">Filter methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-with-the-output">Correlation with the output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mrmr">mRMR</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-methods">Embedded methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-other-predictive-models">Using other predictive models</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

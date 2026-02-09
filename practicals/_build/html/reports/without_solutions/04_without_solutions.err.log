@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Example in Python-like pseudocode:
+import torch
+
+# Suppose X_train is shape (N, n) for an MLP:
+N, n = 1000, 10
+X_train = torch.randn(N, n)
+X_val = torch.randn(N//5, n)
+X_test = torch.randn(N//5, n)
+
+mean = X_train.mean(dim=0)
+std  = X_train.std(dim=0)
+
+X_train = (X_train - mean) / std
+X_val   = (X_val - mean) / std
+X_test  = (X_test - mean) / std
+
+# For CNN input, if needed:
+H, W = 28, 28  # e.g., image dimension
+# Reshape to (N, 1, H, W) for single-channel images:
+X_train_cnn = X_train.view(N, 1, H, W)
+X_val_cnn   = X_val.view(N//5, 1, H, W)
+X_test_cnn  = X_test.view(N//5, 1, H, W)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+Cell [0;32mIn[1], line 20[0m
+[1;32m     18[0m H, W [38;5;241m=[39m [38;5;241m28[39m, [38;5;241m28[39m  [38;5;66;03m# e.g., image dimension[39;00m
+[1;32m     19[0m [38;5;66;03m# Reshape to (N, 1, H, W) for single-channel images:[39;00m
+[0;32m---> 20[0m X_train_cnn [38;5;241m=[39m [43mX_train[49m[38;5;241;43m.[39;49m[43mview[49m[43m([49m[43mN[49m[43m,[49m[43m [49m[38;5;241;43m1[39;49m[43m,[49m[43m [49m[43mH[49m[43m,[49m[43m [49m[43mW[49m[43m)[49m
+[1;32m     21[0m X_val_cnn   [38;5;241m=[39m X_val[38;5;241m.[39mview(N[38;5;241m/[39m[38;5;241m/[39m[38;5;241m5[39m, [38;5;241m1[39m, H, W)
+[1;32m     22[0m X_test_cnn  [38;5;241m=[39m X_test[38;5;241m.[39mview(N[38;5;241m/[39m[38;5;241m/[39m[38;5;241m5[39m, [38;5;241m1[39m, H, W)
+
+[0;31mRuntimeError[0m: shape '[1000, 1, 28, 28]' is invalid for input of size 10000
+
