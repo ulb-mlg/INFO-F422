@@ -1,0 +1,6 @@
+title: Statistical Foundations of Machine Learning - Practicals Handbook
+author: Pascal Tribel
+logo: sfml.png
+only_build_toc_files: true
+execute:
+  execute_notebooks: force

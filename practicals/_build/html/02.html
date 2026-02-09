@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Linear Models &#8212; My Jupyter Book</title>
+    <title>Linear Models &#8212; Statistical Foundations of Machine Learning - Practicals Handbook</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '02';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Conclusion" href="conclusion.html" />
+    <link rel="next" title="Data Preprocessing, Local Models and Tree-Based Models" href="03.html" />
     <link rel="prev" title="Introduction to Probabilistic Methods and Monte Carlo Simulations" href="01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -150,8 +150,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/sfml.png" class="logo__image only-light" alt="Statistical Foundations of Machine Learning - Practicals Handbook - Home"/>
+    <script>document.write(`<img src="_static/sfml.png" class="logo__image only-dark" alt="Statistical Foundations of Machine Learning - Practicals Handbook - Home"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -180,6 +186,10 @@
 <li class="toctree-l1"><a class="reference internal" href="notation.html">Notation Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">Data Preprocessing, Local Models and Tree-Based Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">Neural Networks for Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">Ensembles of models and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -574,7 +584,7 @@ min     -4.973119   -9.929356   -5.262876  -20.342999
 max      4.953585    9.921727    4.501352   30.849943
 </pre></div>
 </div>
-<img alt="_images/616cac8dd538e180dfbc80b25f6cf12c5e3abaa9c082a415e8d9ebdcb213044a.png" src="_images/616cac8dd538e180dfbc80b25f6cf12c5e3abaa9c082a415e8d9ebdcb213044a.png" />
+<img alt="_images/3cd94b570517b4b5f2f0612bfba9cb5c0437e7675f339bb276d6984e58f5467a.png" src="_images/3cd94b570517b4b5f2f0612bfba9cb5c0437e7675f339bb276d6984e58f5467a.png" />
 </div>
 </div>
 </section>
@@ -685,7 +695,7 @@ Dep. Variable:                      y   R-squared:                       0.976
 Model:                            OLS   Adj. R-squared:                  0.976
 Method:                 Least Squares   F-statistic:                     2657.
 Date:                Mon, 09 Feb 2026   Prob (F-statistic):          2.01e-158
-Time:                        11:34:13   Log-Likelihood:                -415.03
+Time:                        12:23:16   Log-Likelihood:                -415.03
 No. Observations:                 200   AIC:                             838.1
 Df Residuals:                     196   BIC:                             851.2
 Df Model:                           3                                         
@@ -960,7 +970,7 @@ Dep. Variable:                      y   R-squared:                       0.976
 Model:                            OLS   Adj. R-squared:                  0.975
 Method:                 Least Squares   F-statistic:                     872.4
 Date:                Mon, 09 Feb 2026   Prob (F-statistic):          2.13e-149
-Time:                        11:34:13   Log-Likelihood:                -413.46
+Time:                        12:23:16   Log-Likelihood:                -413.46
 No. Observations:                 200   AIC:                             846.9
 Df Residuals:                     190   BIC:                             879.9
 Df Model:                           9                                         
@@ -1093,13 +1103,15 @@ y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + \beta_4 X_1^2 + \beta_5 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RBF-transformed shape: (200, 50)
-                            OLS Regression Results                            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                      y   R-squared:                       0.980
 Model:                            OLS   Adj. R-squared:                  0.973
 Method:                 Least Squares   F-statistic:                     146.9
 Date:                Mon, 09 Feb 2026   Prob (F-statistic):          5.70e-105
-Time:                        11:34:14   Log-Likelihood:                -396.22
+Time:                        12:23:17   Log-Likelihood:                -396.22
 No. Observations:                 200   AIC:                             894.4
 Df Residuals:                     149   BIC:                             1063.
 Df Model:                          50                                         
@@ -1169,6 +1181,9 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 [2] The condition number is large, 1.75e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <img alt="_images/3b612899e7110fa664f00b3498274937c126623a4ddaab0e93583654d95f3b66.png" src="_images/3b612899e7110fa664f00b3498274937c126623a4ddaab0e93583654d95f3b66.png" />
@@ -1349,11 +1364,11 @@ Ridge regression adds an L2 penalty:</p>
       </div>
     </a>
     <a class="right-next"
-       href="conclusion.html"
+       href="03.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conclusion</p>
+        <p class="prev-next-title">Data Preprocessing, Local Models and Tree-Based Models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1440,7 +1455,7 @@ Ridge regression adds an L2 penalty:</p>
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Pascal Tribel
 </p>
 
   </div>
