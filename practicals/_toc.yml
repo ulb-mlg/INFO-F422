@@ -4,5 +4,9 @@ entries:
 - file: notation
 - file: "01"
 - file: "02"
+- file: "03"
+- file: "04"
+- file: "05"
+- file: "06"
 - file: conclusion
 - file: bibliography

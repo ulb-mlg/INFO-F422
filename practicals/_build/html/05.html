@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '05';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classification" href="06.html" />
+    <link rel="prev" title="Neural Networks for Regression" href="04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,11 +175,15 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notation.html">Notation Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.html">Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">Data Preprocessing, Local Models and Tree-Based Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">Neural Networks for Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ensembles of models and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -453,7 +457,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c1b88e9296c3eddc8d8e8fc5cab4b22399fd4f893324d4afba4012b1bfa2c71c.png" src="_images/c1b88e9296c3eddc8d8e8fc5cab4b22399fd4f893324d4afba4012b1bfa2c71c.png" />
+<img alt="_images/ae812be95c0fb30fed48e6b2e2d74a42c4a093875b7f07db4e9042b1275edcc7.png" src="_images/ae812be95c0fb30fed48e6b2e2d74a42c4a093875b7f07db4e9042b1275edcc7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -475,8 +479,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSEs: 0.9871505715228971, 95.76275842575922
-NMSEs: 0.1538800578365944, 0.9226149042133757
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSEs: 1.0442084191797718, 98.68839054542934
+NMSEs: 0.16315247686871243, 0.9239549190452924
 </pre></div>
 </div>
 </div>
@@ -1024,7 +1028,7 @@ Variance of Y: 3.5704323990926374
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e119542880e341ce83808a2db658e3e6"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best lambda: 0.2822222222222222
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d6057d7d18e44c3e94ddca1f2bcc98be"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best lambda: 0.2822222222222222
 Greatests coefficients indexes: [ 0  4 27 23]
 Greatests coefficients: [-7.1367055   0.89720319 -0.34672033 -0.33732339]
 </pre></div>
@@ -1092,7 +1096,7 @@ Greatests coefficients: [-7.1367055   0.89720319 -0.34672033 -0.33732339]
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cd894ffb17334426abb1e7f7cad254f2"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0964eab3e849491e958dddec1bc19ab4"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">27</span>
 <span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train_all</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]</span>
@@ -1778,6 +1782,24 @@ Is ensemble error lower than single model? True
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="04.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Neural Networks for Regression</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classification</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

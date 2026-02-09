@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '03';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Neural Networks for Regression" href="04.html" />
+    <link rel="prev" title="Linear Models" href="02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,11 +175,15 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notation.html">Notation Sheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.html">Linear Models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Preprocessing, Local Models and Tree-Based Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">Neural Networks for Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">Ensembles of models and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -862,18 +866,18 @@ memory usage: 1.3 MB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Number of missing values (artificial) ---
-MedInc        215
-HouseAge      212
-AveRooms      200
-AveBedrms     207
-Population    200
-AveOccup      222
-Latitude      224
-Longitude     200
+MedInc        228
+HouseAge      205
+AveRooms      209
+AveBedrms     204
+Population    180
+AveOccup      212
+Latitude      221
+Longitude     197
 dtype: int64
 --- After Dropping Missing Values ---
-Training set size: (15178, 8)
-Test set size: (3831, 8)
+Training set size: (15240, 8)
+Test set size: (3800, 8)
 </pre></div>
 </div>
 </div>
@@ -1142,7 +1146,7 @@ Test set size: (3831, 8)
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c07aeef3cec0421fab993649045eaf4f"}</script><img alt="_images/480ed6ae5cbba051fdc0cfe9de8ae4e4feeec26b7f558178e9eee630c90c5947.png" src="_images/480ed6ae5cbba051fdc0cfe9de8ae4e4feeec26b7f558178e9eee630c90c5947.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "14b92e4aac494730a115a886972b83ef"}</script><img alt="_images/2d7c2267d1a1872928f78ed46ab666a54cf44cd8d9534e31b00eab93bbc5ad8c.png" src="_images/2d7c2267d1a1872928f78ed46ab666a54cf44cd8d9534e31b00eab93bbc5ad8c.png" />
 </div>
 </div>
 </section>
@@ -1188,9 +1192,9 @@ Test set size: (3831, 8)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Comparison of MSE:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNN (k=13): 0.4347
-Decision Tree: 0.4385
-Random Forest: 0.2737
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNN (k=13): 0.4289
+Decision Tree: 0.4348
+Random Forest: 0.2735
 </pre></div>
 </div>
 </div>
@@ -1222,7 +1226,7 @@ Random Forest: 0.2737
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c380682068d42854fec38e8e8780e335ad7ef3b6715356aefeab30cd6e4b30fe.png" src="_images/c380682068d42854fec38e8e8780e335ad7ef3b6715356aefeab30cd6e4b30fe.png" />
+<img alt="_images/3cbd12fdfbe896e9594cde1ddaa86634206994366d334d08d1fc486a0c8765ad.png" src="_images/3cbd12fdfbe896e9594cde1ddaa86634206994366d334d08d1fc486a0c8765ad.png" />
 </div>
 </div>
 </section>
@@ -1252,7 +1256,7 @@ Random Forest: 0.2737
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bac1cb3e6d87449aaee913865a17fa23"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6ec48666a608485fa2b76654e9149d7b"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">estimators_range</span><span class="p">):</span>
@@ -1631,6 +1635,24 @@ Tree Depth
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="02.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Neural Networks for Regression</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
