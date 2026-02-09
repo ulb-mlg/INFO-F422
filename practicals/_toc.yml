@@ -1,4 +1,4 @@
-root: fronpage
+root: frontpage
 entries:
 - file: introduction
 - file: notation

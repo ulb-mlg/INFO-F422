@@ -1,8 +1,0 @@
-root: fronpage
-entries:
-- file: introduction
-- file: notation
-- file: "01"
-- file: "02"
-- file: conclusion
-- file: bibliography
