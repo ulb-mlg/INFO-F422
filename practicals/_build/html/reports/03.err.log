@@ -37,8 +37,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['estimators_range = list(range(1, 10))+list(range(10, 50, 2))+list(range(50, 100, 5))', 'mse_values_rf = []', '', 'for n in tqdm(estimators_range):', '    rf = RandomForestRegressor(n_estimators=n, random_state=42)']
+['import matplotlib.pyplot as plt', "plt.style.use(['seaborn-v0_8-muted', 'practicals.mplstyle'])", 'from sklearn.metrics import mean_squared_error', 'from tqdm.auto import tqdm', '']
 ...
-['plt.title("MSE vs n_estimators (Random Forest)")', 'plt.xlabel("n_estimators")', 'plt.ylabel("MSE")', 'plt.grid("on")', 'plt.show()']
+['plt.title("MSE vs K (KNN)")', 'plt.xlabel("K")', 'plt.ylabel("MSE")', 'plt.grid("on")', 'plt.show()']
 -------------------
 
