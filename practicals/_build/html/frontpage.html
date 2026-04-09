@@ -188,7 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01.html">1. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.html">2. Linear Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.html">3. Data Preprocessing, Local Models and Tree-Based Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">Neural Networks for Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Neural Networks for Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">Ensembles of models and feature selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
@@ -543,153 +543,134 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03.html">3. Data Preprocessing, Local Models and Tree-Based Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="03.html#introduction">Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="03.html#important-precision-about-the-evaluation-metric-used-in-this-practical">Important precision about the evaluation metric used in this practical</a></li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#data-preprocessing-overview">Data preprocessing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.html#introduction">3.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="03.html#important-precision-about-the-evaluation-metric-used-in-this-practical">3.1.1. Important precision about the evaluation metric used in this practical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.html#data-preprocessing-overview">3.1.2. Data preprocessing overview</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="03.html#k-nearest-neighbors">K-Nearest Neighbors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03.html#regression-trees">Regression Trees</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03.html#random-forests">Random Forests</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="03.html#why-does-this-reduce-variance">Why does this reduce variance?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#main-hyperparameters">Main Hyperparameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.html#k-nearest-neighbors">3.2. K-Nearest Neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.html#regression-trees">3.3. Regression Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.html#random-forests">3.4. Random Forests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="03.html#why-does-this-reduce-variance">3.4.1. Why does this reduce variance?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.html#main-hyperparameters">3.4.2. Main Hyperparameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="03.html#feature-importances">Feature Importances</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03.html#scikit-learn-pipelines"><code class="docutils literal notranslate"><span class="pre">Scikit-learn</span></code> Pipelines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03.html#exercises">Exercises</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="03.html#california-housing">California Housing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#solution">Solution</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="03.html#dataset-and-exploration">Dataset and exploration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="03.html#handling-missing-values">Handling Missing Values</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="03.html#an-advanced-method-knnimputer">An advanced method: <code class="docutils literal notranslate"><span class="pre">KNNImputer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.html#feature-importances">3.5. Feature Importances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.html#scikit-learn-pipelines">3.6. <code class="docutils literal notranslate"><span class="pre">Scikit-learn</span></code> Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03.html#exercises">3.7. Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="03.html#california-housing">3.7.1 California Housing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.html#solution">3.7.2. Solution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03.html#dataset-and-exploration">3.7.2.1. Dataset and exploration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.html#handling-missing-values">3.7.2.2. Handling Missing Values</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="03.html#an-advanced-method-knnimputer">3.7.2.2.1. An advanced method: <code class="docutils literal notranslate"><span class="pre">KNNImputer</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="03.html#dealing-with-categorical-values">Dealing with Categorical Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="03.html#normalization-scaling">Normalization/Scaling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.html#dealing-with-categorical-values">3.7.2.3. Dealing with Categorical Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.html#normalization-scaling">3.7.2.4. Normalization/Scaling</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#vanilla-knn-implementation">Vanilla KNN Implementation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="03.html#id1">Solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.html#vanilla-knn-implementation">3.7.3. Vanilla KNN Implementation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03.html#id1">3.7.3.1. Solution</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#regression-trees-and-random-forests">Regression Trees and Random Forests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#id2">Solution</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="03.html#implementation-with-scikit-learn">Implementation with <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="03.html#exploring-key-parameters">Exploring Key Parameters</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="03.html#decision-tree-max-depth">Decision Tree: <code class="docutils literal notranslate"><span class="pre">max_depth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.html#regression-trees-and-random-forests">3.7.4. Regression Trees and Random Forests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03.html#solution-implementation-with-scikit-learn">3.7.4.1 Solution: Implementation with <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.html#feature-importance-with-the-best-models">3.7.4.2. Feature importance with the best models</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="03.html#random-forest-n-estimators">Random Forest: <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.html#building-a-pipeline">3.7.5. Building a Pipeline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03.html#id2">3.7.5.1. Solution</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="03.html#feature-importance-with-the-best-models">Feature importance with the best models</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#building-a-pipeline">Building a Pipeline</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="03.html#id3">Solution</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="03.html#additional-exercise-biasvariance-trade-off-in-regression-with-decision-trees">Additional exercise: bias–variance trade-off in regression with decision trees</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="03.html#id4">Solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03.html#additional-exercise-biasvariance-trade-off-in-regression-with-decision-trees">3.7.6. Additional exercise: bias–variance trade-off in regression with decision trees</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03.html#id3">3.7.6.1. Solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">Neural Networks for Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="04.html#introduction">Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#data-preprocessing-for-neural-networks">Data Preprocessing for Neural Networks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="04.html#normalization-and-standardization">Normalization and Standardization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="04.html#input-data-shaping">Input Data Shaping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. Neural Networks for Regression</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04.html#introduction">4.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#data-preprocessing-for-neural-networks">4.2. Data Preprocessing for Neural Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#normalization-and-standardization">4.2.1. Normalization and Standardization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#input-data-shaping">4.2.2. Input Data Shaping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#feed-forward-neural-networks-mlps">4.3. Feed-Forward Neural Networks (MLPs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#architecture-and-notation">4.3.1. Architecture and Notation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#convolutional-neural-networks-cnns">4.4. Convolutional Neural Networks (CNNs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#convolution-operation">4.4.1. Convolution Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#pooling-layers">4.4.2. Pooling Layers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#activation-functions">4.5. Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#cost-function-and-matrix-based-back-propagation">4.6. Cost function and matrix-based Back-Propagation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#sum-of-squared-errors-sse">4.6.1. Sum of Squared Errors (SSE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#gradient-descent-update">4.6.2. Gradient Descent Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#back-propagation-algorithm-2">4.6.3. Back-Propagation (Algorithm 2)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#example-1-back-propagation-in-a-mlp">4.7. Example 1: Back-Propagation in a MLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#overfitting-and-cross-validation">4.8. Overfitting and Cross-Validation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#overfitting-phenomenon">4.8.1. Overfitting Phenomenon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#detection-and-mitigation">4.8.2. Detection and Mitigation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#model-persistence-saving-and-loading-models-in-pytorch">4.9. Model Persistence: Saving and Loading Models in PyTorch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#example-2-cnn-for-regression">4.10. Example 2: CNN for Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#introduction-to-pytorch-tensors">4.11. Introduction to PyTorch tensors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#creating-tensors">4.11.1. Creating Tensors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#basic-tensor-operations">4.11.2. Basic Tensor Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04.html#arithmetic-operations">4.11.2.1. Arithmetic operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#indexing-and-slicing">4.11.2.2. Indexing and slicing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#reshaping-and-concatenation">4.11.2.3. Reshaping and concatenation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#autograd-and-gradients">4.11.3. Autograd and Gradients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#advanced-tensor-functions">4.11.4. Advanced Tensor Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04.html#broadcasting">4.11.4.1. Broadcasting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#device-management-cpu-vs-gpu">4.11.4.2. Device Management (CPU vs GPU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#in-place-operations">4.11.4.3. In-place Operations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#feed-forward-neural-networks-mlps">Feed-Forward Neural Networks (MLPs)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#architecture-and-notation">Architecture and Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#exercises">4.12. Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network">4.12.1. Comparison of symbolic and automatic differentiation in a simple feedforward neural network</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#convolutional-neural-networks-cnns">Convolutional Neural Networks (CNNs)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#convolution-operation">Convolution Operation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#pooling-layers">Pooling Layers</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#activation-functions">Activation Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#cost-function-and-matrix-based-back-propagation">Cost function and matrix-based Back-Propagation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#sum-of-squared-errors-sse">Sum of Squared Errors (SSE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#gradient-descent-update">Gradient Descent Update</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#back-propagation-algorithm-2">Back-Propagation (Algorithm 2)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#example-1-back-propagation-in-a-mlp">Example 1: Back-Propagation in a MLP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#overfitting-and-cross-validation">Overfitting and Cross-Validation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#overfitting-phenomenon">Overfitting Phenomenon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#detection-and-mitigation">Detection and Mitigation</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#model-persistence-saving-and-loading-models-in-pytorch">Model Persistence: Saving and Loading Models in PyTorch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#example-2-cnn-for-regression">Example 2: CNN for Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#introduction-to-pytorch-tensors">Introduction to PyTorch tensors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#creating-tensors">Creating Tensors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#basic-tensor-operations">Basic Tensor Operations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="04.html#arithmetic-operations">Arithmetic operations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="04.html#indexing-and-slicing">Indexing and slicing</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="04.html#in-this-code">In this code:</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="04.html#reshaping-and-concatenation">Reshaping and concatenation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#autograd-and-gradients">Autograd and Gradients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#advanced-tensor-functions">Advanced Tensor Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="04.html#broadcasting">Broadcasting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="04.html#device-management-cpu-vs-gpu">Device Management (CPU vs GPU)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="04.html#in-place-operations">In-place Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#problem-setup">4.13. Problem setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#pytorch-implementation">4.13.1. PyTorch implementation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04.html#activation-function-and-its-derivative">4.13.1.1. Activation function and its derivative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#define-the-working-variables">4.13.1.2. Define the working variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#forward-pass">4.13.1.3. Forward pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#symbolic-gradients">4.13.1.4. Symbolic gradients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#automatic-differentiation">4.13.1.5. Automatic differentiation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#comparison-of-symbolic-and-automatic-differentiation">4.13.1.6. Comparison of symbolic and automatic differentiation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#exercises">Exercises</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network">Comparison of symbolic and automatic differentiation in a simple feedforward neural network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04.html#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures">4.14. Facial keypoints detection with PyTorch FCN and CNN architectures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04.html#dataset-overview">4.14.1. Dataset overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04.html#data-format">4.14.1.1. Data format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#missing-values">4.14.1.2. Missing values</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#problem-setup">Problem setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#pytorch-implementation">PyTorch implementation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#define-the-activation-function-and-its-derivative">Define the activation function and its derivative</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#define-the-working-variables">Define the working variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#forward-pass">Forward pass</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#symbolic-gradients">Symbolic gradients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#automatic-differentiation">Automatic differentiation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#comparison-of-symbolic-and-automatic-differentiation">Comparison of symbolic and automatic differentiation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures">Facial keypoints detection with PyTorch FCN and CNN architectures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#dataset-overview">Dataset overview</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="04.html#data-format">Data format</a></li>
-<li class="toctree-l4"><a class="reference internal" href="04.html#missing-values">Missing values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#data-exploration">4.14.2. Data exploration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04.html#id1">4.14.2.1. Missing Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.html#sample-visualization">4.14.2.2. Sample visualization</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#data-preprocessing">4.14.3. Data preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#fully-connected-neural-network-fcn">4.14.4. Fully connected neural network (FCN)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04.html#fcn-architecture">4.14.4.1. FCN architecture</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#data-exploration">Data exploration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#id1">Missing Values</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#sample-visualization">Sample visualization</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#data-preprocessing">Data preprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#fully-connected-neural-network-fcn">Fully connected neural network (FCN)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#fcn-architecture">FCN architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#split-the-flattened-dataset-for-training-validation">Split the Flattened Dataset for Training/Validation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#create-pytorch-datasets-and-dataloaders">Create PyTorch Datasets and DataLoaders</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#instantiate-the-fcn-model-define-criterion-and-the-optimizer">Instantiate the FCN Model, define criterion and the optimizer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#training-with-ongoing-evaluation-of-the-validation-error">Training with ongoing evaluation of the validation error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04.html#evaluate-on-validation-set">Evaluate on validation set</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#convolutional-neural-network">Convolutional neural network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#training-the-model">Training the model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04.html#evaluation-and-results">Evaluation and results</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="04.html#visualizing-predictions">Visualizing predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04.html#convolutional-neural-network">4.14.5. Convolutional neural network</a></li>
 </ul>
 </li>
 </ul>
