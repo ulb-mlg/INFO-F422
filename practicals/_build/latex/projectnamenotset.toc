@@ -1,0 +1,215 @@
+\selectlanguage *[]{english}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Welcome}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Why This Book?}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Course Overview}{4}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Introduction to Probabilistic Methods and Monte Carlo Simulations}{4}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Linear Models}{4}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Preprocessing, Local Models and Tree\sphinxhyphen {}Based Models}{4}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Neural Networks for Regression}{5}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Ensemble Models and Feature Selection}{5}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Classification}{5}{subsection.1.3.6}%
+\contentsline {section}{\numberline {1.4}Practical Exercises}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Final Notes}{6}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Notation Sheet}{7}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Introduction to Probabilistic Methods and Monte Carlo Simulations}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Necessary Libraries}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Introduction to \sphinxstyleliteralintitle {\sphinxupquote {NumPy}}}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Manipulation of \sphinxstyleliteralintitle {\sphinxupquote {NumPy}} Arrays}{10}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Basic Operations}{11}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Probabilistic Foundations}{12}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Expectation and Variance}{12}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Common Probability Distributions}{12}{subsection.3.3.2}%
+\contentsline {subsubsection}{Uniform Distribution}{12}{subsubsection*.3}%
+\contentsline {subsubsection}{Normal (Gaussian) Distribution}{13}{subsubsection*.4}%
+\contentsline {section}{\numberline {3.4}Introduction to the \sphinxstyleliteralintitle {\sphinxupquote {numpy.random}} Module}{13}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Reproducibility of Results}{13}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Available Distributions}{14}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Sampling}{14}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Statistical Analysis}{14}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Exercise: Histogram \sphinxhyphen {} Probability Density Function of a \(\symcal N(0,1\)) vs Histogram}{15}{subsection.3.4.5}%
+\contentsline {subsubsection}{Solution}{15}{subsubsection*.5}%
+\contentsline {section}{\numberline {3.5}Multivariate Gaussian Distributions}{16}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Exercise}{16}{subsection.3.5.1}%
+\contentsline {subsubsection}{Solution}{17}{subsubsection*.6}%
+\contentsline {section}{\numberline {3.6}Monte Carlo Simulation}{18}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Monte Carlo Integration}{18}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Exercise: Integral Estimation}{18}{subsection.3.6.2}%
+\contentsline {subsubsection}{Solution}{19}{subsubsection*.7}%
+\contentsline {subsection}{\numberline {3.6.3}Exercise: Probability Estimation}{20}{subsection.3.6.3}%
+\contentsline {subsubsection}{Solution}{21}{subsubsection*.8}%
+\contentsline {subsection}{\numberline {3.6.4}Exercise: Monte Carlo Approximation of Parameters}{22}{subsection.3.6.4}%
+\contentsline {subsubsection}{Solution}{22}{subsubsection*.9}%
+\contentsline {subsection}{\numberline {3.6.5}Exercise: Absolute Value}{23}{subsection.3.6.5}%
+\contentsline {subsubsection}{Solution}{23}{subsubsection*.10}%
+\contentsline {subsection}{\numberline {3.6.6}Exercise: Expected Value for any Function}{23}{subsection.3.6.6}%
+\contentsline {subsubsection}{Solution}{23}{subsubsection*.11}%
+\contentsline {subsection}{\numberline {3.6.7}Exercise: Variance of Uniform Random Variable}{24}{subsection.3.6.7}%
+\contentsline {subsubsection}{Solution}{24}{subsubsection*.12}%
+\contentsline {subsection}{\numberline {3.6.8}Exercise: Covariance of a Multiple of a Random Variable}{25}{subsection.3.6.8}%
+\contentsline {subsubsection}{Solution}{25}{subsubsection*.13}%
+\contentsline {section}{\numberline {3.7}Monte Carlo and Multivariate Gaussian Distributions}{25}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Exercise: 2D Monte Carlo Simulation}{25}{subsection.3.7.1}%
+\contentsline {subsubsection}{Solution}{26}{subsubsection*.14}%
+\contentsline {subsection}{\numberline {3.7.2}Exercise:}{27}{subsection.3.7.2}%
+\contentsline {subsubsection}{Solution}{27}{subsubsection*.15}%
+\contentsline {subsection}{\numberline {3.7.3}Exercise: Trivariate Gaussian Data}{29}{subsection.3.7.3}%
+\contentsline {subsubsection}{Solution}{30}{subsubsection*.16}%
+\contentsline {subsection}{\numberline {3.7.4}Exercise: Partial Correlation}{31}{subsection.3.7.4}%
+\contentsline {subsubsection}{Solution}{32}{subsubsection*.17}%
+\contentsline {section}{\numberline {3.8}Minimization}{32}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Exercise: Minimization}{33}{subsection.3.8.1}%
+\contentsline {subsubsection}{Solution}{33}{subsubsection*.18}%
+\contentsline {section}{\numberline {3.9}Mixture of Gaussians}{34}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Conclusion}{35}{section.3.10}%
+\contentsline {chapter}{\numberline {4}Linear Models}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Generating Synthetic Multivariate Data}{38}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Exercise}{38}{subsection.4.2.1}%
+\contentsline {subsubsection}{Solution}{38}{subsubsection*.19}%
+\contentsline {subsection}{\numberline {4.2.2}Quick Data Inspection}{39}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Ordinary Least Squares (OLS) – Manual Computation Using Matrix Algebra}{40}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Comparison with statsmodels}{42}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Observations}{43}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Residual Analysis and Tests}{43}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Residuals vs. Fitted Plot}{43}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Normal Q\sphinxhyphen {}Q Plot (Quantile\sphinxhyphen {}Quantile Plot)}{44}{subsection.4.4.2}%
+\contentsline {subsubsection}{Comments}{45}{subsubsection*.20}%
+\contentsline {section}{\numberline {4.5}Input Transformations \sphinxhyphen {} Polynomial Features}{45}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Example: Still a Linear Model}{46}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}What Would NOT Be a Linear Model?}{46}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Why Use Polynomial Features in Linear Regression?}{46}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Polynomial Feature Expansion}{46}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Example}{46}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}How to Implement Polynomial Features in Python}{47}{subsection.4.6.3}%
+\contentsline {subsubsection}{2.6.3.1. Residual analysis and QQ\sphinxhyphen {}plot}{49}{subsubsection*.21}%
+\contentsline {section}{\numberline {4.7}RBF Expansion}{50}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}What is RBF Expansion?}{51}{subsection.4.7.1}%
+\contentsline {subsubsection}{Why Use RBF Instead of Polynomial Expansion?}{51}{subsubsection*.22}%
+\contentsline {subsection}{\numberline {4.7.2}Implementing RBF Expansion with Random Fourier Features}{51}{subsection.4.7.2}%
+\contentsline {subsubsection}{Comments}{54}{subsubsection*.23}%
+\contentsline {section}{\numberline {4.8}Ridge Regression}{54}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Ridge Closed\sphinxhyphen {}form}{54}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Residual analysis for Ridge}{56}{subsection.4.8.2}%
+\contentsline {section}{\numberline {4.9}Conclusion}{57}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Data Preprocessing, Local Models and Tree\sphinxhyphen {}Based Models}{59}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{59}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Important precision about the evaluation metric used in this practical}{60}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Data preprocessing overview}{60}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}K\sphinxhyphen {}Nearest Neighbors}{60}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Regression Trees}{61}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Random Forests}{62}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Why does this reduce variance?}{62}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Main Hyperparameters}{63}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Feature Importances}{63}{section.5.5}%
+\contentsline {section}{\numberline {5.6}\sphinxstyleliteralintitle {\sphinxupquote {Scikit\sphinxhyphen {}learn}} Pipelines}{63}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Exercises}{64}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}California Housing}{64}{subsection.5.7.1}%
+\contentsline {subsubsection}{Solution}{64}{subsubsection*.24}%
+\contentsline {paragraph}{Dataset and exploration}{64}{paragraph*.25}%
+\contentsline {paragraph}{Dealing with Categorical Values}{67}{paragraph*.26}%
+\contentsline {paragraph}{Normalization/Scaling}{68}{paragraph*.27}%
+\contentsline {subsection}{\numberline {5.7.2}Vanilla KNN Implementation}{68}{subsection.5.7.2}%
+\contentsline {subsubsection}{Solution}{68}{subsubsection*.28}%
+\contentsline {subsection}{\numberline {5.7.3}Regression Trees and Random Forests}{70}{subsection.5.7.3}%
+\contentsline {subsubsection}{Solution: Implementation with \sphinxstyleliteralintitle {\sphinxupquote {scikit\sphinxhyphen {}learn}}}{70}{subsubsection*.29}%
+\contentsline {subsubsection}{Feature importance with the best models}{73}{subsubsection*.30}%
+\contentsline {subsection}{\numberline {5.7.4}Building a Pipeline}{74}{subsection.5.7.4}%
+\contentsline {subsubsection}{Solution}{75}{subsubsection*.31}%
+\contentsline {subsection}{\numberline {5.7.5}Additional exercise: bias–variance trade\sphinxhyphen {}off in regression with decision trees}{75}{subsection.5.7.5}%
+\contentsline {subsubsection}{Solution}{76}{subsubsection*.32}%
+\contentsline {chapter}{\numberline {6}Neural Networks for Regression}{79}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{79}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Data Preprocessing for Neural Networks}{80}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Normalization and Standardization}{80}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Input Data Shaping}{80}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Feed\sphinxhyphen {}Forward Neural Networks (MLPs)}{81}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Architecture and Notation}{81}{subsection.6.3.1}%
+\contentsline {section}{\numberline {6.4}Convolutional Neural Networks (CNNs)}{82}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Convolution Operation}{83}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Pooling Layers}{83}{subsection.6.4.2}%
+\contentsline {section}{\numberline {6.5}Activation Functions}{83}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Cost function and matrix\sphinxhyphen {}based Back\sphinxhyphen {}Propagation}{83}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Sum of Squared Errors (SSE)}{83}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Gradient Descent Update}{84}{subsection.6.6.2}%
+\contentsline {subsection}{\numberline {6.6.3}Back\sphinxhyphen {}Propagation (Algorithm 2)}{84}{subsection.6.6.3}%
+\contentsline {section}{\numberline {6.7}Example: Back\sphinxhyphen {}Propagation in a MLP}{84}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Overfitting and Cross\sphinxhyphen {}Validation}{85}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Overfitting Phenomenon}{85}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Detection and Mitigation}{85}{subsection.6.8.2}%
+\contentsline {section}{\numberline {6.9}Model Persistence: Saving and Loading Models in PyTorch}{85}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Example: CNN for Regression}{86}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Introduction to PyTorch tensors}{88}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Creating Tensors}{89}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Basic Tensor Operations}{91}{subsection.6.11.2}%
+\contentsline {subsubsection}{Arithmetic operations}{91}{subsubsection*.33}%
+\contentsline {subsubsection}{Indexing and slicing}{93}{subsubsection*.34}%
+\contentsline {subsubsection}{Reshaping and concatenation}{94}{subsubsection*.35}%
+\contentsline {subsection}{\numberline {6.11.3}Autograd and Gradients}{97}{subsection.6.11.3}%
+\contentsline {subsection}{\numberline {6.11.4}Advanced Tensor Functions}{98}{subsection.6.11.4}%
+\contentsline {subsubsection}{Broadcasting}{98}{subsubsection*.36}%
+\contentsline {subsubsection}{Device Management (CPU vs GPU)}{99}{subsubsection*.37}%
+\contentsline {subsubsection}{In\sphinxhyphen {}place Operations}{101}{subsubsection*.38}%
+\contentsline {section}{\numberline {6.12}Exercises}{103}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Comparison of symbolic and automatic differentiation in a simple feedforward neural network}{103}{subsection.6.12.1}%
+\contentsline {subsubsection}{Problem setup}{103}{subsubsection*.39}%
+\contentsline {subsubsection}{PyTorch implementation}{104}{subsubsection*.40}%
+\contentsline {subsection}{\numberline {6.12.2}Facial keypoints detection with PyTorch FCN and CNN architectures}{107}{subsection.6.12.2}%
+\contentsline {subsubsection}{Dataset overview}{108}{subsubsection*.41}%
+\contentsline {subsubsection}{Data exploration}{110}{subsubsection*.42}%
+\contentsline {subsubsection}{Data preprocessing}{113}{subsubsection*.43}%
+\contentsline {subsubsection}{Fully connected neural network (FCN)}{113}{subsubsection*.44}%
+\contentsline {paragraph}{FCN architecture}{113}{paragraph*.45}%
+\contentsline {subsubsection}{Convolutional neural network}{116}{subsubsection*.46}%
+\contentsline {chapter}{\numberline {7}Ensembles of models and feature selection}{123}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Reminder: Supervised learning}{123}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Regression}{123}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Error measurement}{124}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Feature selection}{125}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Data overview and preprocessing}{126}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Input and output variables}{127}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Modelling with linear and decision tree models}{128}{subsection.7.2.3}%
+\contentsline {subsubsection}{Linear model}{128}{subsubsection*.47}%
+\contentsline {subsubsection}{Decision tree}{129}{subsubsection*.48}%
+\contentsline {subsubsection}{Ridge regression with LOO\sphinxhyphen {}CV}{130}{subsubsection*.49}%
+\contentsline {subsubsection}{Selection bias}{132}{subsubsection*.50}%
+\contentsline {subsection}{\numberline {7.2.4}Ensemble of models}{134}{subsection.7.2.4}%
+\contentsline {section}{\numberline {7.3}Feature selection}{135}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Filter methods}{135}{subsection.7.3.1}%
+\contentsline {subsubsection}{Correlation with the output}{135}{subsubsection*.51}%
+\contentsline {subsubsection}{mRMR}{137}{subsubsection*.52}%
+\contentsline {subsubsection}{PCA}{138}{subsubsection*.53}%
+\contentsline {subsection}{\numberline {7.3.2}Wrapper methods}{140}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Using other predictive models}{141}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Classification}{149}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Introduction}{149}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Data generation}{150}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Generative way:}{150}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Discriminative way}{151}{subsection.8.2.2}%
+\contentsline {section}{\numberline {8.3}Exercises}{152}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Question 1}{153}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Question 2}{154}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Question 3}{154}{subsection.8.3.3}%
+\contentsline {section}{\numberline {8.4}Metrics and model evaluations methods}{156}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Bayes classifier}{157}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Linear model for classification}{158}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Multi\sphinxhyphen {}layers perceptron}{159}{subsection.8.6.1}%
+\contentsline {section}{\numberline {8.7}Exercises}{159}{section.8.7}%
+\contentsline {subsection}{\numberline {8.7.1}KNN}{159}{subsection.8.7.1}%
+\contentsline {subsection}{\numberline {8.7.2}Bayes}{161}{subsection.8.7.2}%
+\contentsline {subsection}{\numberline {8.7.3}Other models}{162}{subsection.8.7.3}%
+\contentsline {subsection}{\numberline {8.7.4}More classes}{164}{subsection.8.7.4}%
+\contentsline {section}{\numberline {8.8}ROC curve}{166}{section.8.8}%
+\contentsline {subsection}{\numberline {8.8.1}Exercise}{166}{subsection.8.8.1}%
+\contentsline {subsection}{\numberline {8.8.2}More models}{168}{subsection.8.8.2}%
+\contentsline {section}{\numberline {8.9}Unequal costs}{169}{section.8.9}%
+\contentsline {subsection}{\numberline {8.9.1}Exercise}{170}{subsection.8.9.1}%
+\contentsline {chapter}{\numberline {9}Conclusion}{171}{chapter.9}%
+\contentsline {section}{\numberline {9.1}A Practical Checklist: Building a Machine Learning Pipeline}{171}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Understanding the Task}{171}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Understanding the Inputs}{172}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Exploring the Data}{172}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Evaluating Models}{172}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}Thinking Critically}{172}{subsection.9.1.5}%
+\contentsline {section}{\numberline {9.2}Final Words}{173}{section.9.2}%
+\contentsline {chapter}{\numberline {10}Bibliography}{175}{chapter.10}%
