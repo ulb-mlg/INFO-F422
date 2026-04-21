@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. 1. Introduction to Probabilistic Methods and Monte Carlo Simulations &#8212; Statistical Foundations of Machine Learning - Practicals Handbook</title>
+    <title>3. Introduction to Probabilistic Methods and Monte Carlo Simulations &#8212; Statistical Foundations of Machine Learning - Practicals Handbook</title>
   
   
   
@@ -75,7 +75,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '01';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. 2. Linear Models" href="02.html" />
+    <link rel="next" title="4. Linear Models" href="02.html" />
     <link rel="prev" title="2. Notation Sheet" href="notation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,10 +197,10 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notation.html">2. Notation Sheet</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. 1. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">4. 2. Linear Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">5. 3. Data Preprocessing, Local Models and Tree-Based Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">6. 4. Neural Networks for Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">4. Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. Data Preprocessing, Local Models and Tree-Based Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">6. Neural Networks for Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">7. Ensembles of models and feature selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">8. Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conclusion.html">9. Conclusion</a></li>
@@ -343,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Introduction to Probabilistic Methods and Monte Carlo Simulations</h1>
+    <h1>Introduction to Probabilistic Methods and Monte Carlo Simulations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -353,97 +353,99 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-libraries">3.1. 1.1. Necessary Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-numpy">3.2. 1.2. Introduction to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulation-of-numpy-arrays">3.2.1. 1.2.1. Manipulation of <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> Arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">3.2.2. 1.2.2. Basic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-libraries">3.1. Necessary Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-numpy">3.2. Introduction to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulation-of-numpy-arrays">3.2.1. Manipulation of <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">3.2.2. Basic Operations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-foundations">3.3. 1.3. Probabilistic Foundations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-and-variance">3.3.1. 1.3.1. Expectation and Variance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-probability-distributions">3.3.2. 1.3.2. Common Probability Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3.3.2.1. 1.3.2.1. Uniform Distribution</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-gaussian-distribution">3.3.2.2. 1.3.2.2. Normal (Gaussian) Distribution</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-numpy-random-module">3.4. 1.4. Introduction to the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> Module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-of-results">3.4.1. 1.4.1. Reproducibility of Results</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-distributions">3.4.2. 1.4.2. Available Distributions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">3.4.3. 1.4.3. Sampling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analysis">3.4.4. 1.4.4. Statistical Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-histogram-probability-density-function-of-a-mathcal-n-0-1-vs-histogram">3.4.5. 1.4.5. Exercise: Histogram - Probability Density Function of a <span class="math notranslate nohighlight">\(\mathcal N(0,1\)</span>) vs Histogram</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">3.4.5.1. 1.4.5.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-foundations">3.3. Probabilistic Foundations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-and-variance">3.3.1. Expectation and Variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-probability-distributions">3.3.2. Common Probability Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3.3.2.1. Uniform Distribution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-gaussian-distribution">3.3.2.2. Normal (Gaussian) Distribution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-gaussian-distributions">3.5. 1.5. Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5.1. 1.5.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.5.2. 1.5.2. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulation">3.6. 1.6. Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integration">3.6.1. 1.6.1. Monte Carlo Integration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-integral-estimation">3.6.2. 1.6.2. Exercise: Integral Estimation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.6.2.1. 1.6.2.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-probability-estimation">3.6.3. 1.6.3. Exercise: Probability Estimation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.3.1. 1.6.3.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-monte-carlo-approximation-of-parameters">3.6.4. 1.6.4. Exercise: Monte Carlo Approximation of Parameters</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.6.4.1. 1.6.4.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-absolute-value">3.6.5. 1.6.5. Exercise: Absolute Value</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.6.5.1. 1.6.5.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-expected-value-for-any-function">3.6.6. 1.6.6. Exercise: Expected Value for any Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6.6.1. 1.6.6.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-variance-of-uniform-random-variable">3.6.7. 1.6.7. Exercise: Variance of Uniform Random Variable</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.6.7.1. 1.6.7.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-covariance-of-a-multiple-of-a-random-variable">3.6.8. 1.6.8. Exercise: Covariance of a Multiple of a Random Variable</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.6.8.1. 1.6.8.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-numpy-random-module">3.4. Introduction to the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> Module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-of-results">3.4.1. Reproducibility of Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-distributions">3.4.2. Available Distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">3.4.3. Sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analysis">3.4.4. Statistical Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-histogram-probability-density-function-of-a-mathcal-n-0-1-vs-histogram">3.4.5. Exercise: Histogram - Probability Density Function of a <span class="math notranslate nohighlight">\(\mathcal N(0,1\)</span>) vs Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">3.4.5.1. Solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-and-multivariate-gaussian-distributions">3.7. 1.7. Monte Carlo and Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2d-monte-carlo-simulation">3.7.1. 1.7.1. Exercise: 2D Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.7.1.1. 1.7.1.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.7.2. 1.7.2. Exercise:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.7.2.1. 1.7.2.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-trivariate-gaussian-data">3.7.3. 1.7.3. Exercise: Trivariate Gaussian Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.7.3.1. 1.7.3.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-partial-correlation">3.7.4. 1.7.4. Exercise: Partial Correlation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.7.4.1. 1.7.4.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-gaussian-distributions">3.5. Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5.1. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.5.1.1. Solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization">3.8. 1.8. Minimization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-minimization">3.8.1. 1.8.1. Exercise: Minimization</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.8.1.1. 1.8.1.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulation">3.6. Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integration">3.6.1. Monte Carlo Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-integral-estimation">3.6.2. Exercise: Integral Estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.6.2.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-probability-estimation">3.6.3. Exercise: Probability Estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.3.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-monte-carlo-approximation-of-parameters">3.6.4. Exercise: Monte Carlo Approximation of Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.6.4.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-absolute-value">3.6.5. Exercise: Absolute Value</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.6.5.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-expected-value-for-any-function">3.6.6. Exercise: Expected Value for any Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6.6.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-variance-of-uniform-random-variable">3.6.7. Exercise: Variance of Uniform Random Variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.6.7.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-covariance-of-a-multiple-of-a-random-variable">3.6.8. Exercise: Covariance of a Multiple of a Random Variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.6.8.1. Solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixture-of-gaussians">3.9. 1.9. Mixture of Gaussians</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">3.10. 1.10. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-and-multivariate-gaussian-distributions">3.7. Monte Carlo and Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2d-monte-carlo-simulation">3.7.1. Exercise: 2D Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.7.1.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.7.2. Exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.7.2.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-trivariate-gaussian-data">3.7.3. Exercise: Trivariate Gaussian Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.7.3.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-partial-correlation">3.7.4. Exercise: Partial Correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.7.4.1. Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization">3.8. Minimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-minimization">3.8.1. Exercise: Minimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.8.1.1. Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixture-of-gaussians">3.9. Mixture of Gaussians</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">3.10. Conclusion</a></li>
 </ul>
             </nav>
         </div>
@@ -456,13 +458,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-probabilistic-methods-and-monte-carlo-simulations">
-<h1><span class="section-number">3. </span>1. Introduction to Probabilistic Methods and Monte Carlo Simulations<a class="headerlink" href="#introduction-to-probabilistic-methods-and-monte-carlo-simulations" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Introduction to Probabilistic Methods and Monte Carlo Simulations<a class="headerlink" href="#introduction-to-probabilistic-methods-and-monte-carlo-simulations" title="Link to this heading">#</a></h1>
 <p>Probabilistic methods and Monte Carlo simulations represent fundamental techniques in computational mathematics, offering powerful approaches to solve complex problems that would be analytically intractable. These methods have found widespread applications across diverse domains including statistical physics, financial mathematics, quantum mechanics, machine learning, and computational biology. The course of INFO-F305 - <a class="reference external" href="https://www.researchgate.net/publication/317888858_Cours_de_modelisation_et_simulation_in_French?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InNlYXJjaCIsInBvc2l0aW9uIjoicGFnZUhlYWRlciJ9fQ"><em>Modélisation et Simulation</em></a> proposes a good introduction to Monte Carlo simulations. Exercises are available in the <a class="reference external" href="https://www.researchgate.net/publication/395534091_Modelisation_et_Simulation_-_Syllabus_Pratique">practical handbook</a> of this course.</p>
 <p>This chapter introduces the fundamental concepts, tools, and techniques of probabilistic methods with a particular focus on Monte Carlo simulations. We will explore how to generate random variables from different distributions, estimate integrals, solve optimization problems, and analyze statistical properties of random processes. Throughout the chapter, we will emphasize both the theoretical foundations and practical implementations using Python and its scientific computing ecosystem.</p>
 <p>Note, the proper understanding of this set of methods is extremely important for having a good approach of many modern Machine Learning problems. Real-life data collection can indeed, in many cases, be modelized by a Monte Carlo simulation, and the statistical/probabilistic study of the simulated problem often offers valuable insights about the real-life dynamics.</p>
 <p>By the end of this chapter, you will have developed a solid understanding of how to apply Monte Carlo techniques to solve a variety of mathematical and statistical problems, setting the foundation for more advanced applications in subsequent chapters.</p>
 <section id="necessary-libraries">
-<h2><span class="section-number">3.1. </span>1.1. Necessary Libraries<a class="headerlink" href="#necessary-libraries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>Necessary Libraries<a class="headerlink" href="#necessary-libraries" title="Link to this heading">#</a></h2>
 <p>To run this practical work, the following libraries must be installed:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>: Vector and matrix manipulation, random number generation,</p></li>
@@ -507,14 +509,14 @@ document.write(`
 </div>
 </section>
 <section id="introduction-to-numpy">
-<h2><span class="section-number">3.2. </span>1.2. Introduction to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#introduction-to-numpy" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Introduction to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#introduction-to-numpy" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> is an essential library for scientific computations in Python. It offers:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ndarray</span></code> objects to represent multi-dimensional arrays.</p></li>
 <li><p>A collection of mathematical functions to perform fast operations on these arrays.</p></li>
 </ul>
 <section id="manipulation-of-numpy-arrays">
-<h3><span class="section-number">3.2.1. </span>1.2.1. Manipulation of <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> Arrays<a class="headerlink" href="#manipulation-of-numpy-arrays" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.2.1. </span>Manipulation of <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> Arrays<a class="headerlink" href="#manipulation-of-numpy-arrays" title="Link to this heading">#</a></h3>
 <p>Here are some examples for creating and manipulating <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -568,7 +570,7 @@ document.write(`
 </div>
 </section>
 <section id="basic-operations">
-<h3><span class="section-number">3.2.2. </span>1.2.2. Basic Operations<a class="headerlink" href="#basic-operations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.2.2. </span>Basic Operations<a class="headerlink" href="#basic-operations" title="Link to this heading">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Remark, those functions (and basically, most of the <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> functions) are <em>vectorial</em>. This means that they are applied in parallel on all the components of the vectors. Later on, when we will present the <code class="docutils literal notranslate"><span class="pre">PyTorch</span></code> library, we will show how this parallelisation can benefit from using specialized hardware, such as the GPU’s.</p>
@@ -594,10 +596,10 @@ A larger introduction to <code class="docutils literal notranslate"><span class=
 </section>
 </section>
 <section id="probabilistic-foundations">
-<h2><span class="section-number">3.3. </span>1.3. Probabilistic Foundations<a class="headerlink" href="#probabilistic-foundations" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Probabilistic Foundations<a class="headerlink" href="#probabilistic-foundations" title="Link to this heading">#</a></h2>
 <p>The course of MATH-F315 - <em>Probabilités et Statistiques</em> has presented all the necessary materials used in this chapter. This is let as reference for the formal demonstrations of the tools and theorems used here. However, we propose a small review of the most important notions that will help you understand the exercises at the end of the chapter. Remember: the exercises are not meant to make you familiar with one specific practical implementation of the techniques and tools, they are intended to make you apply some well understood and completely digested statistical and probabilistic concepts. We strongly recommend the reader to delve in depth in the theoretical concepts related to the exercises.</p>
 <section id="expectation-and-variance">
-<h3><span class="section-number">3.3.1. </span>1.3.1. Expectation and Variance<a class="headerlink" href="#expectation-and-variance" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.3.1. </span>Expectation and Variance<a class="headerlink" href="#expectation-and-variance" title="Link to this heading">#</a></h3>
 <p>The expectation of a random variable <span class="math notranslate nohighlight">\(\mathbf x\)</span>, denoted <span class="math notranslate nohighlight">\(E[\mathbf x]\)</span>, is defined as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -624,9 +626,9 @@ E[\mathbf x] = \begin{cases}
 \]</div>
 </section>
 <section id="common-probability-distributions">
-<h3><span class="section-number">3.3.2. </span>1.3.2. Common Probability Distributions<a class="headerlink" href="#common-probability-distributions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.3.2. </span>Common Probability Distributions<a class="headerlink" href="#common-probability-distributions" title="Link to this heading">#</a></h3>
 <section id="uniform-distribution">
-<h4><span class="section-number">3.3.2.1. </span>1.3.2.1. Uniform Distribution<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.3.2.1. </span>Uniform Distribution<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h4>
 <p>A random variable <span class="math notranslate nohighlight">\(\mathbf x\)</span> follows a uniform distribution on the interval <span class="math notranslate nohighlight">\([a, b]\)</span>, denoted <span class="math notranslate nohighlight">\(\mathbf x \sim \mathcal{U}(a, b)\)</span>, if its PDF is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -639,7 +641,7 @@ E[\mathbf x] = \begin{cases}
 In <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the normal distribution can be sampled with the <code class="docutils literal notranslate"><span class="pre">numpy.random.normal</span></code> function.</p>
 </section>
 <section id="normal-gaussian-distribution">
-<h4><span class="section-number">3.3.2.2. </span>1.3.2.2. Normal (Gaussian) Distribution<a class="headerlink" href="#normal-gaussian-distribution" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.3.2.2. </span>Normal (Gaussian) Distribution<a class="headerlink" href="#normal-gaussian-distribution" title="Link to this heading">#</a></h4>
 <p>A random variable <span class="math notranslate nohighlight">\(\mathbf x\)</span> follows a normal distribution with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>, denoted <span class="math notranslate nohighlight">\(\mathbf X \sim \mathcal{N}(\mu, \sigma^2)\)</span>, if its PDF is:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -651,14 +653,14 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </section>
 </section>
 <section id="introduction-to-the-numpy-random-module">
-<h2><span class="section-number">3.4. </span>1.4. Introduction to the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> Module<a class="headerlink" href="#introduction-to-the-numpy-random-module" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Introduction to the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> Module<a class="headerlink" href="#introduction-to-the-numpy-random-module" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> library includes a <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> submodule dedicated to random number generation. This module offers:</p>
 <ul class="simple">
 <li><p>Random number generators for various distributions (uniform, normal, binomial, etc.).</p></li>
 <li><p>Tools for drawing samples and manipulating random sequences.</p></li>
 </ul>
 <section id="reproducibility-of-results">
-<h3><span class="section-number">3.4.1. </span>1.4.1. Reproducibility of Results<a class="headerlink" href="#reproducibility-of-results" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>Reproducibility of Results<a class="headerlink" href="#reproducibility-of-results" title="Link to this heading">#</a></h3>
 <p>To ensure the reproducibility of simulations, it is crucial to set a random seed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -701,7 +703,7 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </div>
 </section>
 <section id="available-distributions">
-<h3><span class="section-number">3.4.2. </span>1.4.2. Available Distributions<a class="headerlink" href="#available-distributions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.2. </span>Available Distributions<a class="headerlink" href="#available-distributions" title="Link to this heading">#</a></h3>
 <p>Here are some common distributions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy.random.uniform(low,</span> <span class="pre">high,</span> <span class="pre">size)</span></code> : Uniform distribution.</p></li>
@@ -710,7 +712,7 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </ul>
 </section>
 <section id="sampling">
-<h3><span class="section-number">3.4.3. </span>1.4.3. Sampling<a class="headerlink" href="#sampling" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.3. </span>Sampling<a class="headerlink" href="#sampling" title="Link to this heading">#</a></h3>
 <p>Sampling is the process of randomly selecting elements from a population. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -733,7 +735,7 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </div>
 </section>
 <section id="statistical-analysis">
-<h3><span class="section-number">3.4.4. </span>1.4.4. Statistical Analysis<a class="headerlink" href="#statistical-analysis" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.4. </span>Statistical Analysis<a class="headerlink" href="#statistical-analysis" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> implements a huge diversity of estimators for the different tools that have been presented in the probability introduction. As an example, the sample average is an unbiased estimator of the expected value. In <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, the sample average of an array can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.mean</span></code> function. The sample variance of an array can be computed by squaring the result of the <code class="docutils literal notranslate"><span class="pre">numpy.std</span></code> function. The covariance between two vectors can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.cov</span></code> function. Finally, the correlation coefficient between two vectors can be computed with the <code class="docutils literal notranslate"><span class="pre">numpy.corrcoef</span></code> function.</p>
 <p>Moreover, <code class="docutils literal notranslate"><span class="pre">Scipy</span></code> offers tools to analyse statistical distributions. As an example, if wan to get density, repartition function and quantiles of a normal distribution <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span>:</p>
 <div class="cell docutils container">
@@ -788,10 +790,10 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </div>
 </section>
 <section id="exercise-histogram-probability-density-function-of-a-mathcal-n-0-1-vs-histogram">
-<h3><span class="section-number">3.4.5. </span>1.4.5. Exercise: Histogram - Probability Density Function of a <span class="math notranslate nohighlight">\(\mathcal N(0,1\)</span>) vs Histogram<a class="headerlink" href="#exercise-histogram-probability-density-function-of-a-mathcal-n-0-1-vs-histogram" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.5. </span>Exercise: Histogram - Probability Density Function of a <span class="math notranslate nohighlight">\(\mathcal N(0,1\)</span>) vs Histogram<a class="headerlink" href="#exercise-histogram-probability-density-function-of-a-mathcal-n-0-1-vs-histogram" title="Link to this heading">#</a></h3>
 <p>Using the previous <code class="docutils literal notranslate"><span class="pre">pdf</span></code> function, plot the histogram of a sampled normal <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> and check that it behaves as the analytical probability density function. Show on the same graph the three quarter quantiles (0.25, 0.5, 0.75).</p>
 <section id="solution">
-<h4><span class="section-number">3.4.5.1. </span>1.4.5.1. Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.4.5.1. </span>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h4>
 <p>In the following code, we sample a normal <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span>, and, using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, we display the histogram of the sampled values, along the probability density function provided by <code class="docutils literal notranslate"><span class="pre">Scipy</span></code>. We also display the three first quarters using the <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm.ppf</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -837,20 +839,19 @@ In <code class="docutils literal notranslate"><span class="pre">NumPy</span></co
 </section>
 </section>
 <section id="multivariate-gaussian-distributions">
-<h2><span class="section-number">3.5. </span>1.5. Multivariate Gaussian Distributions<a class="headerlink" href="#multivariate-gaussian-distributions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Multivariate Gaussian Distributions<a class="headerlink" href="#multivariate-gaussian-distributions" title="Link to this heading">#</a></h2>
 <p>Multivariate Gaussian distributions are multidimensional generalizations of the normal distribution (that you already know well).
 They can be described by mean vector <span class="math notranslate nohighlight">\(\mu\)</span> and a covariance matrix <span class="math notranslate nohighlight">\(\Sigma\)</span>, which shows the covariance between each of the distribution’s dimensions. As an example, if this matrix is diagonal, the variables corresponding to each dimension are independant. In the same way, this matrix has to be symmetric (can you tell why ?). <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> proposes the function <code class="docutils literal notranslate"><span class="pre">random.multivariate_normal</span></code> that allows the sampling of a multivariate Gaussian, given its mean vector and covariance matrix.</p>
 <section id="exercise">
-<h3><span class="section-number">3.5.1. </span>1.5.1. Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.5.1. </span>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <p>Sample <span class="math notranslate nohighlight">\(750\)</span> points following a Multivariate Gaussian Distribution given</p>
 <div class="math notranslate nohighlight">
 \[\mu = [1, -\frac12, 0]\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}\Sigma =  \begin{bmatrix}2&amp;1&amp;0\\1&amp;1&amp;0\\0&amp;0&amp;0\end{bmatrix}\end{split}\]</div>
 <p>Then, using <code class="docutils literal notranslate"><span class="pre">scatter</span></code> from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, plot the points under each pairs of dimensions.</p>
-</section>
 <section id="id1">
-<h3><span class="section-number">3.5.2. </span>1.5.2. Solution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">3.5.1.1. </span>Solution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>This exercise is important: understanding how the values in the mean vector and covariance matrix influence the distribution of the sampled points might be a difficult task, at first. Play with the values: how does changing the values in the mean vector affect the cloud of points ? What happens if you set values of the covariance matrix to <span class="math notranslate nohighlight">\(0\)</span> ? Under which circumstances the covariance matrix is valid ? Why ? Take the necessary time for grasping every subtelty of this way of generating data. You will require this intuition in many real-life scenarios.</p>
@@ -897,11 +898,12 @@ They can be described by mean vector <span class="math notranslate nohighlight">
 </div>
 </section>
 </section>
+</section>
 <section id="monte-carlo-simulation">
-<h2><span class="section-number">3.6. </span>1.6. Monte Carlo Simulation<a class="headerlink" href="#monte-carlo-simulation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>Monte Carlo Simulation<a class="headerlink" href="#monte-carlo-simulation" title="Link to this heading">#</a></h2>
 <p>The core principle of Monte Carlo methods lies in using random sampling to approximate numerical results. Rather than attempting to solve problems through analytical formulas, Monte Carlo techniques leverage the law of large numbers to estimate solutions through repeated random sampling. This approach is particularly valuable when dealing with high-dimensional spaces, complex geometries, or systems with multiple degrees of freedom. The simplest visual example, to understand the notion of Monte Carlo, is the following. You want to measure the surface of a lake. Its shape is complex, difficult to measure and to compute the area it covers. However, you can easily surround it by a square for which the side can accurately be measured. You then decide to randomly throw stones with a catapult on the square. The proportion of number of stones that fall into the lake compared to the total number of thrown stones (if the number of stones is infinite) is the same proportion as the proportion of the surface of the lake compared to the square surface. The more stone you throw, the more accurate the estimation is. This idea is close to the one used for Monte Carlo integration.</p>
 <section id="monte-carlo-integration">
-<h3><span class="section-number">3.6.1. </span>1.6.1. Monte Carlo Integration<a class="headerlink" href="#monte-carlo-integration" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.1. </span>Monte Carlo Integration<a class="headerlink" href="#monte-carlo-integration" title="Link to this heading">#</a></h3>
 <p>Consider the problem of evaluating the integral:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -926,10 +928,10 @@ For a definite integral over <span class="math notranslate nohighlight">\([a, b]
 </aside>
 </section>
 <section id="exercise-integral-estimation">
-<h3><span class="section-number">3.6.2. </span>1.6.2. Exercise: Integral Estimation<a class="headerlink" href="#exercise-integral-estimation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.2. </span>Exercise: Integral Estimation<a class="headerlink" href="#exercise-integral-estimation" title="Link to this heading">#</a></h3>
 <p>Implement a Monte Carlo simulation to estimate the integral of the function <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> over the interval <span class="math notranslate nohighlight">\([0, 1]\)</span>.</p>
 <section id="id2">
-<h4><span class="section-number">3.6.2.1. </span>1.6.2.1. Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.6.2.1. </span>Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>The indefinite integral is given by</p>
 <div class="math notranslate nohighlight">
 \[\int x^2 \,dx = \frac{x^3}{3}\]</div>
@@ -959,14 +961,14 @@ For a definite integral over <span class="math notranslate nohighlight">\([a, b]
 </section>
 </section>
 <section id="exercise-probability-estimation">
-<h3><span class="section-number">3.6.3. </span>1.6.3. Exercise: Probability Estimation<a class="headerlink" href="#exercise-probability-estimation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.3. </span>Exercise: Probability Estimation<a class="headerlink" href="#exercise-probability-estimation" title="Link to this heading">#</a></h3>
 <p>Use a normal distribution to model a random variable, with parameters <span class="math notranslate nohighlight">\(\mu = 0\)</span> and <span class="math notranslate nohighlight">\(\sigma^2 = \frac12\)</span> and calculate the probability that it takes a value in the interval <span class="math notranslate nohighlight">\([-0.25, 0.25]\)</span>.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p><strong>Don’t skip this part!</strong> Rather, take a sheet of paper, and understand properly every step. You should be able to redo this computation yourself without the solution. Try also changing the values: don’t worry, then, you will be able to validate your theoretical answer by the simulation.</p>
 </aside>
 <section id="id3">
-<h4><span class="section-number">3.6.3.1. </span>1.6.3.1. Solution<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.6.3.1. </span>Solution<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>Let us first show how to analytically compute the requested probablity.
 The probability that <span class="math notranslate nohighlight">\(X\)</span> lies within the interval is given by:</p>
 <div class="math notranslate nohighlight">
@@ -1049,10 +1051,10 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </section>
 </section>
 <section id="exercise-monte-carlo-approximation-of-parameters">
-<h3><span class="section-number">3.6.4. </span>1.6.4. Exercise: Monte Carlo Approximation of Parameters<a class="headerlink" href="#exercise-monte-carlo-approximation-of-parameters" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.4. </span>Exercise: Monte Carlo Approximation of Parameters<a class="headerlink" href="#exercise-monte-carlo-approximation-of-parameters" title="Link to this heading">#</a></h3>
 <p>Use Monte Carlo simulation to approximate numerically the mean of a Normal r.v. <span class="math notranslate nohighlight">\({\mathbf z} \sim N(\mu,\sigma^2)\)</span> and of the variable <span class="math notranslate nohighlight">\({\mathbf y}= {\mathbf z}^2\)</span>. Verify that MC returns a good approximation of the analytical result. As a hint, note that <span class="math notranslate nohighlight">\(\mbox{Var}[{\mathbf z}]=E[{\mathbf z}^2]-E[{\mathbf z}]^2\)</span></p>
 <section id="id4">
-<h4><span class="section-number">3.6.4.1. </span>1.6.4.1. Solution<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.6.4.1. </span>Solution<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>First, analytically, we can note that, if <span class="math notranslate nohighlight">\(\mu\)</span> is the expected value of <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, and  <span class="math notranslate nohighlight">\(\sigma^2\)</span> is its variance, then the expected value of <span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{z}^2\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1097,10 +1099,10 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </section>
 </section>
 <section id="exercise-absolute-value">
-<h3><span class="section-number">3.6.5. </span>1.6.5. Exercise: Absolute Value<a class="headerlink" href="#exercise-absolute-value" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.5. </span>Exercise: Absolute Value<a class="headerlink" href="#exercise-absolute-value" title="Link to this heading">#</a></h3>
 <p>Use MC to approximate numerically <span class="math notranslate nohighlight">\(E[ {\mathbf k}]\)</span> and <span class="math notranslate nohighlight">\(\mbox{Var}[ {\mathbf k}]\)</span> where <span class="math notranslate nohighlight">\({\mathbf k} = |{\mathbf z}|\)</span> and check that the approximation is good w.r.t. the analytical results in <a class="reference external" href="https://www.quora.com/If-Y-X-where-X-has-normal-distribution-N-0-1-what-is-the-density-function-expectation-and-variance-of-Y">this article</a>.</p>
 <section id="id5">
-<h4><span class="section-number">3.6.5.1. </span>1.6.5.1. Solution<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.6.5.1. </span>Solution<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>The process is truly similar to the previous one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1127,10 +1129,10 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </section>
 </section>
 <section id="exercise-expected-value-for-any-function">
-<h3><span class="section-number">3.6.6. </span>1.6.6. Exercise: Expected Value for any Function<a class="headerlink" href="#exercise-expected-value-for-any-function" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.6. </span>Exercise: Expected Value for any Function<a class="headerlink" href="#exercise-expected-value-for-any-function" title="Link to this heading">#</a></h3>
 <p>Use MC to approximate numerically the value of <span class="math notranslate nohighlight">\(E[f({\mathbf x})]\)</span> and <span class="math notranslate nohighlight">\(f(E[{\mathbf x}])\)</span> for a given deterministic function <span class="math notranslate nohighlight">\(f\)</span>, where <span class="math notranslate nohighlight">\({\mathbf x}\)</span> is a normal random variable.</p>
 <section id="id6">
-<h4><span class="section-number">3.6.6.1. </span>1.6.6.1. Solution<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.6.6.1. </span>Solution<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <p>The following script show the MC process to estimate the expected value of any Python function.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -1172,10 +1174,10 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </section>
 </section>
 <section id="exercise-variance-of-uniform-random-variable">
-<h3><span class="section-number">3.6.7. </span>1.6.7. Exercise: Variance of Uniform Random Variable<a class="headerlink" href="#exercise-variance-of-uniform-random-variable" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.7. </span>Exercise: Variance of Uniform Random Variable<a class="headerlink" href="#exercise-variance-of-uniform-random-variable" title="Link to this heading">#</a></h3>
 <p>Use MC to approximate numerically the value of the variance <span class="math notranslate nohighlight">\(\mbox{Var}[{\mathbf z}]\)</span> where <span class="math notranslate nohighlight">\({\mathbf z} \sim U(a,b)\)</span> is uniformly distributed. Check that the result is a good approximation of the analytical value.</p>
 <section id="id7">
-<h4><span class="section-number">3.6.7.1. </span>1.6.7.1. Solution<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.6.7.1. </span>Solution<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <p>The following script estimates the variance of an uniformly distributed variable by Monte Carlo. The distribution is uniform between <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1201,7 +1203,7 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 </section>
 </section>
 <section id="exercise-covariance-of-a-multiple-of-a-random-variable">
-<h3><span class="section-number">3.6.8. </span>1.6.8. Exercise: Covariance of a Multiple of a Random Variable<a class="headerlink" href="#exercise-covariance-of-a-multiple-of-a-random-variable" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.8. </span>Exercise: Covariance of a Multiple of a Random Variable<a class="headerlink" href="#exercise-covariance-of-a-multiple-of-a-random-variable" title="Link to this heading">#</a></h3>
 <p>Use MC to approximate the value of the covariance of <span class="math notranslate nohighlight">\({\mathbf x}\)</span> and <span class="math notranslate nohighlight">\({\mathbf y}=K{\mathbf x}\)</span> and verify that the result is a good approximation of the analytical derivation. Check for different distributions of <span class="math notranslate nohighlight">\({\mathbf x}\)</span>. As a hint, note that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1212,7 +1214,7 @@ z_{0.25} = \frac{0.25 - 0}{\sigma} = \frac{\sqrt{2}}{4}\]</div>
 &amp;=K\mbox{Var}({\mathbf x})
 \end{align}\end{split}\]</div>
 <section id="id8">
-<h4><span class="section-number">3.6.8.1. </span>1.6.8.1. Solution<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.6.8.1. </span>Solution<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <p>The following code shows the covariance estimation of a sampled random variable with a multiple of this random variable. The estimated covariance is close to the analytical value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1248,9 +1250,9 @@ Monte Carlo covariance: 60.455461621858774
 </section>
 </section>
 <section id="monte-carlo-and-multivariate-gaussian-distributions">
-<h2><span class="section-number">3.7. </span>1.7. Monte Carlo and Multivariate Gaussian Distributions<a class="headerlink" href="#monte-carlo-and-multivariate-gaussian-distributions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>Monte Carlo and Multivariate Gaussian Distributions<a class="headerlink" href="#monte-carlo-and-multivariate-gaussian-distributions" title="Link to this heading">#</a></h2>
 <section id="exercise-2d-monte-carlo-simulation">
-<h3><span class="section-number">3.7.1. </span>1.7.1. Exercise: 2D Monte Carlo Simulation<a class="headerlink" href="#exercise-2d-monte-carlo-simulation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.1. </span>Exercise: 2D Monte Carlo Simulation<a class="headerlink" href="#exercise-2d-monte-carlo-simulation" title="Link to this heading">#</a></h3>
 <p>Use MC simulation approximate the mean and covariance of 2-dimensional Gaussian random data with the following parameters:</p>
 <ul class="simple">
 <li><p>Mean vector: <span class="math notranslate nohighlight">\([2, 3]\)</span></p></li>
@@ -1260,7 +1262,7 @@ Monte Carlo covariance: 60.455461621858774
 Hint: use <code class="docutils literal notranslate"><span class="pre">scipy.stats.multivariate_normal</span></code> for generation and numpy to calculate the sample mean, and use <code class="docutils literal notranslate"><span class="pre">numpy.cov</span></code> for covariance estimation.
 Ensure you understand the difference between population and sample covariance.</p>
 <section id="id9">
-<h4><span class="section-number">3.7.1.1. </span>1.7.1.1. Solution<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.7.1.1. </span>Solution<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">rvs</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.stats.multivariate_normal</span></code> (for <em>random variable sample</em> allows to sample a bivariate Gaussian adequately defined. The following code shows how to sample such kind of distribution, how to display it in <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, and how to estimate the covariance matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1323,7 +1325,7 @@ Ensure you understand the difference between population and sample covariance.</
 </section>
 </section>
 <section id="id10">
-<h3><span class="section-number">3.7.2. </span>1.7.2. Exercise:<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.2. </span>Exercise:<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>We define a bivariate gaussian distribution <span class="math notranslate nohighlight">\((\mathbf z_1, \mathbf z_2)\)</span> with the following parameters:</p>
 <ul class="simple">
 <li><p>Mean vector: <span class="math notranslate nohighlight">\([0.25, 1.0]\)</span></p></li>
@@ -1331,7 +1333,7 @@ Ensure you understand the difference between population and sample covariance.</
 </ul>
 <p>Plot the regressions of <span class="math notranslate nohighlight">\(\mathbf z_1|\mathbf z_2\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2|\mathbf z_1\)</span>. What is their intersection ? Hint: those are given by expressing <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> in terms of <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> (or the opposite): <span class="math notranslate nohighlight">\(\mathbf z_1 = a_1 + b_1\mathbf z_2\)</span>.</p>
 <section id="id11">
-<h4><span class="section-number">3.7.2.1. </span>1.7.2.1. Solution<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.7.2.1. </span>Solution<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>For the following derivation, we redirect the student to the theoretical handbook, Section 2.15.1 (Bivariate normal distribution). The following code generates a set of samples from a bivariate normal distribution with mean vector <span class="math notranslate nohighlight">\(\mu = \begin{bmatrix} 0.25 \\ 1 \end{bmatrix}\)</span> and covariance matrix <span class="math notranslate nohighlight">\(\Sigma = \begin{bmatrix} 1 &amp; 0.5 \\ 0.5 &amp; 1 \end{bmatrix}\)</span>, then computes and visualizes the regression lines corresponding to the conditional expectations <span class="math notranslate nohighlight">\(\mathbb{E}[\mathbf z_1 \mid \mathbf z_2]\)</span> and <span class="math notranslate nohighlight">\(\mathbb{E}[\mathbf z_2 \mid \mathbf z_1]\)</span>. The regression coefficients are computed as <span class="math notranslate nohighlight">\(b_1 = \frac{\Sigma_{12}}{\Sigma_{22}}\)</span> and <span class="math notranslate nohighlight">\(b_2 = \frac{\Sigma_{12}}{\Sigma_{11}}\)</span>, with intercepts <span class="math notranslate nohighlight">\(a_1 = \mu_1 - b_1 \mu_2\)</span> and <span class="math notranslate nohighlight">\(a_2 = \mu_2 - b_2 \mu_1\)</span>. The resulting lines are plotted on the <span class="math notranslate nohighlight">\((\mathbf z_2, \mathbf z_1)\)</span> plane, showing the best linear predictors of each variable given the other.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1382,7 +1384,7 @@ Ensure you understand the difference between population and sample covariance.</
 </section>
 </section>
 <section id="exercise-trivariate-gaussian-data">
-<h3><span class="section-number">3.7.3. </span>1.7.3. Exercise: Trivariate Gaussian Data<a class="headerlink" href="#exercise-trivariate-gaussian-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.3. </span>Exercise: Trivariate Gaussian Data<a class="headerlink" href="#exercise-trivariate-gaussian-data" title="Link to this heading">#</a></h3>
 <p>Finally, generate 1000 samples of 3-dimensional Gaussian random data with the following parameters:</p>
 <ul class="simple">
 <li><p>Mean vector: <span class="math notranslate nohighlight">\([1, 4, 7]\)</span></p></li>
@@ -1392,7 +1394,7 @@ Ensure you understand the difference between population and sample covariance.</
 Hints: use <code class="docutils literal notranslate"><span class="pre">pandas.plotting.scatter_matrix</span></code> or <code class="docutils literal notranslate"><span class="pre">seaborn.pairplot</span></code> for visualization.
 Pay attention to the interpretation of correlations between dimensions.</p>
 <section id="id12">
-<h4><span class="section-number">3.7.3.1. </span>1.7.3.1. Solution<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.7.3.1. </span>Solution<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>The following code generates a 3-dimensional dataset of 1000 samples from a multivariate normal distribution with a specified mean vector <span class="math notranslate nohighlight">\([1, 4, 7]\)</span> and covariance matrix <span class="math notranslate nohighlight">\(\begin{bmatrix} 3 &amp; 1.5 &amp; 0.8 \\ 1.5 &amp; 2 &amp; 0.5 \\ 0.8 &amp; 0.5 &amp; 1 \end{bmatrix}\)</span>. It stores the generated samples in a Pandas DataFrame with columns labeled “Dimension 1”, “Dimension 2”, and “Dimension 3”. It then computes the empirical covariance matrix of the generated data using <code class="docutils literal notranslate"><span class="pre">np.cov</span></code>, prints both the given and estimated covariance matrices, and visualizes the pairwise relationships between the three dimensions using <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>’s <code class="docutils literal notranslate"><span class="pre">pairplot</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1443,10 +1445,10 @@ Pay attention to the interpretation of correlations between dimensions.</p>
 </section>
 </section>
 <section id="exercise-partial-correlation">
-<h3><span class="section-number">3.7.4. </span>1.7.4. Exercise: Partial Correlation<a class="headerlink" href="#exercise-partial-correlation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.7.4. </span>Exercise: Partial Correlation<a class="headerlink" href="#exercise-partial-correlation" title="Link to this heading">#</a></h3>
 <p>Given two normal <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> r.v. <span class="math notranslate nohighlight">\(\mathbf z_1, \mathbf z_2\)</span> and a third r.v. <span class="math notranslate nohighlight">\(\mathbf y = \mathbf z_1 + \mathbf z_2\)</span>, compute the correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span>, then compute the partial correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> given <span class="math notranslate nohighlight">\(\mathbf y\)</span>. Hint: use the function <code class="docutils literal notranslate"><span class="pre">corrcoef</span></code> of <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> to compute the correlation coefficients. What happens to the partial correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> given <span class="math notranslate nohighlight">\(\mathbf y\)</span> if now  <span class="math notranslate nohighlight">\(\mathbf y = \mathbf z_1 + \mathbf z_2 + \mathbf z_3\)</span>, for <span class="math notranslate nohighlight">\(\mathbf z_3\)</span> another <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> r.v. ?</p>
 <section id="id13">
-<h4><span class="section-number">3.7.4.1. </span>1.7.4.1. Solution<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.7.4.1. </span>Solution<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p>This code defines a function <code class="docutils literal notranslate"><span class="pre">partial_corr(X,</span> <span class="pre">Y,</span> <span class="pre">Z)</span></code> that computes the partial correlation between two variables <span class="math notranslate nohighlight">\(\mathbf x\)</span> and <span class="math notranslate nohighlight">\(\mathbf y\)</span> given a third variable <span class="math notranslate nohighlight">\(\mathbf z\)</span>, using the formula <span class="math notranslate nohighlight">\(\rho_{\mathbf x\mathbf y \cdot \mathbf z} = \frac{\rho_{\mathbf x\mathbf y} - \rho_{\mathbf x\mathbf z}\rho_{\mathbf y\mathbf z}}{\sqrt{(1 - \rho_{\mathbf x\mathbf z}^2)(1 - \rho_{\mathbf y\mathbf z}^2)}}\)</span>. It then generates one million samples of three independent standard normal variables <span class="math notranslate nohighlight">\(\mathbf z_1, \mathbf z_2, \mathbf z_3\)</span>, defines <span class="math notranslate nohighlight">\(\mathbf y = \mathbf z_1 + \mathbf z_2\)</span>, and prints the empirical correlation between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span>, as well as the partial correlations between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> given <span class="math notranslate nohighlight">\(\mathbf y\)</span> and given <span class="math notranslate nohighlight">\(\mathbf y + \mathbf z_3\)</span>, illustrating that the dependence between <span class="math notranslate nohighlight">\(\mathbf z_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf z_2\)</span> vanishes when conditioning on their sum.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1486,16 +1488,16 @@ Pay attention to the interpretation of correlations between dimensions.</p>
 </section>
 </section>
 <section id="minimization">
-<h2><span class="section-number">3.8. </span>1.8. Minimization<a class="headerlink" href="#minimization" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.8. </span>Minimization<a class="headerlink" href="#minimization" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Scipy</span></code> offers a convenient tool to perform the minimization of a derivable univariate function: in the module <code class="docutils literal notranslate"><span class="pre">optimize</span></code>, we have the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function.</p>
 <section id="exercise-minimization">
-<h3><span class="section-number">3.8.1. </span>1.8.1. Exercise: Minimization<a class="headerlink" href="#exercise-minimization" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.8.1. </span>Exercise: Minimization<a class="headerlink" href="#exercise-minimization" title="Link to this heading">#</a></h3>
 <p>Define a function</p>
 <div class="math notranslate nohighlight">
 \[f(x) = x^2 + (\sin{x} + 25)^2\]</div>
 <p>and use the <code class="docutils literal notranslate"><span class="pre">sp.optimize.minimize</span></code> function to find different local minima. Plot the function an show the different minimas. On which parameter of the <code class="docutils literal notranslate"><span class="pre">minimize</span></code> function can you play?</p>
 <section id="id14">
-<h4><span class="section-number">3.8.1.1. </span>1.8.1.1. Solution<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">3.8.1.1. </span>Solution<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p>The following code defines a function <span class="math notranslate nohighlight">\(f(x) = x^2 + (\sin(x) + 25)^2\)</span>, then plots it over the interval <span class="math notranslate nohighlight">\([-15, 15]\)</span>. For several initial guesses <span class="math notranslate nohighlight">\(x_0 \in \{-12, -4, 1, 7, 14\}\)</span>, the script uses the <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> optimization routine <code class="docutils literal notranslate"><span class="pre">minimize</span></code> to find a local minimum of <span class="math notranslate nohighlight">\(f(x)\)</span> starting from <span class="math notranslate nohighlight">\(x_0\)</span>. Each minimization path is illustrated as a dashed line connecting the initial point to the corresponding minimum, with different colors representing different initial guesses. The plot includes a legend, grid, and title to clearly display the function and minimization results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1524,7 +1526,7 @@ Pay attention to the interpretation of correlations between dimensions.</p>
 </section>
 </section>
 <section id="mixture-of-gaussians">
-<h2><span class="section-number">3.9. </span>1.9. Mixture of Gaussians<a class="headerlink" href="#mixture-of-gaussians" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.9. </span>Mixture of Gaussians<a class="headerlink" href="#mixture-of-gaussians" title="Link to this heading">#</a></h2>
 <p>Mixture of Gaussians are particular cases of linear combinations of Gaussians r.v. Formally, they are defined as</p>
 <div class="math notranslate nohighlight">
 \[p = \sum_{i=1}^m w_i \mathbf p_i\]</div>
@@ -1562,7 +1564,7 @@ As an example, we show here how to define (and plot) the mixture of three Gaussi
 </div>
 </section>
 <section id="conclusion">
-<h2><span class="section-number">3.10. </span>1.10. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.10. </span>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>Throughout this chapter, we have presented a huge variety of probabilistic and statistical tools that form the basis of the next chapters content. Every topic was linked to a concrete implementation in <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>, with which you should be familiar and comfortable before delving into the next chapters. We have also studied how to sample different distributions, allowing systematic numerical study of statistical distributions, and preparing the necessary grounds for Monte Carlo simulations.</p>
 <p>Monte Carlo methods represent a powerful paradigm in computational mathematics, offering solutions to problems that would otherwise be analytically intractable. Throughout this chapter, we’ve explored the fundamental principles of probabilistic methods and Monte Carlo simulations, covering essential concepts from probability theory and their practical applications.</p>
 <p>We’ve seen how random sampling can be leveraged to approximate integrals, estimate statistical properties, and solve complex problems in high-dimensional spaces.</p>
@@ -1615,7 +1617,7 @@ As an example, we show here how to define (and plot) the mixture of three Gaussi
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>2. Linear Models</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Linear Models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1635,97 +1637,99 @@ As an example, we show here how to define (and plot) the mixture of three Gaussi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-libraries">3.1. 1.1. Necessary Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-numpy">3.2. 1.2. Introduction to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulation-of-numpy-arrays">3.2.1. 1.2.1. Manipulation of <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> Arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">3.2.2. 1.2.2. Basic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-libraries">3.1. Necessary Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-numpy">3.2. Introduction to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulation-of-numpy-arrays">3.2.1. Manipulation of <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations">3.2.2. Basic Operations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-foundations">3.3. 1.3. Probabilistic Foundations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-and-variance">3.3.1. 1.3.1. Expectation and Variance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-probability-distributions">3.3.2. 1.3.2. Common Probability Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3.3.2.1. 1.3.2.1. Uniform Distribution</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-gaussian-distribution">3.3.2.2. 1.3.2.2. Normal (Gaussian) Distribution</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-numpy-random-module">3.4. 1.4. Introduction to the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> Module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-of-results">3.4.1. 1.4.1. Reproducibility of Results</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-distributions">3.4.2. 1.4.2. Available Distributions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">3.4.3. 1.4.3. Sampling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analysis">3.4.4. 1.4.4. Statistical Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-histogram-probability-density-function-of-a-mathcal-n-0-1-vs-histogram">3.4.5. 1.4.5. Exercise: Histogram - Probability Density Function of a <span class="math notranslate nohighlight">\(\mathcal N(0,1\)</span>) vs Histogram</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">3.4.5.1. 1.4.5.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-foundations">3.3. Probabilistic Foundations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-and-variance">3.3.1. Expectation and Variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-probability-distributions">3.3.2. Common Probability Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">3.3.2.1. Uniform Distribution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-gaussian-distribution">3.3.2.2. Normal (Gaussian) Distribution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-gaussian-distributions">3.5. 1.5. Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5.1. 1.5.1. Exercise</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.5.2. 1.5.2. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulation">3.6. 1.6. Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integration">3.6.1. 1.6.1. Monte Carlo Integration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-integral-estimation">3.6.2. 1.6.2. Exercise: Integral Estimation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.6.2.1. 1.6.2.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-probability-estimation">3.6.3. 1.6.3. Exercise: Probability Estimation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.3.1. 1.6.3.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-monte-carlo-approximation-of-parameters">3.6.4. 1.6.4. Exercise: Monte Carlo Approximation of Parameters</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.6.4.1. 1.6.4.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-absolute-value">3.6.5. 1.6.5. Exercise: Absolute Value</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.6.5.1. 1.6.5.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-expected-value-for-any-function">3.6.6. 1.6.6. Exercise: Expected Value for any Function</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6.6.1. 1.6.6.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-variance-of-uniform-random-variable">3.6.7. 1.6.7. Exercise: Variance of Uniform Random Variable</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.6.7.1. 1.6.7.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-covariance-of-a-multiple-of-a-random-variable">3.6.8. 1.6.8. Exercise: Covariance of a Multiple of a Random Variable</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.6.8.1. 1.6.8.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-numpy-random-module">3.4. Introduction to the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> Module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-of-results">3.4.1. Reproducibility of Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-distributions">3.4.2. Available Distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">3.4.3. Sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-analysis">3.4.4. Statistical Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-histogram-probability-density-function-of-a-mathcal-n-0-1-vs-histogram">3.4.5. Exercise: Histogram - Probability Density Function of a <span class="math notranslate nohighlight">\(\mathcal N(0,1\)</span>) vs Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">3.4.5.1. Solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-and-multivariate-gaussian-distributions">3.7. 1.7. Monte Carlo and Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2d-monte-carlo-simulation">3.7.1. 1.7.1. Exercise: 2D Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.7.1.1. 1.7.1.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.7.2. 1.7.2. Exercise:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.7.2.1. 1.7.2.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-trivariate-gaussian-data">3.7.3. 1.7.3. Exercise: Trivariate Gaussian Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.7.3.1. 1.7.3.1. Solution</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-partial-correlation">3.7.4. 1.7.4. Exercise: Partial Correlation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.7.4.1. 1.7.4.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-gaussian-distributions">3.5. Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">3.5.1. Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.5.1.1. Solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization">3.8. 1.8. Minimization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-minimization">3.8.1. 1.8.1. Exercise: Minimization</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.8.1.1. 1.8.1.1. Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-simulation">3.6. Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-integration">3.6.1. Monte Carlo Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-integral-estimation">3.6.2. Exercise: Integral Estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.6.2.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-probability-estimation">3.6.3. Exercise: Probability Estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.3.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-monte-carlo-approximation-of-parameters">3.6.4. Exercise: Monte Carlo Approximation of Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.6.4.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-absolute-value">3.6.5. Exercise: Absolute Value</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.6.5.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-expected-value-for-any-function">3.6.6. Exercise: Expected Value for any Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6.6.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-variance-of-uniform-random-variable">3.6.7. Exercise: Variance of Uniform Random Variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.6.7.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-covariance-of-a-multiple-of-a-random-variable">3.6.8. Exercise: Covariance of a Multiple of a Random Variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.6.8.1. Solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixture-of-gaussians">3.9. 1.9. Mixture of Gaussians</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">3.10. 1.10. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-and-multivariate-gaussian-distributions">3.7. Monte Carlo and Multivariate Gaussian Distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2d-monte-carlo-simulation">3.7.1. Exercise: 2D Monte Carlo Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.7.1.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.7.2. Exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.7.2.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-trivariate-gaussian-data">3.7.3. Exercise: Trivariate Gaussian Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">3.7.3.1. Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-partial-correlation">3.7.4. Exercise: Partial Correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.7.4.1. Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization">3.8. Minimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-minimization">3.8.1. Exercise: Minimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.8.1.1. Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixture-of-gaussians">3.9. Mixture of Gaussians</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">3.10. Conclusion</a></li>
 </ul>
   </nav></div>
 
