@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Neural Networks for Regression &#8212; Statistical Foundations of Machine Learning - Practicals Handbook</title>
+    <title>6. 4. Neural Networks for Regression &#8212; Statistical Foundations of Machine Learning - Practicals Handbook</title>
   
   
   
@@ -78,8 +78,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '04';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Ensembles of models and feature selection" href="05.html" />
-    <link rel="prev" title="3. Data Preprocessing, Local Models and Tree-Based Models" href="03.html" />
+    <link rel="next" title="7. Ensembles of models and feature selection" href="05.html" />
+    <link rel="prev" title="5. 3. Data Preprocessing, Local Models and Tree-Based Models" href="03.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,16 +198,16 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notation.html">Notation Sheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">1. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">2. Linear Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">3. Data Preprocessing, Local Models and Tree-Based Models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Neural Networks for Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">Ensembles of models and feature selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">Classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notation.html">2. Notation Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">3. 1. Introduction to Probabilistic Methods and Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">4. 2. Linear Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. 3. Data Preprocessing, Local Models and Tree-Based Models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. 4. Neural Networks for Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">7. Ensembles of models and feature selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">8. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">9. Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">10. Bibliography</a></li>
 </ul>
 
     </div>
@@ -356,68 +356,68 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing-for-neural-networks">4.2. Data Preprocessing for Neural Networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-standardization">4.2.1. Normalization and Standardization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data-shaping">4.2.2. Input Data Shaping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.1. 4.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing-for-neural-networks">6.2. 4.2. Data Preprocessing for Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-standardization">6.2.1. 4.2.1. Normalization and Standardization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data-shaping">6.2.2. 4.2.2. Input Data Shaping</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feed-forward-neural-networks-mlps">4.3. Feed-Forward Neural Networks (MLPs)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-and-notation">4.3.1. Architecture and Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feed-forward-neural-networks-mlps">6.3. 4.3. Feed-Forward Neural Networks (MLPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-and-notation">6.3.1. 4.3.1. Architecture and Notation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks-cnns">4.4. Convolutional Neural Networks (CNNs)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-operation">4.4.1. Convolution Operation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-layers">4.4.2. Pooling Layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks-cnns">6.4. 4.4. Convolutional Neural Networks (CNNs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-operation">6.4.1. 4.4.1. Convolution Operation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-layers">6.4.2. 4.4.2. Pooling Layers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-functions">4.5. Activation Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function-and-matrix-based-back-propagation">4.6. Cost function and matrix-based Back-Propagation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squared-errors-sse">4.6.1. Sum of Squared Errors (SSE)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-update">4.6.2. Gradient Descent Update</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-algorithm-2">4.6.3. Back-Propagation (Algorithm 2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-functions">6.5. 4.5. Activation Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function-and-matrix-based-back-propagation">6.6. 4.6. Cost function and matrix-based Back-Propagation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squared-errors-sse">6.6.1. 4.6.1. Sum of Squared Errors (SSE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-update">6.6.2. 4.6.2. Gradient Descent Update</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-algorithm-2">6.6.3. 4.6.3. Back-Propagation (Algorithm 2)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-back-propagation-in-a-mlp">4.7. Example 1: Back-Propagation in a MLP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-cross-validation">4.8. Overfitting and Cross-Validation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-phenomenon">4.8.1. Overfitting Phenomenon</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-and-mitigation">4.8.2. Detection and Mitigation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-back-propagation-in-a-mlp">6.7. 4.7. Example 1: Back-Propagation in a MLP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-cross-validation">6.8. 4.8. Overfitting and Cross-Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-phenomenon">6.8.1. 4.8.1. Overfitting Phenomenon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-and-mitigation">6.8.2. 4.8.2. Detection and Mitigation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-persistence-saving-and-loading-models-in-pytorch">4.9. Model Persistence: Saving and Loading Models in PyTorch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-cnn-for-regression">4.10. Example 2: CNN for Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pytorch-tensors">4.11. Introduction to PyTorch tensors</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tensors">4.11.1. Creating Tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-tensor-operations">4.11.2. Basic Tensor Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">4.11.2.1. Arithmetic operations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">4.11.2.2. Indexing and slicing</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-concatenation">4.11.2.3. Reshaping and concatenation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-persistence-saving-and-loading-models-in-pytorch">6.9. 4.9. Model Persistence: Saving and Loading Models in PyTorch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-cnn-for-regression">6.10. 4.10. Example 2: CNN for Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pytorch-tensors">6.11. 4.11. Introduction to PyTorch tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tensors">6.11.1. 4.11.1. Creating Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-tensor-operations">6.11.2. 4.11.2. Basic Tensor Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">6.11.2.1. 4.11.2.1. Arithmetic operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">6.11.2.2. 4.11.2.2. Indexing and slicing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-concatenation">6.11.2.3. 4.11.2.3. Reshaping and concatenation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autograd-and-gradients">4.11.3. Autograd and Gradients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tensor-functions">4.11.4. Advanced Tensor Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">4.11.4.1. Broadcasting</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#device-management-cpu-vs-gpu">4.11.4.2. Device Management (CPU vs GPU)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-place-operations">4.11.4.3. In-place Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autograd-and-gradients">6.11.3. 4.11.3. Autograd and Gradients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tensor-functions">6.11.4. 4.11.4. Advanced Tensor Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">6.11.4.1. 4.11.4.1. Broadcasting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#device-management-cpu-vs-gpu">6.11.4.2. 4.11.4.2. Device Management (CPU vs GPU)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-place-operations">6.11.4.3. 4.11.4.3. In-place Operations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.12. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network">4.12.1. Comparison of symbolic and automatic differentiation in a simple feedforward neural network</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup">4.12.1.1. Problem setup</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-implementation">4.12.1.2. PyTorch implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.12. 4.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network">6.12.1. 4.12.1. Comparison of symbolic and automatic differentiation in a simple feedforward neural network</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup">6.12.1.1. 4.12.1.1. Problem setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-implementation">6.12.1.2. 4.12.1.2. PyTorch implementation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures">4.12.2. Facial keypoints detection with PyTorch FCN and CNN architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-overview">4.12.2.1. Dataset overview</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">4.12.2.2. Data exploration</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">4.12.2.3. Data preprocessing</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-connected-neural-network-fcn">4.12.2.4. Fully connected neural network (FCN)</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#fcn-architecture">4.12.2.4.1. FCN architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures">6.12.2. 4.12.2. Facial keypoints detection with PyTorch FCN and CNN architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-overview">6.12.2.1. 4.12.2.1. Dataset overview</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">6.12.2.2. 4.12.2.2. Data exploration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">6.12.2.3. 4.12.2.3. Data preprocessing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-connected-neural-network-fcn">6.12.2.4. 4.12.2.4. Fully connected neural network (FCN)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#fcn-architecture">6.12.2.4.1. 4.12.2.4.1. FCN architecture</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-network">4.12.2.5. Convolutional neural network</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-network">6.12.2.5. 4.12.2.5. Convolutional neural network</a></li>
 </ul>
 </li>
 </ul>
@@ -434,9 +434,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="neural-networks-for-regression">
-<h1>4. Neural Networks for Regression<a class="headerlink" href="#neural-networks-for-regression" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>4. Neural Networks for Regression<a class="headerlink" href="#neural-networks-for-regression" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2>4.1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>4.1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>This practical has not as intention to reintroduce entirely the notion of Neural Network. We redirect the student to Chapter 8 of <a class="reference external" href="http://researchgate.net/publication/242692234_Statistical_foundations_of_machine_learning_the_handbook">the handbook</a> for a formal introduction to those tools.</p>
 <p>However, we aim at giving a practical sight on what Neural Networks actually are. Concretely, Neural Networks form a family of approximations of functions. Generally speaking, most Neural Networks make the hypothesis of non-linearity in the relationship between the inputs and the outputs. The design of the Neural Network involves, non-exhaustively, the definition of the input and output shape, the size and the relationships between the hidden layers, and the non-linear activation functions for each of the layers.</p>
 <aside class="margin sidebar">
@@ -481,9 +481,9 @@ document.write(`
 </div>
 </section>
 <section id="data-preprocessing-for-neural-networks">
-<h2>4.2. Data Preprocessing for Neural Networks<a class="headerlink" href="#data-preprocessing-for-neural-networks" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>4.2. Data Preprocessing for Neural Networks<a class="headerlink" href="#data-preprocessing-for-neural-networks" title="Link to this heading">#</a></h2>
 <section id="normalization-and-standardization">
-<h3>4.2.1. Normalization and Standardization<a class="headerlink" href="#normalization-and-standardization" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>4.2.1. Normalization and Standardization<a class="headerlink" href="#normalization-and-standardization" title="Link to this heading">#</a></h3>
 <p>Gradient-based optimization of neural networks often becomes unstable if different features vary widely in scale. Hence, <strong>Sec. 8.1</strong> of the handbook (and earlier practicals) reiterate that scaling inputs to zero mean and unit variance—or to a small bounded range—is essential. This ensures the gradients have more balanced magnitudes across parameters, which helps the optimizer converge more reliably. Typically, normalization and standardization follow those steps:</p>
 <ol class="arabic simple">
 <li><p>Compute the empirical mean and standard deviation of each input dimension:</p></li>
@@ -505,7 +505,7 @@ x_{ij}^{(std)} = \frac{x_{ij} - \mu_j}{\sigma_j}.
 </ol>
 </section>
 <section id="input-data-shaping">
-<h3>4.2.2. Input Data Shaping<a class="headerlink" href="#input-data-shaping" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.2. </span>4.2.2. Input Data Shaping<a class="headerlink" href="#input-data-shaping" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>For MLPs</strong>: Usually arrange training data into a matrix of shape <span class="math notranslate nohighlight">\((\text{batch}, n)\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of input features.</p></li>
 <li><p><strong>For 2D-CNNs</strong>: Reshape data into a 4D tensor of shape <span class="math notranslate nohighlight">\((\text{batch}, \text{channels}, \text{height}, \text{width})\)</span>. Convolutional layers exploit the spatial dimensions for images or other grid-like inputs.</p></li>
@@ -513,9 +513,9 @@ x_{ij}^{(std)} = \frac{x_{ij} - \mu_j}{\sigma_j}.
 </section>
 </section>
 <section id="feed-forward-neural-networks-mlps">
-<h2>4.3. Feed-Forward Neural Networks (MLPs)<a class="headerlink" href="#feed-forward-neural-networks-mlps" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>4.3. Feed-Forward Neural Networks (MLPs)<a class="headerlink" href="#feed-forward-neural-networks-mlps" title="Link to this heading">#</a></h2>
 <section id="architecture-and-notation">
-<h3>4.3.1. Architecture and Notation<a class="headerlink" href="#architecture-and-notation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.3.1. </span>4.3.1. Architecture and Notation<a class="headerlink" href="#architecture-and-notation" title="Link to this heading">#</a></h3>
 <p>An MLP (multi-layer perceptron, or feed-forward network) with <span class="math notranslate nohighlight">\(L\)</span> layers (including hidden and output layers) maps an input vector <span class="math notranslate nohighlight">\(\mathbf{x}\in\mathbb{R}^n\)</span> to an output (for regression, typically <span class="math notranslate nohighlight">\(\hat{y}\in\mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>) through successive affine transformations and nonlinear activations. In the notation of <strong>Eqs. <span class="math notranslate nohighlight">\((8.1.2)\)</span>–<span class="math notranslate nohighlight">\((8.1.5)\)</span></strong>:</p>
 <ol class="arabic simple">
 <li><p><strong>Layer 1</strong>:</p></li>
@@ -547,7 +547,7 @@ A^{(L)} = Z^{(L-1)} W^{(L)} + b^{(L)},\quad Z^{(L)} = A^{(L)}.
 </section>
 </section>
 <section id="convolutional-neural-networks-cnns">
-<h2>4.4. Convolutional Neural Networks (CNNs)<a class="headerlink" href="#convolutional-neural-networks-cnns" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>4.4. Convolutional Neural Networks (CNNs)<a class="headerlink" href="#convolutional-neural-networks-cnns" title="Link to this heading">#</a></h2>
 <p>Though the practical focuses on regression, CNNs (p. 198–199) illustrate deep architectures that handle grid-structured data (e.g., images). Main ideas:</p>
 <ol class="arabic simple">
 <li><p><strong>Local Connectivity</strong>: Each neuron in a convolutional layer only connects to a local patch of the input.</p></li>
@@ -555,7 +555,7 @@ A^{(L)} = Z^{(L-1)} W^{(L)} + b^{(L)},\quad Z^{(L)} = A^{(L)}.
 <li><p><strong>Translation Equivariance</strong>: The same filter is applied at all spatial locations.</p></li>
 </ol>
 <section id="convolution-operation">
-<h3>4.4.1. Convolution Operation<a class="headerlink" href="#convolution-operation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>4.4.1. Convolution Operation<a class="headerlink" href="#convolution-operation" title="Link to this heading">#</a></h3>
 <p>A single 2D filter:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -564,14 +564,14 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 <p>where <span class="math notranslate nohighlight">\((k_h, k_w)\)</span> is the kernel size. ReLU or another activation is then applied.</p>
 </section>
 <section id="pooling-layers">
-<h3>4.4.2. Pooling Layers<a class="headerlink" href="#pooling-layers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.2. </span>4.4.2. Pooling Layers<a class="headerlink" href="#pooling-layers" title="Link to this heading">#</a></h3>
 <p>Often, a <strong>pooling</strong> layer follows one or more convolutional layers to reduce the spatial resolution. For instance, <strong>max pooling</strong> with a <span class="math notranslate nohighlight">\(2\times2\)</span> window and stride 2 halves the height and width.</p>
 <p>An example of represention of a CNN is given here:</p>
 <p><img alt="MLP Example" src="_images/cnn_example.jpg" /></p>
 </section>
 </section>
 <section id="activation-functions">
-<h2>4.5. Activation Functions<a class="headerlink" href="#activation-functions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>4.5. Activation Functions<a class="headerlink" href="#activation-functions" title="Link to this heading">#</a></h2>
 <p>Nonlinearities <span class="math notranslate nohighlight">\(g^{(l)}(\cdot)\)</span> are critical. Common examples in the course:</p>
 <ul class="simple">
 <li><p><strong>Sigmoid</strong>: <span class="math notranslate nohighlight">\(\sigma(z)=1/(1+e^{-z})\)</span>, which saturates for large <span class="math notranslate nohighlight">\(|z|\)</span>.</p></li>
@@ -581,9 +581,9 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 <p>Without a nonlinear <span class="math notranslate nohighlight">\(g^{(l)}\)</span>, the stacked linear transformations collapse to an effective single linear mapping. Nonlinearity ensures the network can approximate complex functions (Universal Approximation property).</p>
 </section>
 <section id="cost-function-and-matrix-based-back-propagation">
-<h2>4.6. Cost function and matrix-based Back-Propagation<a class="headerlink" href="#cost-function-and-matrix-based-back-propagation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>4.6. Cost function and matrix-based Back-Propagation<a class="headerlink" href="#cost-function-and-matrix-based-back-propagation" title="Link to this heading">#</a></h2>
 <section id="sum-of-squared-errors-sse">
-<h3>4.6.1. Sum of Squared Errors (SSE)<a class="headerlink" href="#sum-of-squared-errors-sse" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.6.1. </span>4.6.1. Sum of Squared Errors (SSE)<a class="headerlink" href="#sum-of-squared-errors-sse" title="Link to this heading">#</a></h3>
 <p>For regression tasks, the <em>empirical sum of squared errors</em>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -592,7 +592,7 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 <p>where <span class="math notranslate nohighlight">\(\hat{y}(x_i)\)</span> is the network’s prediction for input <span class="math notranslate nohighlight">\(x_i\)</span>, and <span class="math notranslate nohighlight">\(y_i\)</span> is the true target. The parameter vector <span class="math notranslate nohighlight">\(\alpha_N\)</span> includes <span class="math notranslate nohighlight">\(\{W^{(l)}, b^{(l)}\}\)</span> for <span class="math notranslate nohighlight">\(l=1,\ldots,L\)</span>.</p>
 </section>
 <section id="gradient-descent-update">
-<h3>4.6.2. Gradient Descent Update<a class="headerlink" href="#gradient-descent-update" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.6.2. </span>4.6.2. Gradient Descent Update<a class="headerlink" href="#gradient-descent-update" title="Link to this heading">#</a></h3>
 <p>Using the notation from <strong>Algorithm 2 (p. 194)</strong>, we iteratively update each parameter in the direction that reduces the SSE cost:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -601,7 +601,7 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 <p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the learning rate.</p>
 </section>
 <section id="back-propagation-algorithm-2">
-<h3>4.6.3. Back-Propagation (Algorithm 2)<a class="headerlink" href="#back-propagation-algorithm-2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.6.3. </span>4.6.3. Back-Propagation (Algorithm 2)<a class="headerlink" href="#back-propagation-algorithm-2" title="Link to this heading">#</a></h3>
 <p>Back-propagation is the application of the chain rule to compute <span class="math notranslate nohighlight">\(\nabla \mathrm{SSE}_{\mathrm{emp}}\)</span> with respect to each weight matrix <span class="math notranslate nohighlight">\(W^{(l)}\)</span> and bias <span class="math notranslate nohighlight">\(b^{(l)}\)</span>.</p>
 <ol class="arabic simple">
 <li><p><strong>Output-Layer Delta</strong>:</p></li>
@@ -633,7 +633,7 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 </section>
 </section>
 <section id="example-1-back-propagation-in-a-mlp">
-<h2>4.7. Example 1: Back-Propagation in a MLP<a class="headerlink" href="#example-1-back-propagation-in-a-mlp" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.7. </span>4.7. Example 1: Back-Propagation in a MLP<a class="headerlink" href="#example-1-back-propagation-in-a-mlp" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
@@ -672,13 +672,13 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 </div>
 </section>
 <section id="overfitting-and-cross-validation">
-<h2>4.8. Overfitting and Cross-Validation<a class="headerlink" href="#overfitting-and-cross-validation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.8. </span>4.8. Overfitting and Cross-Validation<a class="headerlink" href="#overfitting-and-cross-validation" title="Link to this heading">#</a></h2>
 <section id="overfitting-phenomenon">
-<h3>4.8.1. Overfitting Phenomenon<a class="headerlink" href="#overfitting-phenomenon" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.8.1. </span>4.8.1. Overfitting Phenomenon<a class="headerlink" href="#overfitting-phenomenon" title="Link to this heading">#</a></h3>
 <p>In the handbook’s example on <strong>p. 197</strong>, a network with 15 hidden units achieves extremely low training SSE but high test SSE, illustrating <strong>overfitting</strong>. Overfitting arises when a model fits training data “too well,” capturing noise rather than the underlying trend.</p>
 </section>
 <section id="detection-and-mitigation">
-<h3>4.8.2. Detection and Mitigation<a class="headerlink" href="#detection-and-mitigation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.8.2. </span>4.8.2. Detection and Mitigation<a class="headerlink" href="#detection-and-mitigation" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Validation Set</strong>: Split data into training and validation. Monitor the validation error (e.g., MSE). If it increases while training error decreases, the model is overfitting.</p></li>
 <li><p><strong>Cross-Validation</strong>: Alternatively, use <span class="math notranslate nohighlight">\(k\)</span>-fold cross-validation.</p></li>
@@ -693,7 +693,7 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 </section>
 </section>
 <section id="model-persistence-saving-and-loading-models-in-pytorch">
-<h2>4.9. Model Persistence: Saving and Loading Models in PyTorch<a class="headerlink" href="#model-persistence-saving-and-loading-models-in-pytorch" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.9. </span>4.9. Model Persistence: Saving and Loading Models in PyTorch<a class="headerlink" href="#model-persistence-saving-and-loading-models-in-pytorch" title="Link to this heading">#</a></h2>
 <p>For safe and reproducible experiments, one typically needs to <strong>save</strong>:</p>
 <ol class="arabic simple">
 <li><p><strong>Model Weights (state_dict)</strong>: The learned parameters <span class="math notranslate nohighlight">\(\{W^{(l)},b^{(l)}\}\)</span>.</p></li>
@@ -725,7 +725,7 @@ y_{ij} = \sum_{m=1}^{k_h} \sum_{n=1}^{k_w} W_{mn} x_{(i + m - 1, j + n - 1)} + b
 </div>
 </section>
 <section id="example-2-cnn-for-regression">
-<h2>4.10. Example 2: CNN for Regression<a class="headerlink" href="#example-2-cnn-for-regression" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.10. </span>4.10. Example 2: CNN for Regression<a class="headerlink" href="#example-2-cnn-for-regression" title="Link to this heading">#</a></h2>
 <p>Below is a more detailed illustration of an implementation of a CNN in PyTorch for regression highlighting many of the points presented above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -861,14 +861,14 @@ Final validation MSE (best model): 1.0975
 </div>
 </section>
 <section id="introduction-to-pytorch-tensors">
-<h2>4.11. Introduction to PyTorch tensors<a class="headerlink" href="#introduction-to-pytorch-tensors" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.11. </span>4.11. Introduction to PyTorch tensors<a class="headerlink" href="#introduction-to-pytorch-tensors" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">PyTorch</span></code> is a popular open-source deep learning framework, and <strong>tensors</strong> are its core data structure. In PyTorch, tensors are the central data abstraction – a specialized data structure very similar to arrays or matrices, used to represent data (inputs, outputs, model parameters) in deep learning models. Tensors are conceptually like NumPy’s multi-dimensional arrays, but with two key advantages: they can run on GPUs (for accelerated computing), and they support automatic differentiation (through PyTorch’s autograd engine) for computing gradients. These features make tensors fundamental for building and training neural networks.</p>
 <p>In this introduction, we’ll explore PyTorch tensors from the ground up. We assume you are comfortable with Python and NumPy, but completely new to PyTorch. We’ll cover what tensors are and how they compare to NumPy arrays, how to create and manipulate them, basic operations, how PyTorch’s autograd works for automatic differentiation, and some additional important tensor functionalities like broadcasting, using GPUs, and in-place operations. Along the way, you’ll find hands-on code examples you can run and modify to solidify your understanding.</p>
 <p>Let’s get started by importing PyTorch (the <code class="docutils literal notranslate"><span class="pre">torch</span></code> library) and seeing how to create tensors in various ways.</p>
 <p>PyTorch (<code class="docutils literal notranslate"><span class="pre">torch</span></code>) provides the <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> class, which, as mentioned, is similar to NumPy’s <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>s but with GPU support and gradient computation. If you’re familiar with NumPy arrays, you’ll find the tensor API quite intuitive. In fact, many operations (creation, indexing, math, etc.) have a very similar syntax.</p>
 <p>One important difference is that PyTorch operations can be automatically differentiated (if required), which is essential for tasks like training neural networks.</p>
 <section id="creating-tensors">
-<h3>4.11.1. Creating Tensors<a class="headerlink" href="#creating-tensors" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.11.1. </span>4.11.1. Creating Tensors<a class="headerlink" href="#creating-tensors" title="Link to this heading">#</a></h3>
 <p>There are many ways to create a tensor in PyTorch. Here are some of the most common methods:</p>
 <ol class="arabic simple">
 <li><p><strong>From Python data</strong>: You can create a tensor directly from a Python list or sequence of numbers using <code class="docutils literal notranslate"><span class="pre">torch.tensor()</span></code>. PyTorch will automatically infer the data type (dtype) if not specified.</p></li>
@@ -982,10 +982,10 @@ Tensor device: cpu
 </div>
 </section>
 <section id="basic-tensor-operations">
-<h3>4.11.2. Basic Tensor Operations<a class="headerlink" href="#basic-tensor-operations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.11.2. </span>4.11.2. Basic Tensor Operations<a class="headerlink" href="#basic-tensor-operations" title="Link to this heading">#</a></h3>
 <p>Once you have tensors, PyTorch provides a rich set of operations to manipulate them. In fact, there are over 100 tensor operations available, including arithmetic, linear algebra, slicing, reshaping, and more. Many of these mirror NumPy operations in syntax and function. Let’s go through some fundamental operations.</p>
 <section id="arithmetic-operations">
-<h4>4.11.2.1. Arithmetic operations<a class="headerlink" href="#arithmetic-operations" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.11.2.1. </span>4.11.2.1. Arithmetic operations<a class="headerlink" href="#arithmetic-operations" title="Link to this heading">#</a></h4>
 <p>Arithmetic on tensors is typically element-wise (just like with NumPy arrays). You can use Python arithmetic operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>) or the equivalent <code class="docutils literal notranslate"><span class="pre">torch</span></code> functions (<code class="docutils literal notranslate"><span class="pre">torch.add</span></code>, <code class="docutils literal notranslate"><span class="pre">torch.sub</span></code>, etc.). For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1096,7 +1096,7 @@ Tensor device: cpu
 <p>Here, <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">*</span> <span class="pre">B</span></code> will do element-wise multiplication (resulting in <span class="math notranslate nohighlight">\(\begin{bmatrix}5&amp;12\\21&amp;32\end{bmatrix}\)</span>), whereas <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&#64;</span> <span class="pre">B</span></code> will compute the matrix product (result <span class="math notranslate nohighlight">\(\begin{bmatrix}19&amp;22\\43&amp;50\end{bmatrix}\)</span>).</p>
 </section>
 <section id="indexing-and-slicing">
-<h4>4.11.2.2. Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.11.2.2. </span>4.11.2.2. Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h4>
 <p>You can access and modify parts of tensors using indexing and slicing, just like with NumPy. PyTorch uses 0-based indexing. You can use indices, ranges, colons, and even Boolean masks or index tensors (though advanced indexing is outside our scope here). Some examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1175,7 +1175,7 @@ Tensor device: cpu
 <p>Note: Slicing a tensor (e.g., <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x[0:2,</span> <span class="pre">0:2]</span></code>) will result in a <strong>view</strong> of the original tensor whenever possible (i.e., it doesn’t copy the data). So modifying <code class="docutils literal notranslate"><span class="pre">y</span></code> would also modify <code class="docutils literal notranslate"><span class="pre">x</span></code>. If you need to explicitly copy a tensor or sub-tensor, you can use <code class="docutils literal notranslate"><span class="pre">.clone()</span></code>.</p>
 </section>
 <section id="reshaping-and-concatenation">
-<h4>4.11.2.3. Reshaping and concatenation<a class="headerlink" href="#reshaping-and-concatenation" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.11.2.3. </span>4.11.2.3. Reshaping and concatenation<a class="headerlink" href="#reshaping-and-concatenation" title="Link to this heading">#</a></h4>
 <p>Often you’ll want to change the shape or dimensionality of a tensor without changing its data. This is done with operations like <code class="docutils literal notranslate"><span class="pre">tensor.view()</span></code> or <code class="docutils literal notranslate"><span class="pre">tensor.reshape()</span></code>. Both do similar things (though <code class="docutils literal notranslate"><span class="pre">.view()</span></code> only works on contiguous tensors). For simplicity, we’ll use <code class="docutils literal notranslate"><span class="pre">reshape</span></code> here.</p>
 <p>You can also join tensors together (concatenate) along a given dimension using <code class="docutils literal notranslate"><span class="pre">torch.cat</span></code> or stack them with <code class="docutils literal notranslate"><span class="pre">torch.stack</span></code> (which adds a new dimension). Examples:</p>
 <div class="cell docutils container">
@@ -1279,7 +1279,7 @@ Tensor device: cpu
 </section>
 </section>
 <section id="autograd-and-gradients">
-<h3>4.11.3. Autograd and Gradients<a class="headerlink" href="#autograd-and-gradients" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.11.3. </span>4.11.3. Autograd and Gradients<a class="headerlink" href="#autograd-and-gradients" title="Link to this heading">#</a></h3>
 <p>One of the most powerful features of PyTorch is its <strong>autograd</strong> system, which allows automatic computation of gradients for tensor operations. This is what enables training of neural networks using gradient descent: you define a forward computation, and PyTorch can compute the backward gradients for you.</p>
 <p>In PyTorch, the <code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code> engine tracks all operations on tensors that have <code class="docutils literal notranslate"><span class="pre">requires_grad=True</span></code>. By default, tensors do <strong>not</strong> track gradients. You need to specify which tensors require gradient computation (usually the learnable parameters of your model, or any input for which you want to compute a derivative) by setting <code class="docutils literal notranslate"><span class="pre">requires_grad=True</span></code> when creating the tensor or by calling <code class="docutils literal notranslate"><span class="pre">.requires_grad_()</span></code> on an existing tensor.</p>
 <p>When you perform operations on such tensors, PyTorch builds a computational graph behind the scenes: nodes are tensors, and edges are functions that produce output tensors from input tensors. Once you have a result (typically a scalar loss value), you can call <code class="docutils literal notranslate"><span class="pre">.backward()</span></code> on it, and PyTorch will automatically traverse the graph to compute the gradient of that result with respect to every tensor that has <code class="docutils literal notranslate"><span class="pre">requires_grad=True</span></code> (using the chain rule of calculus). Let’s see a simple example to illustrate this:</p>
@@ -1348,9 +1348,9 @@ dz/dy: tensor(-4.)
 <p>Here <span class="math notranslate nohighlight">\( z = x \times y + y^2 \)</span>. We expect <span class="math notranslate nohighlight">\( dz/dx = y \)</span> and <span class="math notranslate nohighlight">\( dz/dy = x + 2y \)</span>. With <span class="math notranslate nohighlight">\( x = 2.0 \)</span> and <span class="math notranslate nohighlight">\( y = -3.0 \)</span>, those values are <span class="math notranslate nohighlight">\( dz/dx = -3 \)</span> and <span class="math notranslate nohighlight">\( dz/dy = 2 + 2(-3) = -4 \)</span>. The autograd should produce the same results in <code class="docutils literal notranslate"><span class="pre">x.grad</span></code> and <code class="docutils literal notranslate"><span class="pre">y.grad</span></code>.</p>
 </section>
 <section id="advanced-tensor-functions">
-<h3>4.11.4. Advanced Tensor Functions<a class="headerlink" href="#advanced-tensor-functions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.11.4. </span>4.11.4. Advanced Tensor Functions<a class="headerlink" href="#advanced-tensor-functions" title="Link to this heading">#</a></h3>
 <section id="broadcasting">
-<h4>4.11.4.1. Broadcasting<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.11.4.1. </span>4.11.4.1. Broadcasting<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h4>
 <p>Like NumPy, PyTorch supports <strong>broadcasting</strong> – a mechanism that allows arithmetic operations on tensors of different shapes by automatically expanding one of them to match the shape of the other. Broadcasting rules in PyTorch are the same as NumPy’s. In short, two tensors are compatible for an elementwise operation if their shapes are equal or align in such a way that one of them can be expanded (a dimension of size 1 can be expanded to match the other’s size, and missing dimensions are treated as size 1).</p>
 <p>For example, if you have a tensor of shape (4, 3) and another of shape (3,), you can add them because the second tensor can be treated as if it were (1, 3) and then expanded to (4, 3) to match the first tensor’s shape.</p>
 <p>In code, we can demonstrate broadcasting with a simple example:</p>
@@ -1400,7 +1400,7 @@ dz/dy: tensor(-4.)
 <p>Here, <code class="docutils literal notranslate"><span class="pre">vec</span></code> is added to each row of <code class="docutils literal notranslate"><span class="pre">mat</span></code>. The expected result would be each row of <code class="docutils literal notranslate"><span class="pre">mat</span></code> incremented by <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>. Broadcasting is a powerful feature that makes your code more concise and often more efficient.</p>
 </section>
 <section id="device-management-cpu-vs-gpu">
-<h4>4.11.4.2. Device Management (CPU vs GPU)<a class="headerlink" href="#device-management-cpu-vs-gpu" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.11.4.2. </span>4.11.4.2. Device Management (CPU vs GPU)<a class="headerlink" href="#device-management-cpu-vs-gpu" title="Link to this heading">#</a></h4>
 <p>One of PyTorch’s strengths is the ability to perform computations on a <strong>GPU</strong> for speed. Tensors can reside on either the CPU or the GPU. By default, tensors are created on the CPU.
 You can check where a tensor is located by looking at its <code class="docutils literal notranslate"><span class="pre">.device</span></code> attribute. To leverage a GPU (if you have one and PyTorch is installed with CUDA support), you need to explicitly move tensors to the GPU. There are a few ways to do this:</p>
 <ol class="arabic simple">
@@ -1518,7 +1518,7 @@ y device: mps:0
 </div>
 </section>
 <section id="in-place-operations">
-<h4>4.11.4.3. In-place Operations<a class="headerlink" href="#in-place-operations" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.11.4.3. </span>4.11.4.3. In-place Operations<a class="headerlink" href="#in-place-operations" title="Link to this heading">#</a></h4>
 <p>PyTorch differentiates between operations that create new tensors and those that modify an existing tensor <strong>in-place</strong>. In-place operations are identified by an underscore suffix in the method name. For example, <code class="docutils literal notranslate"><span class="pre">tensor.add_(5)</span></code> will add 5 to every element of the tensor <strong>in-place</strong> (mutating the tensor), whereas <code class="docutils literal notranslate"><span class="pre">tensor.add(5)</span></code> returns a new tensor with the result and leaves the original unchanged. All functions ending in <code class="docutils literal notranslate"><span class="pre">_</span></code> modify the tensor in-place.</p>
 <p>Why use in-place ops? They can save memory and sometimes a bit of compute, because you don’t allocate a new tensor for the result. However, be careful: in-place operations can sometimes interfere with autograd (if you modify values required to compute gradients). As a rule of thumb, avoid using in-place ops on tensors that require grad unless you know what you’re doing.</p>
 <p>Let’s demonstrate the difference between an in-place operation and its out-of-place counterpart:</p>
@@ -1641,9 +1641,9 @@ y device: mps:0
 </section>
 </section>
 <section id="exercises">
-<h2>4.12. Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.12. </span>4.12. Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network">
-<h3>4.12.1. Comparison of symbolic and automatic differentiation in a simple feedforward neural network<a class="headerlink" href="#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.12.1. </span>4.12.1. Comparison of symbolic and automatic differentiation in a simple feedforward neural network<a class="headerlink" href="#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network" title="Link to this heading">#</a></h3>
 <p>In this exercise, we will illustrate how <strong>automatic differentiation</strong> (as implemented in PyTorch) matches with the result of <strong>symbolic differentiation</strong> for a simple two-hidden-neuron feedforward neural network. You should:</p>
 <ol class="arabic simple">
 <li><p><strong>Define</strong> a simple feedforward neural network (FNN) with two hidden neurons <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_2\)</span> using the values and notation from the figure below.</p></li>
@@ -1654,7 +1654,7 @@ y device: mps:0
 </ol>
 <p>The feedforward neural network architecture that we will use in this exercise is the following:</p>
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAH0CAYAAADFQEl4AAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjAsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvlHJYcgAAAAlwSFlzAAAPYQAAD2EBqD+naQAAYPpJREFUeJzt3Qm8TPXj//GPJXuUrSwh2UPZsmUJkWRro2+UrV+itGmRQkXqW2kjhIQWpbLLLgpR9kj2lMgu+3r+j/fn9z/zm5m7uPe6c2a5r+fjMcydO3fmM8s55/M+ny2d4ziOAQAAAAAPpPfiSQAAAABACCAAAAAAPEMAAQAAAOAZAggAAAAAzxBAAAAAAHiGAAIAAADAMwQQAAAAAJ4hgAAAAADwDAEEAAAAgGcIIAAAAAA8QwABAAAA4BkCCAAAAADPEEAAAAAAeIYAAgAAAMAzBBAAAAAAniGAAAAAAPAMAQQAAACAZwggAAAAADxDAAEAAADgGQIIAAAAAM8QQAAAAAB4hgACAAAAwDMEEAAAAACeIYAAAAAA8AwBBAAAAIBnCCAAAAAAPEMAAQAAAOAZAggAAAAAzxBAAAAAAHiGAAIAAADAMwQQAAAAAJ4hgAAAAADwDAEEAAAAgGcIIAAAAAA8QwABAAAA4BkCCAAAAADPEEAAxLR06dKZ+vXrx7n9l19+MbfeeqvJly+fvc+NN95o0rpixYrZCwL169fPfke+//77cBclqnXo0MG+jzt27Ah3UQCEGQEEQIqoEqHKRGKXw4cPm0j077//mmbNmpnly5ebNm3amL59+5quXbuGu1hRRZVx93N++OGH473P+PHj7e9VgU9LFHj1urNkyWL++OOPeO9TpkwZe59L8cknn9jH0P8AEE0yhrsAAKLbddddZ9q1axfv71QBi0QKHnv37jUDBgwwL7zwQriLE/U+/vhj89RTT5nSpUuHuygR5fTp0+bFF18048aNC3dRACCiEEAAXJISJUpE3Rnuv//+2/5fsGDBcBclJgLo1q1bbZD75ptvwl2ciHtvPv/8c/PMM8+YihUrhrs4ABAx6IIFwBNr1641bdu2NQUKFDCZMmUyRYsWNY899pg5cOBAqtx/5MiRpnz58rbV5ZprrjHPPvusOXXqVJz7qcvKgw8+aK937NjR143IvxuLus107tzZFCpUyD534cKF7c87d+5MsLuNnktnu1XpvOyyy2woe++99+zvvv7664C/eeKJJ+ztN998c7zd2lQu16ZNm+xrqVy5ssmTJ499faVKlTLPP/+8OXbsWLLK45o8ebKpVq2ayZo1q7nqqqvMQw89ZA4dOmRSolGjRqZevXrm22+/NcuWLUvy36kF6sknn7QBNnPmzCZv3rzmrrvuMr/++muSx/EkNG7FHWuwbds28/bbb5ty5crZ59DtbgBVt7saNWqY/Pnz29/pMbp162bLlVr69+9vLly4YJ577rlk/Z0+n4YNG5orr7zSft76Xr/11lvm/PnzAa/R/Z74f4/dbl16b3VdY538tWrVyt4e3Grpdql7+eWXA25PrW0hMXruK664whQpUsRs3LgxWe8VgOhECwiAkJsyZYq59957Tfr06U3Lli1tQNiwYYMZPHiwmTVrlq24qrKV0vu/+uqrpk+fPr7KtCo9X375pfntt9/ilEUVz9WrV9tKnh7bHXzu/q8Kv4LBvn37TPPmzc31119vK8XqZjR16lTz448/2gAQTJXnNWvWmNtuu81Wpq699lpTqVIl+7sFCxaYu+++23df/ex2BTt+/LjJnj17wO233HKL776q2I8aNcrepgqeKrQ//fSTeeONN8zChQvNokWL7OtNSnlk7NixNoDlzJnTtG/f3v5u2rRpNkicOXPGVjKTS2VRZV5BSWW6GLWY6LX89ddfpnHjxrZSrIq/WlD0+c6bN89Ur17dXCoFVr1XGu+jz1JhQ/SeKZiokq/n0fu3atUqM3ToUPv8K1euNLly5brk59drbNq0qfnuu+/sZ+v/uSakV69e5vXXX7cV/jvvvNOW44cffrCtKPreT5gwwd5P75nGWAV/j116rnfffdc+b9WqVe1t+u7otft/11zxffdSc1tIiD7z+++/34YVvfcKOADSAAcAUmD79u2OdiHXXXed07dv3ziXpUuX2vvt37/fyZkzp1OoUCFnx44dAY/xxRdf2Md49NFHfbcl9/6bN292MmbMaO//zz//+G4/cuSIU7p0aXv/evXqBTzO6NGj7e36P9gtt9xifzd8+PCA24cMGWJvb9CgQcDtemzdfuONNzoHDhwI+N2FCxecPHnyOGXLlg14fenSpXMaNmxo/27WrFm+37Vv397etnPnTt9tf/31l3P69Ok45Xz55ZftfT/99NMkl0fvid7b7NmzO7///rvv9jNnzjh169a1f1e0aFEnKRYsWGDv//DDD9uf7777bvvz1KlT43xe+j74q1WrlpMhQwZn5syZAberTJdffrlToUKFgNvj+wxdKm9wmR988EH7N4ULF3b++OOPOH+j78nRo0fj3D5mzBj7d/379w+4XeXX7XrNSeF+Brt373bWrFnjpE+f3qlWrZr9Prjc76a/2bNn29uaNGniHDt2zHe7/q5r1672d19//XWSvseHDh2yz9u0aVPfbStWrLD3d797/t+BOnXqOFmzZg34rqXmtuD/uWjfIUOHDrVl1Pfh4MGDSXhnAcQKAgiASwogCV3eeecde79BgwbZn8eOHRvv41SuXNnJmzev7+fk3t+tiL/99ttx7jtu3LhkBRBVVnV7uXLlAiqLcv78eadMmTJxAoJb6Zo8eXK85b3rrrt8lVFRBdKtzGbOnNl57rnnfPdVhbl48eJOUqiCp8fp0KFDwO2JlcetYD/22GNxfvfDDz9cUgDZtGmTDYLly5e371VCAWTlypX2tk6dOsX7uE899ZT9/bp16y45gLz33ntOcugzV0CrX79+qgUQeeCBB+zPX375ZaIBpEWLFva2+ELT4cOHbXDV9ykpAUSqVKni5MiRwzl79qz9+a233rL3X7x4sf1fAUBOnDjhZMqUKSBQhGJb8A8g/fr1s9fvuOMO+/wA0ha6YAG4JE2aNDEzZ85M8PfqAiPqPqKuN8HUX3z//v32onEAyb2/unpInTp14tw3vtsSo65ZojENwVOkqjtY3bp1bR913U/dwvzddNNN8T6murSom4m6uNx33332/8svv9x2bVG3Jbfry5YtW2yXJPWv96f69+jRo+0YFXV/OXLkiO1KEzygPlh85UnsvapZs6bJmDHlh4SSJUuaLl26mGHDhtluXu54i2Du5/vPP//EOzbAHQOg/zX24VIk9Jm4XduGDx9uu1tp/Iv/+IqE3tOUUhdBdQnUuAh1q0rofdZ7o+546uIUH43ZSc4YCX33VqxYYX7++Wf7+eq7VrZsWVOrVi07pko/a/rpxYsX2+53/t2vQrEt+I+BUtcxfUdGjBhxSd87ANGJrR5ASB08eND+P2TIkETvp7EQChTJvb8q5OL27/enMSHJXR8ksb/TgHj/+yXludxKnX8AUeVNlS79TpVTPV58ffClR48eduyLKnktWrSwZdCgadGAYU31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DBlixo0bZ/bt2xfn99mzZ7fdqdxuVfq/SJEiJmvWrCZz5sz2PqdPnzYnT540O3futC0muqjLli7Hjx+P85j58uUz7du3N927dzfFixf35HUCALxBAAEAxEuh4c033zT9+/e31/0VLVrUdOzY0bRp08aUKlXKtl6khFpRNm3aZMaPH29Gjx5tA4o/jRvp3bu3eeaZZ3xhBgAQ3QggAIA4Fi5caLp27Wo2btzou01dolq3bm06d+5sGjZsmOLQkZDz58+b+fPn2y5eEydOtF2+XGXKlDHDhg0z9erVS9XnBAB4jwACAPDR7FU9e/Y0Y8aM8d2WIUMG88QTT5hevXqZPHnyeFKOAwcOmIEDB5p3333XBhNXhw4dbKuMZtMCAEQnAggAwNK4jGbNmpm///7bd1v16tXN8OHD7diOcJVJLTHLli3z3VawYEEzY8aMsJUJAHBpWIgQAGBntapTp44vfGh9jqFDh5olS5aEtaKvAe2LFy82H374oW/NEJVRZZ09e3bYygUASDlaQAAgjfv666/NfffdZ86dO2d/rlGjhvn2229NgQIFTCTZvXu3HYPitoZkzJjRDl6/6667wl00AEAy0AICAGnYhAkTTNu2bX3h484777QDwSMtfIjKpLIphIjKrFm4FKAAANGDFhAASKNUmW/cuLFvkLem1R0xYoQddB7JVN6HHnrITtsrKu+cOXPMLbfcEu6iAQCSgAACAGmQZpmqWLGib8yHVh9X+EjtqXVDReuHdOnSxRdCChUqZBc19GqWLgBAykXHkQYAkGp03kmVdzd8aE2PaAoforKOHDnSll127dplW0U4pwYAkS96jjYAgFShsDFp0iR7XS0GY8eOjarw4VKZtV6J2+qhxQsVSgAAkY0uWACQhmhl88qVK5uTJ0/anydPnmxatGhhopleQ6tWrez1bNmymZUrV5rSpUuHu1gAgARE3ykvAECKde/e3Rc+tMBftIcPadmypXn44Yft9RMnTphu3bqFu0gAgETQAgIAacSqVats64cUL17crFu3zrYYxAIFjwoVKpht27b5XqsWMQQARB5aQAAgjXjnnXd815955pmYCR+i19KzZ894XysAILLQAgIAaYBmiSpWrJhdvC937tzmzz//jKkAIsePHzdFihQxBw8eNJdddpnZsWOHKViwYLiLBQAIQgsIAKQBQ4YM8a12/sgjj8Rc+JDs2bPbcS1y9uxZ+5oBAJGHFhAAiHGnT582BQoUMIcOHbItA3/88Yf9ORZpbRO19CiAXHnllWb37t0mc+bM4S4WAMAPLSAAEOM0IFvhQ+68886YDR+iLletW7e21/WaV69eHe4iAQCCEEAAIMYtW7bMd71evXom1vm/Rv/XDgCIDAQQAIhx/pXw6tWrm1jn/xoJIAAQeQggABDj3Ep4lixZ7FoZobBp0yaTLl26eC9XXHGF8VLFihXtaxUCCABEnozhLgAAIHT27dvnW5yvSpUqdhB6KOTMmdOMGzcu4LaNGzeaAQMGmMaNGxsv6TVqwcUlS5aYrVu3mv3795u8efN6WgYAQMIIIAAQw9asWeO7ftNNN4Xsea6++mrTrl07388KPc8995y5+eabzSeffGK8pteqACIaiN6oUSPPywAAiB9dsAAghv37778BIcELWuSwQYMGplChQmb69OlhWXPE/7UePXrU8+cHACSMAAIAMezEiRO+61mzZg358+3Zs8c0bNjQ5MqVy8ycOdN2zdI6JJ06dbKrlOvnGjVqmKVLl4a0HP6v1f89AACEH12wACAKqXuTBliXKFHClCxZMuB//xaHM2fO+K6HekG+AwcO2K5OGTJkMHPmzDG5c+e2t2sFdi0O+OOPP5rChQubr776yjRv3tzs2LHD5MiRIyRl8X+tWg/k8ccfN9dee625++67bRkAAOFDAAGAKOM4jhk7dqxtbVi4cGGc319++eW2cq8AkClTJt/taokIlSNHjtjB5idPnjSLFi0y+fPn9/0ue/bspk+fPr6f27Zta5566inz+++/24HxoeD/WjUe5f3337fXn3zySVOzZk1zzz332DByzTXXhOT5AQAJowsWAEQZTW27cuVK895775kmTZrEmeFJYx4UCMS/NUThIBSOHTtmmjZtavbu3WvmzZtnx34kZvPmzebgwYO2tSZU/F9r7dq1zbBhw+yAeL136v6lAKQuYbVq1TLvvPOOHbcCAPAGLSAAEEV27txpvv76azNhwgTz008/xTsFrVpH1N1INObCpRaTUGjfvr2t1L/00ku2m5UurvLly5sbb7wxIBhotqxevXrZcSKh4v9a9Tx33XWXefjhh83ff/9tvvnmG/v+qZwqtxtINDbFbRlROAEAhEY6R235AICoCx06m68z+Grt+PXXX+3ie5MnTw5Y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H3/sbNq0yTl//nyKHv/EiRPO8uXLnX79+jlFixaN8xzp06d3Hn/8cefff/9N9deG/7Nx40bn1VdfdSpWrBjw/mfIkMFp0qSJM3LkSGf//v3hLmZEmjlzppMjRw7fe5YrVy7nww8/TPE2kZrOnTvnDBkyxMmZM6evfJdffrkza9ascBctIu3bt88ZMWKE07hxY/vd998WtG3079/f+f3338NdzJh25MgRp0ePHnbfH3w80DFCxwodM3TsSAltlzpm6dilY1h8x7batWs769atS/XXBqQGAghi2rFjx5xnn33WyZgxY8COuUCBAk6vXr3sDjy16cAwZ84cp23btk6mTJkCnrdQoULO119/7Vy4cCHVnzetSih06DMndCTP6tWr7XfU/32sXr26s2rVqrCVSc990003xdmOVFZcnL772ga0LcQXRrTtaBtC6tC+Xfv4ggULBrzXmTNntscEHRtCEep1LNMxTce24P3gc8895xw/fjzVnxO4FAQQxKxp06bFaY0oWbKkM2nSJOfs2bOelOHAgQPOgAEDnKxZswaUo1mzZs727ds9KUMs+u2335xXXnnFqVChQpyD7W233eaMGjXKvvdI2dnzDh06xGlBeuqppzwNcnouPWdwpbljx462jLi0MBJ8UkbbEmHk0miffvvttwe8r9r36xjg1f5IxzYd43Ss8y9HsWLFnOnTp3tSBiApCCCIOdoBP/LIIwE7X7VEqMn75MmTYSnTtm3b4hyYsmXL5kyePDks5YlGhA5vff/9906ZMmXibEf33nuv7foUirO46mqlx9ZzBLceli1b1lm4cGGqP2dapW1F24y2nfjCiLY1bXNIGlX6tU/3fx+1z9e+Pxx0rOvbt2+c7ahbt26enYADEkMAQUw5evSobV3w3+E2aNAgIvo7q2l+woQJAU3z6h88ePDgcBctYm3YsMF5+eWXnfLly8cJHU2bNrX9nwkdoXPq1Ck7XiBLlixx+pcXKVLEVnBUSb2UMKK/1WP06dPHPmbw8+i5VYbTp0+n6mtD0sKItj3CSOI++OADJ126dL73TPv4SOlqqxatW265JeAzveOOO2z3ZCCcmAULMePw4cN2+tvly5fbn7U44IcffmhnA4mk+dH//fdf8/DDD9vZe1wvvfSSefnllyOqnOGcNcadverXX38NmN1F891rJp+WLVua3Llzh7Wcacm2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" style="width: 50%; height: 100%;"/><section id="problem-setup">
-<h4>4.12.1.1. Problem setup<a class="headerlink" href="#problem-setup" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.12.1.1. </span>4.12.1.1. Problem setup<a class="headerlink" href="#problem-setup" title="Link to this heading">#</a></h4>
 <p>Let’s consider the following simplified network:</p>
 <ul class="simple">
 <li><p><strong>Input</strong>: <span class="math notranslate nohighlight">\(x\)</span>, a single scalar input.</p></li>
@@ -1692,7 +1692,7 @@ w_{11}^{(1)},\quad w_{12}^{(1)},\quad w_{11}^{(2)},\quad w_{21}^{(2)}.
 <p>We will show that these two results match.</p>
 </section>
 <section id="pytorch-implementation">
-<h4>4.12.1.2. PyTorch implementation<a class="headerlink" href="#pytorch-implementation" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.12.1.2. </span>4.12.1.2. PyTorch implementation<a class="headerlink" href="#pytorch-implementation" title="Link to this heading">#</a></h4>
 <p><strong>Activation function and its derivative</strong></p>
 <p>We will use the logistic sigmoid <span class="math notranslate nohighlight">\(g(a) = 1 / (1 + e^{-a})\)</span> as the activation function. Its derivative with respect to <span class="math notranslate nohighlight">\(a\)</span> is:</p>
 <div class="math notranslate nohighlight">
@@ -1898,7 +1898,7 @@ You can now expand this example to more complex network architectures or differe
 </section>
 </section>
 <section id="facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures">
-<h3>4.12.2. Facial keypoints detection with PyTorch FCN and CNN architectures<a class="headerlink" href="#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.12.2. </span>4.12.2. Facial keypoints detection with PyTorch FCN and CNN architectures<a class="headerlink" href="#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures" title="Link to this heading">#</a></h3>
 <p>Facial keypoint detection is the task of identifying important landmarks on a human face (e.g., corners of the eyes, nose tip, mouth corners) in an image. These keypoints are crucial for many applications in computer vision:</p>
 <ul class="simple">
 <li><p>Aligning faces for recognition or verification.</p></li>
@@ -1908,7 +1908,7 @@ You can now expand this example to more complex network architectures or differe
 <p>In this exercise, we will build fully connected neural networks and convolutional neural networks to detect <strong>15 keypoints</strong> on <strong>96x96 grayscale face images</strong>. The network will take an image as input and output the <span class="math notranslate nohighlight">\( (x,y) \)</span> coordinates of the <strong>15 facial keypoints</strong>.</p>
 <p>Source: <a class="reference external" href="https://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/">danielnouri.org</a></p>
 <section id="dataset-overview">
-<h4>4.12.2.1. Dataset overview<a class="headerlink" href="#dataset-overview" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.12.2.1. </span>4.12.2.1. Dataset overview<a class="headerlink" href="#dataset-overview" title="Link to this heading">#</a></h4>
 <p>We will use the <strong>Kaggle Facial Keypoints Detection</strong> dataset (<a class="reference external" href="https://www.kaggle.com/competitions/facial-keypoints-detection">Kaggle challenge webpage</a>). This dataset consists of a training set of <strong>7,049</strong> face images (96x96 pixels, grayscale). Each image has up to <strong>15 keypoint coordinates</strong> labeled (30 values: <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span> for each of 15 facial landmarks). For example, the keypoints include the centers of the eyes, the tip of the nose, and the corners of the mouth.</p>
 <p><strong>Data format</strong></p>
 <p>The training data is provided as a CSV file (<code class="docutils literal notranslate"><span class="pre">training.csv</span></code>). Each row contains:</p>
@@ -2165,7 +2165,7 @@ dtype: int64
 <p>From this, we can see which keypoint columns have missing values. We expect some columns to have 7049 values (no missing data for those keypoints) and others to have fewer (indicating missing labels). If a column has fewer than 7049 non-null entries, the difference is the number of missing values.</p>
 </section>
 <section id="data-exploration">
-<h4>4.12.2.2. Data exploration<a class="headerlink" href="#data-exploration" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.12.2.2. </span>4.12.2.2. Data exploration<a class="headerlink" href="#data-exploration" title="Link to this heading">#</a></h4>
 <p>Before training a model, it’s important to understand the dataset. We will:</p>
 <ol class="arabic simple">
 <li><p>Identify how many keypoint annotations are missing.</p></li>
@@ -2255,7 +2255,7 @@ dtype: int64
 <p>We see 9 face images with red dots marking the locations of eyes, nose, mouth, etc. This visual check helps verify that the keypoints line up with facial features (for instance, dots around the eyes, nose, and mouth).</p>
 </section>
 <section id="data-preprocessing">
-<h4>4.12.2.3. Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.12.2.3. </span>4.12.2.3. Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h4>
 <p>Next, we need to prepare the data for training a PyTorch model. This involves:</p>
 <ol class="arabic simple">
 <li><p><strong>Handling missing keypoint values</strong>: We’ll simplify by using only the images that have all 15 keypoints labeled.</p></li>
@@ -2301,9 +2301,9 @@ X_cnn shape: (2140, 1, 96, 96) y shape: (2140, 30)
 </div>
 </section>
 <section id="fully-connected-neural-network-fcn">
-<h4>4.12.2.4. Fully connected neural network (FCN)<a class="headerlink" href="#fully-connected-neural-network-fcn" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.12.2.4. </span>4.12.2.4. Fully connected neural network (FCN)<a class="headerlink" href="#fully-connected-neural-network-fcn" title="Link to this heading">#</a></h4>
 <section id="fcn-architecture">
-<h5>4.12.2.4.1. FCN architecture<a class="headerlink" href="#fcn-architecture" title="Link to this heading">#</a></h5>
+<h5><span class="section-number">6.12.2.4.1. </span>4.12.2.4.1. FCN architecture<a class="headerlink" href="#fcn-architecture" title="Link to this heading">#</a></h5>
 <p>We create a <strong>Fully Connected Neural Network (FCN)</strong> using PyTorch to regress the 30 keypoint coordinates <span class="math notranslate nohighlight">\((x, y)\)</span> directly from flattened grayscale images (of size <span class="math notranslate nohighlight">\(96 \times 96 = 9216\)</span> pixels). Feel free to adjust the hidden layer sizes and dropout probabilities based on your experimentation.<br></p>
 <p>The architecture of our FCN is as follows:</p>
 <ul class="simple">
@@ -2497,7 +2497,7 @@ Estimated Total Size (MB): 38.12
 </section>
 </section>
 <section id="convolutional-neural-network">
-<h4>4.12.2.5. Convolutional neural network<a class="headerlink" href="#convolutional-neural-network" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.12.2.5. </span>4.12.2.5. Convolutional neural network<a class="headerlink" href="#convolutional-neural-network" title="Link to this heading">#</a></h4>
 <p>We will create a Convolutional Neural Network (CNN) to <strong>regress</strong> the 30 keypoint coordinates from the input image. CNNs are highly effective in image analysis as they can automatically learn spatial hierarchies of features from images – from low-level edges to high-level shapes – which makes them well-suited for detecting patterns like facial features.<br></p>
 <p>The architecture of our CNN will be as follows:</p>
 <ol class="arabic simple">
@@ -2779,7 +2779,7 @@ Estimated Total Size (MB): 17.45
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3. Data Preprocessing, Local Models and Tree-Based Models</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>3. Data Preprocessing, Local Models and Tree-Based Models</p>
       </div>
     </a>
     <a class="right-next"
@@ -2787,7 +2787,7 @@ Estimated Total Size (MB): 17.45
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ensembles of models and feature selection</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Ensembles of models and feature selection</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2807,68 +2807,68 @@ Estimated Total Size (MB): 17.45
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing-for-neural-networks">4.2. Data Preprocessing for Neural Networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-standardization">4.2.1. Normalization and Standardization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data-shaping">4.2.2. Input Data Shaping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.1. 4.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing-for-neural-networks">6.2. 4.2. Data Preprocessing for Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-standardization">6.2.1. 4.2.1. Normalization and Standardization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data-shaping">6.2.2. 4.2.2. Input Data Shaping</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feed-forward-neural-networks-mlps">4.3. Feed-Forward Neural Networks (MLPs)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-and-notation">4.3.1. Architecture and Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feed-forward-neural-networks-mlps">6.3. 4.3. Feed-Forward Neural Networks (MLPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-and-notation">6.3.1. 4.3.1. Architecture and Notation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks-cnns">4.4. Convolutional Neural Networks (CNNs)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-operation">4.4.1. Convolution Operation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-layers">4.4.2. Pooling Layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-networks-cnns">6.4. 4.4. Convolutional Neural Networks (CNNs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution-operation">6.4.1. 4.4.1. Convolution Operation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-layers">6.4.2. 4.4.2. Pooling Layers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-functions">4.5. Activation Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function-and-matrix-based-back-propagation">4.6. Cost function and matrix-based Back-Propagation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squared-errors-sse">4.6.1. Sum of Squared Errors (SSE)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-update">4.6.2. Gradient Descent Update</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-algorithm-2">4.6.3. Back-Propagation (Algorithm 2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-functions">6.5. 4.5. Activation Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function-and-matrix-based-back-propagation">6.6. 4.6. Cost function and matrix-based Back-Propagation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squared-errors-sse">6.6.1. 4.6.1. Sum of Squared Errors (SSE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-descent-update">6.6.2. 4.6.2. Gradient Descent Update</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-algorithm-2">6.6.3. 4.6.3. Back-Propagation (Algorithm 2)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-back-propagation-in-a-mlp">4.7. Example 1: Back-Propagation in a MLP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-cross-validation">4.8. Overfitting and Cross-Validation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-phenomenon">4.8.1. Overfitting Phenomenon</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-and-mitigation">4.8.2. Detection and Mitigation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-back-propagation-in-a-mlp">6.7. 4.7. Example 1: Back-Propagation in a MLP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-cross-validation">6.8. 4.8. Overfitting and Cross-Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-phenomenon">6.8.1. 4.8.1. Overfitting Phenomenon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-and-mitigation">6.8.2. 4.8.2. Detection and Mitigation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-persistence-saving-and-loading-models-in-pytorch">4.9. Model Persistence: Saving and Loading Models in PyTorch</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-cnn-for-regression">4.10. Example 2: CNN for Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pytorch-tensors">4.11. Introduction to PyTorch tensors</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tensors">4.11.1. Creating Tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-tensor-operations">4.11.2. Basic Tensor Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">4.11.2.1. Arithmetic operations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">4.11.2.2. Indexing and slicing</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-concatenation">4.11.2.3. Reshaping and concatenation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-persistence-saving-and-loading-models-in-pytorch">6.9. 4.9. Model Persistence: Saving and Loading Models in PyTorch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-cnn-for-regression">6.10. 4.10. Example 2: CNN for Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pytorch-tensors">6.11. 4.11. Introduction to PyTorch tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-tensors">6.11.1. 4.11.1. Creating Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-tensor-operations">6.11.2. 4.11.2. Basic Tensor Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">6.11.2.1. 4.11.2.1. Arithmetic operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">6.11.2.2. 4.11.2.2. Indexing and slicing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-concatenation">6.11.2.3. 4.11.2.3. Reshaping and concatenation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autograd-and-gradients">4.11.3. Autograd and Gradients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tensor-functions">4.11.4. Advanced Tensor Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">4.11.4.1. Broadcasting</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#device-management-cpu-vs-gpu">4.11.4.2. Device Management (CPU vs GPU)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-place-operations">4.11.4.3. In-place Operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autograd-and-gradients">6.11.3. 4.11.3. Autograd and Gradients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tensor-functions">6.11.4. 4.11.4. Advanced Tensor Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">6.11.4.1. 4.11.4.1. Broadcasting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#device-management-cpu-vs-gpu">6.11.4.2. 4.11.4.2. Device Management (CPU vs GPU)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-place-operations">6.11.4.3. 4.11.4.3. In-place Operations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.12. Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network">4.12.1. Comparison of symbolic and automatic differentiation in a simple feedforward neural network</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup">4.12.1.1. Problem setup</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-implementation">4.12.1.2. PyTorch implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.12. 4.12. Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-symbolic-and-automatic-differentiation-in-a-simple-feedforward-neural-network">6.12.1. 4.12.1. Comparison of symbolic and automatic differentiation in a simple feedforward neural network</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup">6.12.1.1. 4.12.1.1. Problem setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-implementation">6.12.1.2. 4.12.1.2. PyTorch implementation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures">4.12.2. Facial keypoints detection with PyTorch FCN and CNN architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-overview">4.12.2.1. Dataset overview</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">4.12.2.2. Data exploration</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">4.12.2.3. Data preprocessing</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-connected-neural-network-fcn">4.12.2.4. Fully connected neural network (FCN)</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#fcn-architecture">4.12.2.4.1. FCN architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facial-keypoints-detection-with-pytorch-fcn-and-cnn-architectures">6.12.2. 4.12.2. Facial keypoints detection with PyTorch FCN and CNN architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-overview">6.12.2.1. 4.12.2.1. Dataset overview</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">6.12.2.2. 4.12.2.2. Data exploration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">6.12.2.3. 4.12.2.3. Data preprocessing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-connected-neural-network-fcn">6.12.2.4. 4.12.2.4. Fully connected neural network (FCN)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#fcn-architecture">6.12.2.4.1. 4.12.2.4.1. FCN architecture</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-network">4.12.2.5. Convolutional neural network</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolutional-neural-network">6.12.2.5. 4.12.2.5. Convolutional neural network</a></li>
 </ul>
 </li>
 </ul>

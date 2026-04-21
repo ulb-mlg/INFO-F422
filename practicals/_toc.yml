@@ -1,6 +1,7 @@
 title: Statistical Foundations of Machine Learning - Practicals Handbook
 options:
   logo: sfml.png
+  numbered: true
 root: frontpage
 entries:
 - file: introduction
